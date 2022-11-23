@@ -1,9 +1,12 @@
 import { Approach } from "./TimelineData";
+import ellipse from "../../assets/Ellipse.png"
+import star from "../../assets/Star.png"
+import Image from "next/image";
 
 function Timeline() {
   return (
-    <div className="bg-white font-Grotesk container flex flex-col mx-auto justify-center">
-      <div className="mx-6 justify-center grid">
+    <div className="bg-white py-8 relative my-10 font-Grotesk container grid w-screen overflow-hidden">
+      <div className="justify-center my-10 grid">
         <h1 className="font-bold text-center text-xl sm:text-2xl md:text-3xl text-secondary">
           Our Approach
         </h1>
@@ -18,6 +21,8 @@ function Timeline() {
           })}
         </div>
       </div>
+          <Image className="absolute top-8 flex justify-self-start w-16 sm:w-24 h-auto" src={star} size={50} alt="" />
+          <Image className="absolute flex justify-self-end self-end w-16 sm:w-24 h-auto" src={ellipse} size={50} alt="" />
     </div>
   );
 }

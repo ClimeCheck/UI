@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.main{
-  @apply container
+.main {
+  @apply container;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
-.footer{
-  @apply container
+.footer {
+  @apply container;
 }
 
 @font-face {

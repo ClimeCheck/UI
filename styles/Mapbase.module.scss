@@ -5,6 +5,7 @@
   flex-direction: column;
   padding: 4rem;
   row-gap: 1rem;
+  font-family: "Grotesk";
 
   h1 {
     color: #0087d2;
@@ -64,7 +65,7 @@
     width: max-content;
     background-color: $primary-button-color;
     color: white;
-    padding: 16px 24px;
+    padding: 16px 30px;
     border: none;
     border-radius: 4px;
     align-self: center;

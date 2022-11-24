@@ -1,10 +1,12 @@
 @use "../styles/variables/variables" as *;
 .container {
   color: black;
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   padding: 4rem;
   row-gap: 1rem;
+  font-family: "Grotesk";
 
   div {
     display: flex;
@@ -20,6 +22,7 @@
       align-items: center;
       gap: 20px;
       h1 {
+        font-size: 48px;
         color: #0087d2;
         font-weight: 700;
       }
@@ -34,6 +37,8 @@
 
   .reveal {
     align-items: center;
+    background-color: white;
+    border-radius: 24px;
     img {
       width: 40%;
       height: 100%;

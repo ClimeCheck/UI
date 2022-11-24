@@ -9,7 +9,7 @@ const WhyClime = () => {
         <span>
           <h1>Why ClimeCheck?</h1>
           <svg
-            width="503"
+            width="40%"
             height="7"
             viewBox="0 0 503 7"
             fill="none"

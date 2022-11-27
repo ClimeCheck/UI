@@ -15,13 +15,25 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         <div className="bar3"></div>
       </div>
       <nav>
-        <Link href="/">About us</Link>
+        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+          About us
+        </Link>
 
-        <Link href="/">Contribute</Link>
-        <Link href="/">Explorer</Link>
-        <Link href="/">FAQs</Link>
-        <Link href="/">Login</Link>
-        <button href="/">Join us for free</button>
+        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+          Contribute
+        </Link>
+        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+          Explorer
+        </Link>
+        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+          FAQs
+        </Link>
+        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+          Login
+        </Link>
+        <button href="/" onClick={() => setIsOpen(!isOpen)}>
+          Join us for free
+        </button>
       </nav>
     </div>
   );

@@ -22,6 +22,12 @@ export const getServerSideProps = async () => {
 
   const { trend } = co2.pop();
   const { station } = result.pop();
+
+  if (!result || !trend || !station) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       data: { station, trend, value },

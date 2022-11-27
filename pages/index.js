@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
+import { Hero, Navbar, Mapbase, WhyClime } from "../components";
+import styles from "../styles/Home.module.scss";
+
 
 import { Hero, Navbar, Mapbase, WhyClime } from "../components";
 
@@ -47,11 +50,13 @@ export default function Home({ data }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
           <Hero data={data} />
+
         </div>
         <Mapbase />
         <WhyClime />

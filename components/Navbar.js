@@ -1,6 +1,7 @@
 import { Logo } from "../assets/images";
 import Image from "next/image";
 import style from "../styles/Navbar.module.scss";
+
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 import cx from "classnames";
@@ -30,6 +31,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         </div>
       </header>
     </>
+
   );
 };
 

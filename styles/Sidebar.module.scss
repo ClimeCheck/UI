@@ -1,0 +1,63 @@
+@use "./variables//variables" as *;
+
+.sidebar {
+  position: absolute;
+  margin-left: auto;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 20px;
+  padding: 4rem 1.5rem;
+  color: black;
+  height: 100vh;
+  width: 75vw;
+  background-color: white;
+  z-index: 2;
+
+  //   transform: translateX(100%);
+  display: flex;
+  will-change: transform;
+  transition: all 1s ease;
+  //   @media screen and (max-width: 870px) {
+  //     transform: translateX(0%);
+
+  //     display: flex;
+  //   }
+  button,
+  a {
+    padding: 15px 20px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+    font-family: inherit;
+    will-change: transform;
+    transition: all 0.5s ease;
+    &:hover {
+      color: white;
+      background-color: $primary-button-color;
+      padding: 16px 23px;
+    }
+  }
+  nav {
+    width: 100%;
+    margin-inline-end: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // justify-content: flex-start;
+    row-gap: 10px;
+
+    button {
+      background-color: $primary-button-color;
+      color: white;
+    }
+  }
+}
+
+.control {
+  display: none;
+}

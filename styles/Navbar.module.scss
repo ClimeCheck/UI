@@ -6,13 +6,16 @@
   justify-content: space-between;
 
   button {
-    padding: 16px 24px;
+    padding: 16px 20px;
     background: transparent;
     color: white;
     border: none;
     cursor: pointer;
 
     font-family: inherit;
+    @media screen and (max-width: 870px) {
+      display: none;
+    }
   }
   img {
     object-fit: cover;
@@ -22,7 +25,7 @@
     margin-inline: auto;
     display: flex;
     align-items: center;
-    column-gap: 15px;
+    justify-content: space-between;
   }
   .ctawrapper {
     text-align: right;

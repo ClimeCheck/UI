@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Logo } from "../assets/images";
 import style from "../styles/WhyClime.module.scss";
+import { PlayCircle } from "iconsax-react";
 
 const WhyClime = () => {
   return (
@@ -32,7 +33,9 @@ const WhyClime = () => {
       </div>
       <div className={style.reveal}>
         <Image src={Logo} alt="Clime Check Logo" placeholder="blur" priority />
-
+        <button className={style.playButton}>
+          Watch Video <PlayCircle size="32" color="#ffffff" variant="Bold" />
+        </button>
         <h3>Introducing ClimeCheck</h3>
       </div>
     </div>

@@ -5,10 +5,6 @@ import Timeline from "../components/Timeline";
 import { Hero, Navbar, Mapbase, WhyClime } from "../components";
 import styles from "../styles/Home.module.scss";
 
-
-import { Hero, Navbar, Mapbase, WhyClime } from "../components";
-
-import styles from "../styles/Home.module.scss";
 import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 
@@ -56,7 +52,6 @@ export default function Home({ data }) {
         <div className={styles.wrapper}>
           <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
           <Hero data={data} />
-
         </div>
         <Mapbase />
         <WhyClime />

@@ -11,8 +11,7 @@ const TextFieldWrapper = ({
   const configTextfield = {
     ...field,
     ...otherProps,
-    fullWidth: true,
-    variant: 'standard'
+    variant: 'filled'
   };
 
   if (mata && mata.touched && mata.error) {
@@ -21,7 +20,7 @@ const TextFieldWrapper = ({
   }
 
   return (
-    <TextField {...configTextfield} />
+    <TextField sx={{ width: '30ch' }} {...configTextfield} />
   );
 };
 

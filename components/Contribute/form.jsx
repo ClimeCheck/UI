@@ -1,4 +1,4 @@
-import { useFormik, Formik, Form } from "formik";
+import { useFormikContext, Formik, Form } from "formik";
 import * as yup from "yup";
 import TextFieldWrapper from "./Textfield";
 import SelectWrapper from "./sellectfield";
@@ -15,14 +15,14 @@ function ContForm() {
     details: "",
   };
 
-  const AOC_OPTIONS = [
-    "Community",
-    "Governance",
-    "Software",
-    "Artificial Intelligence",
-    "Hardware",
-    "Infrastructure",
-  ];
+  const AOC_OPTIONS = {
+    "Community": "Community",
+    "Governance": "Governance",
+    "Software": "Software",
+    "Artificial Intelligence": "Artificial Intelligence",
+    "Hardware": "Hardware",
+    "Infrastructure": "Infrastructure",
+};
 
   const URL =
     /^((https?|ftp):\/\/)?(www.)?(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i;
@@ -43,11 +43,12 @@ function ContForm() {
     details: yup.string(),
   });
 
-  const formik = useFormik({
-    formData,
-    ContributeSchema,
-    // onSubmit,
-  });
+  // const formik = useFormik({
+  //   formData,
+  //   ContributeSchema,
+  //   // onSubmit,
+  // });
+  const { values, submitForm} = useFormikContext();
 
   return (
     <div className="grid font-Grotesk w-screen justify-center">
@@ -102,11 +103,11 @@ function ContForm() {
                 <Grid item xs={12}>
                   <button
                     className="px-12 py-2 justify-center w-full bg-[#00963f]"
-                    onClick={(e) => {
-                      e.preventDefault();
+                    onClick={() => {
+                      submitForm();
                     }}
                   >
-                    Submit
+                    Join the community
                   </button>
                 </Grid>
               </Grid>

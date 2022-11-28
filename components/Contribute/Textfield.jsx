@@ -8,10 +8,10 @@ const TextFieldWrapper = ({
 }) => {
   const [field, mata] = useField(name);
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setFieldValue(name, value);
-  };
+  // const handleChange = (e) => {
+  //   const { value } = e.target;
+  //   setFieldValue(name, value);
+  // };
 
   const configTextfield = {
     ...field,
@@ -27,7 +27,7 @@ const TextFieldWrapper = ({
   }
 
   return (
-    <TextField onChange={(e) => handleChange(e)} fullWidth {...configTextfield} />
+    <TextField  fullWidth {...configTextfield} />
   );
 };
 

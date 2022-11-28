@@ -16,9 +16,7 @@ const TextFieldWrapper = ({
   const configTextfield = {
     ...field,
     ...otherProps,
-    mata,
     variant: 'filled',
-    // onChange: handleChange()
   };
 
   if (mata && mata.touched && mata.error) {

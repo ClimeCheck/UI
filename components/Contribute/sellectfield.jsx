@@ -21,7 +21,6 @@ const SelectWrapper = ({
     ...field,
     ...otherProps,
     select: true,
-    meta,
     variant: 'filled',
     // onChange: handleChange()
   };

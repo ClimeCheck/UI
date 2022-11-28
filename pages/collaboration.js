@@ -9,7 +9,7 @@ function Contribute() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="">
+    <div className=" ">
       <Head>
         <title>ClimeCheck UI</title>
         <meta
@@ -19,7 +19,7 @@ function Contribute() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <main className="main p-8 flex w-screen m-auto justify-center items-center">
+      <main className="main flex w-screen m-auto justify-center items-center">
         <ContForm />
       </main>
       <Footer />

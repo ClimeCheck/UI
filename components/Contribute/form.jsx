@@ -3,6 +3,8 @@ import * as yup from "yup";
 import TextFieldWrapper from "./Textfield";
 import SelectWrapper from "./sellectfield";
 import { Box, Grid, Container } from "@mui/material";
+import SubmitButton from "./submit";
+import axios from "axios";
 
 function ContForm() {
   const formData = {
@@ -43,12 +45,19 @@ function ContForm() {
     details: yup.string(),
   });
 
-  // const formik = useFormik({
-  //   formData,
-  //   ContributeSchema,
-  //   // onSubmit,
-  // });
-  const { values, submitForm} = useFormikContext();
+function handleSubmit(values){
+  const endpoint = '/contributors/addContributor'
+  try{
+    axios.post(endpoint, values, {
+      headers: {
+        Authorizations: ``,
+        "content-type" : "", 
+      }
+    })
+  } catch(e){
+    console.log('error', e)
+  }
+}
 
   return (
     <div className="grid font-Grotesk w-screen justify-center">
@@ -101,14 +110,7 @@ function ContForm() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <button
-                    className="px-12 py-2 justify-center w-full bg-[#00963f]"
-                    onClick={() => {
-                      submitForm();
-                    }}
-                  >
-                    Join the community
-                  </button>
+                  <SubmitButton />
                 </Grid>
               </Grid>
             </Form>

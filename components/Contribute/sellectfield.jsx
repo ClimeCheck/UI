@@ -20,8 +20,9 @@ const SelectWrapper = ({
     ...field,
     ...otherProps,
     select: true,
+    meta,
     variant: 'filled',
-    onChange: handleChange
+    // onChange: handleChange()
   };
 
   if (meta && meta.touched && meta.error) {
@@ -30,7 +31,7 @@ const SelectWrapper = ({
   }
 
   return (
-    <TextField sx={{ width: '30ch', color: '#787777' }} {...configSelect}>
+    <TextField onChange={(e) => handleChange(e)} fullWidth {...configSelect}>
       {Object.keys(options).map((item, pos) => {
         return (
           <MenuItem  key={pos} value={item}>

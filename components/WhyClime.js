@@ -4,7 +4,6 @@ import style from "../styles/WhyClime.module.scss";
 
 import { PlayCircle } from "iconsax-react";
 
-
 const WhyClime = () => {
   return (
     <div className={style.container}>
@@ -34,13 +33,17 @@ const WhyClime = () => {
         </p>
       </div>
       <div className={style.reveal}>
-        <Image src={Logo} alt="Clime Check Logo" placeholder="blur" priority />
-
-        <button className={style.playButton}>
+        <iframe
+          className={style.video}
+          src="https://www.youtube.com/embed/wjRiBeWAYlk"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        {/* <button className={style.playButton}>
           Watch Video <PlayCircle size="32" color="#ffffff" variant="Bold" />
-        </button>
-
-        <h3>Introducing ClimeCheck</h3>
+        </button> */}
       </div>
     </div>
   );

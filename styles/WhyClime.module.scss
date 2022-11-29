@@ -42,12 +42,10 @@
 
     position: relative;
 
-
-    img {
-      width: 40%;
-      height: 100%;
+    .video {
+      aspect-ratio: 16 / 9;
+      width: 100%;
     }
-
 
     .playButton {
       position: absolute;
@@ -63,6 +61,5 @@
       align-items: center;
       gap: 10px;
     }
-
   }
 }

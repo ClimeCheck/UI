@@ -52,7 +52,8 @@ const Hero = (props) => {
               <span className={style.supsub}>
                 <sup> &#8451;</sup> <sub>(since 1880)</sub>
 
-              419
+                419
+              </span>
               <span className={style.supsub}>
                 <sup> &#8451;</sup> <sub>(since 2000)</sub>
 

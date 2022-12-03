@@ -1,0 +1,53 @@
+@use "./variables//variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+
+    padding: 16px 20px;
+
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    font-family: inherit;
+
+    @media screen and (max-width: 870px) {
+      display: none;
+    }
+
+  }
+  img {
+    object-fit: cover;
+  }
+
+  nav {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+  }
+  .ctawrapper {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    button:nth-of-type(1) {
+      color: $primary-link-color;
+    }
+    button:nth-of-type(2) {
+      background-color: $primary-button-color;
+      color: white;
+
+      border-radius: 4px;
+    }
+  }
+}

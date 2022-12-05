@@ -1,7 +1,6 @@
 import style from "../styles/Sidebar.module.scss";
 import Link from "next/link";
-import { CloseCircle } from "iconsax-react";
-import { motion } from "framer-motion";
+
 import cx from "classnames";
 const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
@@ -19,7 +18,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           About us
         </Link>
 
-        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/contribute" onClick={() => setIsOpen(!isOpen)}>
           Contribute
         </Link>
         <Link href="/" onClick={() => setIsOpen(!isOpen)}>

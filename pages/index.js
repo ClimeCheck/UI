@@ -50,7 +50,7 @@ export default function Home({ data }) {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
           <Hero data={data} />
         </div>
         <Mapbase />
@@ -60,7 +60,7 @@ export default function Home({ data }) {
         <Timeline />
       </main>
 
-      <Footer />
+    
     </div>
   );
 }

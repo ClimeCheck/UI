@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import ContForm from "../components/contribute/form";
+import ContForm from "../components/Contribute/form";
 import Head from "next/head";
 import { Navbar } from "../components";
 import { useState } from "react";

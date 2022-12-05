@@ -37,9 +37,9 @@ const WhyClime = () => {
           className={style.video}
           src="https://www.youtube.com/embed/wjRiBeWAYlk"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         {/* <button className={style.playButton}>
           Watch Video <PlayCircle size="32" color="#ffffff" variant="Bold" />

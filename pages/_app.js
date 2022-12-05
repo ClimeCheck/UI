@@ -1,18 +1,17 @@
 import "../styles/globals.css";
-import { Inter, Space_Grotesk } from "@next/font/google";
-import cx from "classnames";
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ["latin"] });
-const spacegrotesk = Space_Grotesk({ subsets: ["latin"] });
+import Footer from "../components/Footer";
+
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-  // (
-  // <main className={cx(inter.className, spacegrotesk.className)}>
-  //   <Component {...pageProps} />;
-  // </main>
+ 
 
-  // );
+  return (
+    <>
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
 
 export default MyApp;

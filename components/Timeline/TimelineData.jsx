@@ -2,10 +2,7 @@ export const Approach = [
   {
     id: 1,
     title: "Data Agregations",
-    desc: `Climecheck leverages the blockchain for data integrity and verifiability. Users can: 
-    • Download raw sensor data
-    • Train models on the data
-    • Perform confidential computing`,
+    desc: `Climecheck leverages the blockchain for data integrity and verifiability. Users can:\n  &#x2022; Download raw sensor data\n &#x2022; Train models on the data\n &#x2022; Perform confidential computing`,
   },
   {
     id: 2,

@@ -11,7 +11,7 @@ const Hero = (props) => {
         <h1>Community sourced hyperlocalized stream of climate data.</h1>
         <h4>
           Climecheck is a Decentralized Science (DeSci) ecosystem with a
-          real-time Big Data Platform of climate monitoring devices around the
+          real-time big data Platform of climate monitoring devices around the
           world.
         </h4>
       </div>
@@ -28,12 +28,9 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
-                <sup>Part per million</sup> <sub>(since 2012)</sub>
+                <sup>ppm</sup>
               </span>
             </span>
-          </div>
-          <div className={style.trendIcon}>
-            <Diagram size="25" color="white" variant="Bold" />
           </div>
         </div>
 
@@ -44,12 +41,9 @@ const Hero = (props) => {
             <span>
               {station}
               <span className={style.supsub}>
-                <sup> &#8451;</sup> <sub>(since 1880)</sub>
+                <sup> &#8451;</sup>
               </span>
             </span>
-          </div>
-          <div className={style.trendIcon}>
-            <Diagram size="25" color="white" variant="Bold" />
           </div>
         </div>
 
@@ -60,12 +54,9 @@ const Hero = (props) => {
             <span>
               {Number(value).toFixed(2)}
               <span className={style.supsub}>
-                <sup>inches</sup> <sub>(since 1993)</sub>
+                <sup>inches</sup>
               </span>
             </span>
-          </div>
-          <div className={style.trendIcon}>
-            <Diagram size="25" color="white" variant="Bold" />
           </div>
         </div>
       </div>

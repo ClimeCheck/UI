@@ -30,7 +30,6 @@ function Footer() {
         })}
       </div>
       <div className="grid">
-        <p className="font-bold text-base">Companies</p>
         {companyLinks.map((links, key) => {
           return (
             <Link key={key} href={links.link}>

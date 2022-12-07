@@ -7,12 +7,12 @@ export const exploreLinks = [
 export const aboutLinks = [
   { name: "Our Story", link: "/story" },
   { name: "Meet Our Team", link: "/team" },
-  { name: "Collaboration", link: "/collaboration" },
+  { name: "Collaboration", link: "/contribute" },
   { name: "Contact Us", link: "/contact" },
 ];
 
-export const companyLinks = [
-  { name: "Careers", link: "/careers" },
-  { name: "Privacy and Policy", link: "/policy" },
-  { name: "FAQ", link: "/faq" },
-];
+// export const companyLinks = [
+//   { name: "Careers", link: "/careers" },
+//   { name: "Privacy and Policy", link: "/policy" },
+//   { name: "FAQ", link: "/faq" },
+// ];

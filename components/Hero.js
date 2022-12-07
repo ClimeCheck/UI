@@ -28,6 +28,7 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
+
                 <sup>ppm</sup>
               </span>
             </span>
@@ -41,10 +42,12 @@ const Hero = (props) => {
             <span>
               {station}
               <span className={style.supsub}>
+
                 <sup> &#8451;</sup>
               </span>
             </span>
           </div>
+
         </div>
 
         <div>
@@ -54,10 +57,12 @@ const Hero = (props) => {
             <span>
               {Number(value).toFixed(2)}
               <span className={style.supsub}>
+
                 <sup>inches</sup>
               </span>
             </span>
           </div>
+
         </div>
       </div>
     </div>

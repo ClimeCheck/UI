@@ -60,6 +60,8 @@ export default function Home({ data }) {
       <main className="main w-screen m-auto justify-center items-center">
         <Timeline />
       </main>
+
+
     </div>
   );
 }

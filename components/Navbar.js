@@ -3,7 +3,12 @@ import Image from "next/image";
 import style from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import cx from "classnames";
-const Navbar = ({ isOpen, setIsOpen, textColor }) => {
+
+import { useSidebarContext } from "../context/SidebarContext";
+
+const Navbar = ({ textColor }) => {
+  const { isOpen, setIsOpen } = useSidebarContext();
+
   return (
     <>
       <header className={style.header}>
@@ -11,12 +16,16 @@ const Navbar = ({ isOpen, setIsOpen, textColor }) => {
           <Image
             src={Logo}
             alt="Clime Check Logo"
-            placeholder="blur"
+
+            height={143}
+            width={143}
+
             priority
           />
         </Link>
         <nav className={`text-${textColor}`}>
-          <Link href="/">About us</Link>
+
+
           <Link href="/contribute">Contribute</Link>
           <Link href="/">Explorer</Link>
           <Link href="/">FAQs</Link>

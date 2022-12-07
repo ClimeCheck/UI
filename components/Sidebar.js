@@ -1,8 +1,14 @@
+
+
 import style from "../styles/Sidebar.module.scss";
 import Link from "next/link";
 
 import cx from "classnames";
-const Sidebar = ({ isOpen, setIsOpen }) => {
+import { useSidebarContext } from "../context/SidebarContext";
+
+const Sidebar = () => {
+  const { isOpen, setIsOpen } = useSidebarContext();
+
   return (
     <div className={isOpen ? style.sidebar : style.control}>
       <div

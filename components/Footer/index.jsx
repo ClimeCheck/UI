@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../assets/footerLogo.png";
-import { aboutLinks, companyLinks, exploreLinks } from "./FooterData";
+import { Logo } from "../../assets/images";
+
+import { aboutLinks, exploreLinks } from "./FooterData";
 
 function Footer() {
   return (
@@ -29,8 +30,7 @@ function Footer() {
           );
         })}
       </div>
-      <div className="grid">
-        <p className="font-bold text-base">Companies</p>
+      {/* <div className="grid">
         {companyLinks.map((links, key) => {
           return (
             <Link key={key} href={links.link}>
@@ -38,7 +38,7 @@ function Footer() {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

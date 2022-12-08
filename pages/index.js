@@ -2,6 +2,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
 import { Hero, Navbar } from "../components";
+
 import styles from "../styles/Home.module.scss"
 import { useState } from "react";
 

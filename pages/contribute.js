@@ -1,8 +1,7 @@
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 import ContForm from "../components/Contribute/form";
 import Head from "next/head";
 import { Navbar } from "../components";
+const Sidebar = dynamic(() => import("../components/Sidebar"));
 
 function Contribute() {
   return (

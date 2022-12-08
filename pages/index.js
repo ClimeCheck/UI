@@ -2,12 +2,12 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
 import { Hero, Navbar } from "../components";
-import styles from "../styles/Home.module.scss";
-
-import Sidebar from "../components/Sidebar";
+import styles from "../styles/Home.module.scss"
 import { useState } from "react";
 
+
 const Mapbase = dynamic(() => import("../components/Mapbase"));
+const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/WhyClime"));
 export const getServerSideProps = async () => {
   const { co2 = 0 } = await (
@@ -51,6 +51,10 @@ export default function Home({ data }) {
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={styles.container}>
         <div className={styles.wrapper}>
+          <video playsInline autoPlay muted loop poster="/Cloud.png">
+            <source src="/cloud.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
           <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
           <Hero data={data} />
         </div>

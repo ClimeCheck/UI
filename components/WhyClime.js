@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Logo } from "../assets/images";
+
 import style from "../styles/WhyClime.module.scss";
 
-import { PlayCircle } from "iconsax-react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
 
 const WhyClime = () => {
   return (
@@ -34,6 +34,7 @@ const WhyClime = () => {
       </div>
       <div className={style.reveal}>
         <iframe
+          loading="lazy"
           className={style.video}
           src="https://www.youtube.com/embed/wjRiBeWAYlk"
           title="YouTube video player"
@@ -41,9 +42,6 @@ const WhyClime = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        {/* <button className={style.playButton}>
-          Watch Video <PlayCircle size="32" color="#ffffff" variant="Bold" />
-        </button> */}
       </div>
     </div>
   );

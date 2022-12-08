@@ -15,9 +15,11 @@ specifiers:
   framer-motion: ^7.6.12
   iconsax-react: ^0.0.8
   next: 13.0.3
+  pnpm: ^7.18.1
   postcss: ^8.4.19
   react: 18.2.0
   react-dom: 18.2.0
+  react-lite-youtube-embed: ^2.3.52
   sass: ^1.56.1
   tailwindcss: ^3.2.4
   yup: ^0.32.11
@@ -36,15 +38,17 @@ dependencies:
   framer-motion: 7.6.12_biqbaboplfbrettd7655fr4n2y
   iconsax-react: 0.0.8_react@18.2.0
   next: 13.0.3_m5sxuueb27gk6ddc5gums6vtgq
+  pnpm: 7.18.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-lite-youtube-embed: 2.3.52_biqbaboplfbrettd7655fr4n2y
   yup: 0.32.11
 
 devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.19
   postcss: 8.4.19
   sass: 1.56.1
-  tailwindcss: 3.2.4
+  tailwindcss: 3.2.4_postcss@8.4.19
 
 packages:
 
@@ -1127,7 +1131,7 @@ packages:
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.19
       postcss-js: 4.0.0_postcss@8.4.19
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.19
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -2388,6 +2392,12 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
+  /pnpm/7.18.1:
+    resolution: {integrity: sha512-GulnWxFW1dej1sSiju1FlYtvWIYa35ZvbTk9F8jOo+1GgJEVdx1ObLaZCApd2I4IB+jozyNWzInEdV0hQgUq0Q==}
+    engines: {node: '>=14.6'}
+    hasBin: true
+    dev: false
+
   /popmotion/11.0.5:
     resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
     dependencies:
@@ -2522,6 +2532,16 @@ packages:
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
+  /react-lite-youtube-embed/2.3.52_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-G010PvCavA4EqL8mZ/Sv9XXiHnjMfONW+lmNeCRnSEPluPdptv2lZ0cNlngrj7K9j7luc8pbpyrmNpKbD9VMmw==}
+    peerDependencies:
+      react: '>=16.0.8'
+      react-dom: '>=16.0.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
@@ -2780,10 +2800,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.2.4:
+  /tailwindcss/3.2.4_postcss@8.4.19:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

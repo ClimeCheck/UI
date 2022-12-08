@@ -42,7 +42,6 @@ const Hero = (props) => {
             <span>
               {station}
               <span className={style.supsub}>
-
                 <sup> &#8451;</sup>
               </span>
             </span>

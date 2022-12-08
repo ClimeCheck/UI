@@ -25,7 +25,6 @@ const Navbar = ({ textColor }) => {
         </Link>
         <nav className={`text-${textColor}`}>
 
-
           <Link href="/contribute">Contribute</Link>
           <Link href="/">Explorer</Link>
           <Link href="/">FAQs</Link>

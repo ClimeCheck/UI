@@ -13,11 +13,30 @@ function Timeline() {
         <div className="flex flex-col items-center justify-center pt-20 mx-auto text-black">
           {Approach.map((data, key) => {
             return (
-            <div className="grid sm:even:flex-row-reverse sm:flex" key={key}>
-              <h1 className={`text-xl text-primary w-[300px] p-4 relative ${data.id === 2 ? "pl-2" : "sm:border-r-4 sm:border-r-[#0069B3] sm:pr-4" }`}>{data.title}</h1>
-              <span className="rounded-full bg-[#00963F] -ml-4 sm:mx-[288px] flex p-[10px] absolute"> </span>
-              <p className={`pb-8 w-[300px] p-4 ${data.id ===2 ? "sm:border-r-4 sm:border-r-[#0069B3] sm:pr-4" : ""}`}>{data.desc}</p>
-            </div>)
+              <div className="grid sm:even:flex-row-reverse sm:flex" key={key}>
+                <h1
+                  className={`text-xl text-primary w-[300px] p-4 relative ${
+                    data.id === 2
+                      ? "pl-2"
+                      : "sm:border-r-4 sm:border-r-[#0069B3] sm:pr-4"
+                  }`}
+                >
+                  {data.title}
+                </h1>
+                <span className="rounded-full bg-[#00963F] -ml-4 sm:mx-[288px] flex p-[10px] absolute">
+                  {" "}
+                </span>
+                <p
+                  className={`pb-8 w-[300px] p-4 ${
+                    data.id === 2
+                      ? "sm:border-r-4 sm:border-r-[#0069B3] sm:pr-4"
+                      : ""
+                  }`}
+                >
+                  {data.desc}
+                </p>
+              </div>
+            );
           })}
         </div>
       </div>

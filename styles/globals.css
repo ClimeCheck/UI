@@ -27,6 +27,7 @@ body {
 @font-face {
   font-family: "Grotesk";
   src: url("../assets/SpaceGrotesk-VariableFont_wght.ttf");
+  font-display: swap;
 }
 
 .harmburger {

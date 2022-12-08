@@ -28,6 +28,7 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
+feat/taofeek
 
                 <sup>ppm</sup>
               </span>
@@ -42,7 +43,6 @@ const Hero = (props) => {
             <span>
               {station}
               <span className={style.supsub}>
-
                 <sup> &#8451;</sup>
               </span>
             </span>

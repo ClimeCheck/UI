@@ -1,61 +1,32 @@
 .container {
   .wrapper {
+    position: relative;
     background: linear-gradient(
-        113.75deg,
-        #000000 25.42%,
-        rgba(0, 70, 109, 0.49) 151.69%,
-        rgba(0, 111, 173, 0.25) 174.6%
-      ),
-      url(../assets/images/cloud.gif) no-repeat;
+      113.75deg,
+      #000000 25.42%,
+      rgba(0, 70, 109, 0.49) 151.69%,
+      rgba(0, 111, 173, 0.25) 174.6%
+    );
     opacity: 0.97;
     background-size: cover;
 
-    // height: 100vh;
+    // height:
     padding: 0 3rem;
+
+
+    video {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      opacity: 0.18;
+    }
 
     @media (max-width: 400px) {
       padding: 0 1.5rem;
     }
-  }
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
   }
 }

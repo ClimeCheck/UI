@@ -42,7 +42,7 @@ export default function Home({ data }) {
       <Head>
         <title>ClimeCheck</title>
         <meta
-          name="ClimeCheck"
+          name="description"
           content="ClimeCheck is a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent  . The Climecheck be all, end all is individual grassroot participation. "
         />
         <link rel="icon" href="/ClimeCheck.png" />

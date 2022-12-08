@@ -9,7 +9,7 @@ function Contribute() {
       <Head>
         <title>ClimeCheck || Contribute</title>
         <meta
-          name="Clime Check Web app"
+          name="description"
           content="Contribute to ClimeCheck, a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent. "
         />
         <link rel="icon" href="/favicon.ico" />

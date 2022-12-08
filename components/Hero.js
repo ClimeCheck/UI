@@ -28,6 +28,8 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
+feat/taofeek
+
                 <sup>ppm</sup>
               </span>
             </span>
@@ -45,6 +47,7 @@ const Hero = (props) => {
               </span>
             </span>
           </div>
+
         </div>
 
         <div>
@@ -54,10 +57,12 @@ const Hero = (props) => {
             <span>
               {Number(value).toFixed(2)}
               <span className={style.supsub}>
+
                 <sup>inches</sup>
               </span>
             </span>
           </div>
+
         </div>
       </div>
     </div>

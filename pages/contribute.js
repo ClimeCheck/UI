@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Navbar } from "../components";
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 
+
 function Contribute() {
   return (
     <div>
@@ -17,6 +18,7 @@ function Contribute() {
       <Sidebar />
       <div className="px-12">
         <Navbar textColor="black" />
+
         <main className="main flex w-screen m-auto justify-center items-center">
           <ContForm />
         </main>

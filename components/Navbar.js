@@ -16,6 +16,7 @@ const Navbar = ({ textColor }) => {
           <Image
             src={Logo}
             alt="Clime Check Logo"
+
             height={143}
             width={143}
 

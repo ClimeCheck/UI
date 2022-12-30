@@ -28,7 +28,6 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
-feat/taofeek
 
                 <sup>ppm</sup>
               </span>

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Timeline() {
   return (
-    <div className="bg-white py-8 relative my-10 font-Grotesk container grid w-screen overflow-hidden">
+    <div className="bg-white py-8 relative font-Grotesk container grid w-screen overflow-hidden">
       <div className="justify-center my-10 grid">
         <h1 className="font-bold text-center text-xl sm:text-2xl md:text-3xl text-secondary">
           Our Approach
@@ -47,7 +47,7 @@ function Timeline() {
         alt=""
       />
       <Image
-        className="absolute flex justify-self-end self-end w-16 sm:w-24 h-auto"
+        className="absolute flex justify-self-end self-end w-16 mb-4 sm:w-24 h-auto"
         src={ellipse}
         size={50}
         alt=""

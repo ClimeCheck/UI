@@ -65,3 +65,9 @@ body {
     display: inline-block;
   }
 }
+
+.green-gradient-text {
+  background: -webkit-linear-gradient(#DFFDEB,#91B8D4,#2AEA7B, #FFFFFF);	/* <-- create background gradient. */	
+  -webkit-background-clip: text;							/* <-- have the gradient clip to the text. */
+  -webkit-text-fill-color: transparent;		
+}

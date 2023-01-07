@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import style from "../styles/WhyClime.module.scss";
 
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
-
 const WhyClime = () => {
   return (
     <div className={style.container}>

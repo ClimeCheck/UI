@@ -2,10 +2,10 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
 import { Hero, Navbar } from "../components";
+import Footer from "../components/Footer";
 
-import styles from "../styles/Home.module.scss"
+import styles from "../styles/Home.module.scss";
 import { useState } from "react";
-
 
 const Mapbase = dynamic(() => import("../components/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
@@ -43,9 +43,7 @@ export default function Home({ data }) {
       <Head>
         <title>ClimeCheck</title>
         <meta
-
           name="description"
-
           content="ClimeCheck is a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent  . The Climecheck be all, end all is individual grassroot participation. "
         />
         <link rel="icon" href="/ClimeCheck.png" />
@@ -64,10 +62,10 @@ export default function Home({ data }) {
         <Mapbase />
         <WhyClime />
       </div>
-      <main className="main w-screen m-auto justify-center items-center">
+      <main className=" bg-white w-screen justify-center items-center">
         <Timeline />
       </main>
-
+      <Footer />
     </div>
   );
 }

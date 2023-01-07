@@ -6,7 +6,7 @@ import { aboutLinks, exploreLinks } from "./FooterData";
 
 function Footer() {
   return (
-    <div className="grid justify-evenly px-auto mt-32 py-16 bg-black text-white  gap-14 sm:flex font-Grotesk overflow-hidden">
+    <div className="grid justify-evenly px-auto  py-16 bg-black text-white  gap-14 sm:flex font-Grotesk overflow-hidden">
       <div>
         <Image src={Logo} alt="logo" />
       </div>

@@ -2,6 +2,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
 import { Hero, Navbar } from "../components";
+import Footer from "../components/Footer";
 
 import styles from "../styles/Home.module.scss";
 import { useState } from "react";
@@ -64,6 +65,7 @@ export default function Home({ data }) {
       <main className=" bg-white w-screen justify-center items-center">
         <Timeline />
       </main>
+      <Footer />
     </div>
   );
 }

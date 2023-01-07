@@ -2,6 +2,7 @@ import ContForm from "../components/Contribute/form";
 import Head from "next/head";
 import { Navbar } from "../components";
 import dynamic from "next/dynamic";
+import Footer from "../components/Footer";
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 
 
@@ -26,6 +27,7 @@ function Contribute() {
           <ContForm />
         </main>
       </div>
+      <Footer />
     </div>
   );
 }

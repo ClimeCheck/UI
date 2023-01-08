@@ -37,23 +37,32 @@ const Explore = () => {
                         {/* Card 2 */}
                         <div className='md:h-[300px] w-[85%] md:w-1/2 bg-slate-200 rounded-3xl overflow-hidden flex flex-col justify-start items-start space-y-6 md:space-y-8'>
                             <span className='pt-4 px-6 text-start'>Dec 8, 2022. Air stream summary</span>
-                            <div className='flex flex-col md:flex-row w-[80%] mx-auto gap-6 text-[#777777]'>
-                                <div className='w-1/2 flex flex-col space-y-4'>
-                                    <p>Temperature</p>
-                                    <p className='text-[#B80D7F] text-2xl md:text-4xl font-medium'>25</p>
-                                    <p>Pm 2.5</p>
-                                    <p className='text-[#BE690B] text-2xl md:text-4xl font-medium'>1.21</p>
+                            <div className='flex flex-col md:flex-row w-[80%] mx-auto gap-6 pb-4 text-[#777777]'>
+                                <div className='w-full md:w-1/2 flex flex-row md:flex-col md:items-start items-center justify-between space-y-0 md:space-y-8'>
+                                    <div>
+                                        <p>Temperature</p>
+                                        <p className='text-[#B80D7F] text-2xl md:text-4xl font-medium'>25</p>
+                                    </div>
+                                    <div>
+                                        <p>Pm 2.5</p>
+                                        <p className='text-[#BE690B] text-2xl md:text-4xl font-medium'>1.21</p>
+                                    </div>
                                 </div>
-                                <div className='w-1/2 flex flex-col space-y-4'>
-                                    <p>CO2</p>
-                                    <p className='text-2xl md:text-4xl font-medium text-[#192F5D]'>5.62</p>
-                                    <p>Pm 5</p>
-                                    <p className='text-2xl md:text-4xl font-medium text-[#192F5D]'>2.56</p>
+                                <div className='w-full md:w-1/2 flex flex-row md:flex-col md:items-start items-center justify-between space-y-0 md:space-y-8'>
+                                    <div>
+                                        <p>CO2</p>
+                                        <p className='text-2xl md:text-4xl font-medium text-[#192F5D]'>5.62</p>
+                                    </div>
+                                    <div>
+                                        <p>Pm 5</p>
+                                        <p className='text-2xl md:text-4xl font-medium text-[#192F5D]'>2.56</p>
+                                    </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
+                    {/* View map button */}
                 </div>
             </div>
             <Footer />

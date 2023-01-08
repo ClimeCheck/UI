@@ -71,13 +71,13 @@ const Sidebar = () => {
   const wrapperClasses = classNames(
     " px-4 pt-8 pb-4 bg-[#F8F8F8] flex justify-between flex-col ",
     {
-      ["w-85"]: !toggleCollapse,
+      ["w-72"]: !toggleCollapse,
       ["w-20"]: toggleCollapse,
     }
   );
 
   const collapseIconClasses = classNames(
-    "p-4 rounded bg-light-lighter absolute right-0",
+    "h-full p-4 rounded bg-[#74BF44] absolute right-0",
     {
       "rotate-180": toggleCollapse,
     }

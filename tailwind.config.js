@@ -14,12 +14,13 @@ module.exports = {
       },
     },
   },
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#74BF44",
-          secondary: "#0087D2",
+          primary: "#00963F",
+          secondary: "#0069B3",
           "base-100": "#ffffff",
         },
       },

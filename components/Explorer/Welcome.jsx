@@ -11,7 +11,7 @@ const welcomeData = {
 };
 
 const AirSTreamData = [
-  { name: "Temparature", value: "25" },
+  { name: "Temparature", value: `25` },
   { name: "CO2", value: "5.62" },
   { name: "Pm 2.5", value: "1.27" },
   { name: "Pm 5", value: "2.56" },
@@ -29,7 +29,7 @@ function WelcomeExplore() {
             for a climate monitoring commons.
           </p>
 
-          <div className="grid grid-cols-1 text-black sm:grid-cols-2 gap-4 my-16 self-center max-w-3xl">
+          <div className="grid grid-cols-1 text-black sm:grid-cols-2 gap-6 mt-10 mb-4 self-center max-w-4xl">
             <div className="bg-slate-300 rounded-md p-3 ">
               <Link href="/explore/data/devices">
                 <p className="text-secondary text-sm font-bold p-3">
@@ -37,16 +37,16 @@ function WelcomeExplore() {
                 </p>
                 <div>
                   <div>
-                    <h1 className="text-4xl font-bold text-secondary mt-4">
-                      {welcomeData.totalDevices}
+                    <h1 className="text-3xl sm:text-4xl font-bold text-secondary mt-4">
+                      {welcomeData.totalDevices} <sub className="text-sm font-normal text-green-500">&uarr; +0.1%</sub>
                     </h1>
                     {/**Add Percent Increase and Icon */}
                   </div>
                   <p className="text-base text-primary py-4">Connected Devices</p>
                 </div>
                 <div className="flex flex-row gap-6 justify-center mt-8">
-                  <div className="self-center">{welcomeData.percentActive}</div>
-                  <div className="font-bold text-2xl  text-primary">
+                  <div className="self-center">{welcomeData.percentActive} active</div>
+                  <div className="font-bold text-xl  text-primary">
                     {welcomeData.amountActive}
                   </div>
                   <BiDevices size={40} className="text-[#BE690B]" />
@@ -67,7 +67,9 @@ function WelcomeExplore() {
                         className={`m-4 ${name == "Temparature" && "border-b-[1px] border-slate-500"} ${name == "CO2" && "border-b-[1px] border-slate-500"}`}
                       >
                         <p className="text-slate-500 py-2">{name}</p>
-                        <h1 className={`text-2xl font-bold ${name == "Temparature" && "text-[#B80D7F]"} ${name == "Pm 2.5" && "text-[#BE690B]"} ${name == "Pm 5" && "text-[#525252]"} ${name == "CO2" && "text-[#192F5D]"}`}>{value}</h1>
+                        <h1 className={`text-2xl font-bold ${name == "Temparature" && "text-[#B80D7F]"} ${name == "Pm 2.5" && "text-[#BE690B]"} ${name == "Pm 5" && "text-[#525252]"} ${name == "CO2" && "text-[#192F5D]"}`}>
+                          {value}{name == "Temparature" && <span>&#176;</span>}
+                          </h1>
                       </div>
                     );
                   })}

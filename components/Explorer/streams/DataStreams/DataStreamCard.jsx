@@ -7,19 +7,19 @@ function DataStreamCards({
   amountActive,
 }) {
   return (
-      <div className="bg-slate-300 rounded-md p-5 ">
+      <div className="bg-slate-300 rounded-md p-5 min-w-fit ">
         <p className="text-secondary text-sm font-bold p-3">{continent}</p>
         <div>
-          <div>
+          <div className="mt-2">
             <h1 className="text-3xl font-bold text-secondary">{totalDevices}</h1>
             {/**Add Percent Increase and Icon */}
           </div>
           <p className="text-sm text-primary py-4">Connected Devices</p>
         </div>
-        <div className="flex flex-row gap-6 justify-center mt-8">
-          <div className="self-center">{percentActive}</div>
+        <div className="flex flex-row gap-2 justify-center mt-5">
+          <div className="self-center text-sm">{percentActive} active</div>
           <div className="font-bold text-2xl text-primary">{amountActive}</div>
-          <BiDevices size={40} className="text-[#BE690B]" />
+          <BiDevices size={35} className="text-[#BE690B]" />
         </div>
       </div>
     

@@ -9,7 +9,7 @@ function DataStream() {
           <p className="text-xl my-4">Continent Level Breakdown</p>
           <p className="text-xl my-4">Data streams</p>
 
-          <div className="grid grid-cols-1 text-black sm:grid-cols-2 md:grid-cols-3 gap-4 my-8 self-center max-w-3xl">
+          <div className="grid grid-cols-1 text-black sm:grid-cols-2 md:grid-cols-3 gap-4 my-8 self-center max-w-4xl">
             {DataStreamsByContinent.map(
               ({ name, activeDevices, totalDevices, percentActive }, key) => {
                return(

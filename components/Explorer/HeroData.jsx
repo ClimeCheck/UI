@@ -5,19 +5,16 @@ export const ClimateData = [
   {
     name: "Total Connected Device",
     value: "68,970",
-    icon: <FaInstagram className="rotate-180" />,
-    color: "#F07D00",
+    icon: <FaInstagram size={25} className="rotate-180 mx-1" />,
   },
   {
     name: "Countries",
     value: "68,970",
-    icon: <AiOutlineNodeIndex />,
-    color: "#008000",
+    icon: <AiOutlineNodeIndex size={25} className="mx-2"/>,
   },
   {
     name: "Data streams",
     value: "68,970",
-    icon: <AiOutlineGlobal />,
-    color: "#192F5D",
+    icon: <AiOutlineGlobal size={25} className="mx-2"/>,
   },
 ];

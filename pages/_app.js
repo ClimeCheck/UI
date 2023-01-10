@@ -7,9 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <SidebarContext>
       <Component {...pageProps} />
-      <Footer />
     </SidebarContext>
-
   );
 }
 

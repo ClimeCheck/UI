@@ -1,4 +1,5 @@
-import Layout from "../components/Dashboard/Layout";
+import Layout from "../../components/Dashboard/Layout";
+
 
 const Sensor = () => {
   return (

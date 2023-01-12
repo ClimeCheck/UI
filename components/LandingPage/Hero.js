@@ -1,5 +1,5 @@
 import { ArrowUp2, Diagram } from "iconsax-react";
-import style from "../styles/Hero.module.scss";
+import style from "../../styles/Hero.module.scss";
 import Link from "next/link";
 
 const Hero = (props) => {

@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import Leaflet from 'leaflet';
-// import {MapContainer} from 'react-leaflet';
 import * as ReactLeaflet from 'react-leaflet';
 
 import 'leaflet/dist/leaflet.css';
@@ -12,7 +10,7 @@ const Map = ({ children, className, width, height, ...rest }) => {
 
 
   return (
-    <MapContainer  {...rest}>
+    <MapContainer className={`w-[100%] h-[100%] ${className}`}  {...rest}>
       {children(ReactLeaflet, Leaflet)}
     </MapContainer>
   )

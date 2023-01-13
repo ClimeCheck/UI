@@ -18,10 +18,10 @@ function Map() {
   return (
     <div className="Hero min-h-screen min-w-screen bg-slate-900 bg-opacity-80">
       <div className="grid grid-cols-1 grid-rows-1 items-center justify-center">
-        <div className="flex  py-2">
+        <div className="flex justify-center py-2">
           <div className="w-screen flex self-center justify-between items-center m-auto">
             <input
-              className="rounded-full self-center flex max-w-lg p-2 bg-transparent border-2 border-zinc-600"
+              className="rounded-full self-center flex max-w-2xl p-2 bg-transparent border-2 border-zinc-600"
               placeholder="search..."
             />
           </div>
@@ -38,7 +38,9 @@ function Map() {
             {({ TileLayer, Marker, Popup }) => {
               <>
                 <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                   id="mapbox/streets-v11"
+                   accessToken="pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
+                   url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
                 {devices?.map((device, key) => (
@@ -46,6 +48,7 @@ function Map() {
                     key={key}
                     position={device.position}
                     icon={deviceIcon}
+                    onClick={() => setOpen(!open)}
                   ></Marker>
                 ))}
                 <Popup>Device Details</Popup>
@@ -59,7 +62,7 @@ function Map() {
         </div>
 
         <div
-          className={`relative z-2 bg-white max-w-80 sm:max-w-96 md:max-w-md  ${
+          className={`relative z-2 bg-white max-w-80 h-full sm:max-w-96 md:max-w-md  ${
             open ? "left-0" : "left-[-100vh]"
           }`}
         >

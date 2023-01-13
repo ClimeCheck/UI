@@ -1,10 +1,10 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-// import Map from "../../components/Map/Map";
+import Map from "../../components/Map/Map";
 
-const Map = dynamic(() => import("../../components/Map/Map"), {
-  ssr: false
-});
+// const Map = dynamic(() => import("../../components/Map/Map"), {
+//   ssr: false
+// });
 
 function MapExplorer() {
   return (
@@ -23,7 +23,7 @@ function MapExplorer() {
         muted
         loop
         poster="/Cloud.png"
-        className="absolute -z-10 w-auto min-w-full min-h-full max-w-none"
+        className="absolute -z-10 w-auto min-w-full  h-[200vh] sm:h-[160vh] md:h-[140vh] min-h-full max-w-none"
       >
         <source src="/cloud.webm" type="video/webm" />
         Your browser does not support the video tag.

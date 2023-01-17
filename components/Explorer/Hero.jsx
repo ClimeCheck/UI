@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ClimateData } from "./HeroData";
+import { MdLocationOn } from 'react-icons/md'
 
 function ExplorerHero() {
   return (
@@ -11,7 +12,7 @@ function ExplorerHero() {
           </h1>
           <div className="m-4 grid content-center rounded-md bg-black bg-opacity-80 pt-32 text-white">
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center px-4 py-4 ">
-              {ClimateData.map(({ name, value, icon, color }, key) => {
+              {ClimateData.map(({ name, value, icon }, key) => {
                 return (
                 <div key={key} className={`m-2 rounded-md p-2 bg-slate-300 ${name == "Data streams" && "text-[#192F5D]"} ${name == "Countries" && "text-[#008000]"} ${name == "Total Connected Device" && "text-[#F07D00]"} `}>
                   <div className={`flex `}>
@@ -35,7 +36,7 @@ function ExplorerHero() {
               data.
             </p>
 
-          <Link href='/explore/explorer' className="btn rounded-sm btn-primary px-12">Explore</Link>
+          <Link href='/explore/explorer' className="btn rounded-sm btn-primary px-12"> <MdLocationOn size={25} className="mx-2" /> Explore</Link>
         </div>
       </div>
     </div>

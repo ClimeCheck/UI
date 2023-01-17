@@ -17,6 +17,7 @@
     "daisyui": "^2.46.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
+    "fast-equals": "^4.0.3",
     "formik": "^2.2.9",
     "iconsax-react": "^0.0.8",
     "leaflet": "^1.9.3",
@@ -26,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-leaflet": "^4.2.0",
+    "rechart": "^0.0.1",
     "recharts": "^2.2.0",
     "yup": "^0.32.11"
   },

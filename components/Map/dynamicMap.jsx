@@ -10,8 +10,8 @@ const Map = ({ children, className, width, height, ...rest }) => {
 
 
   return (
-    <MapContainer className={`w-[100%] h-[100%] ${className}`}  {...rest}>
-      {children(ReactLeaflet, Leaflet)}
+    <MapContainer className={`w-[100%] h-[100%] z-0 ${className}`}  {...rest}>
+      {children}
     </MapContainer>
   )
 }

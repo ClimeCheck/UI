@@ -1,10 +1,9 @@
 import Layout from "../../components/Dashboard/Layout";
 
-
 const Sensor = () => {
   return (
     <Layout title="My sensor" showSearch={false}>
-      <div className="flex flex-col justify-center items-center h-full  gap-10 border ">
+      <div className="flex flex-col justify-center items-center m-auto   gap-16 ">
         <span className="text-[5vmax]">😞</span>
         <span className="">You don’t have any connected device</span>
         <div className="flex items-center justify-center gap-3">

@@ -6,12 +6,9 @@ import { useState } from "react";
 import { SidebarContext } from "../context/SidebarContext";
 
 function MyApp({ Component, pageProps }) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <SidebarContext>
-      <AppLayout isOpen={isOpen} setIsOpen={setIsOpen}>
-        <Component {...pageProps} />
-      </AppLayout>
+      <Component {...pageProps} />
     </SidebarContext>
   );
 }

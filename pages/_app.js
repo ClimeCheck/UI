@@ -1,5 +1,7 @@
 import "../styles/globals.css";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
+import AppLayout from "../Layout/AppLayout";
+import { useState } from "react";
 
 import { SidebarContext } from "../context/SidebarContext";
 

@@ -27,7 +27,7 @@ const Sidebar = () => {
         <Link href="/contribute" onClick={() => setIsOpen(!isOpen)}>
           Contribute
         </Link>
-        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/explore" onClick={() => setIsOpen(!isOpen)}>
           Explorer
         </Link>
         <Link href="/" onClick={() => setIsOpen(!isOpen)}>

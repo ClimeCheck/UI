@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import style from "../styles/Mapbase.module.scss";
+import style from "../../styles/Mapbase.module.scss";
 import Map from "./Map";
 
 import { InfoCircle } from "iconsax-react";
 
 import cx from "classnames";
-
-import { Continent } from "../assets/images";
+import Link from "next/link";
+import { Continent } from "../../assets/images";
 import { useRef } from "react";
 
 const FakeMap = ({
@@ -305,7 +305,7 @@ const Mapbase = () => {
         </span>
       </div>
 
-      <button>Explore More</button>
+      <Link href="/explore/">Explore More</Link>
     </div>
   );
 };

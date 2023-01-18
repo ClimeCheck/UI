@@ -305,7 +305,7 @@ const Mapbase = () => {
         </span>
       </div>
 
-      <Link href="/explore">Explore More</Link>
+      <Link href="/explore/">Explore More</Link>
     </div>
   );
 };

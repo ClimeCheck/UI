@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BsMap } from "react-icons/bs";
 import { BiDevices } from "react-icons/bi";
 import Link from "next/link";
+import getDate from "../../utils/getDate";
 
 const welcomeData = {
   totalDevices: "8,000,000",
@@ -30,7 +31,7 @@ function WelcomeExplore() {
           </p>
 
           <div className="grid grid-cols-1 text-black sm:grid-cols-2 gap-6 mt-10 mb-4 self-center max-w-4xl">
-            <div className="bg-slate-300 rounded-md p-3 ">
+            <div className="bg-slate-300 rounded-md hover:bg-secondary ease-in-out p-3">
               <Link href="/explore/data/devices">
                 <p className="text-secondary text-sm font-bold p-3">
                   Data Stream
@@ -54,7 +55,7 @@ function WelcomeExplore() {
               </Link>
             </div>
 
-            <div className="bg-slate-200 rounded-md p-3 ">
+            <div className="bg-slate-200 rounded-md p-3 hover:bg-secondary ease-in-out">
               <Link href="/explore/data/air-streams">
                 <p className="text-start font-bold text-sm p-3">
                   {getDate(Date.now())}., Air stream summary
@@ -94,13 +95,4 @@ function WelcomeExplore() {
 
 export default WelcomeExplore;
 
-const getDate = (unixTimeStamp) => {
-  // const timeInMilliSeconds = unlockTime.toNumber() * 1000;
-  const date1 = new Date();
-  date1.setTime(unixTimeStamp);
-  return date1.toLocaleDateString(undefined, {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-};
+

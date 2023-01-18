@@ -56,7 +56,7 @@ export default function Home({ data }) {
             <source src="/cloud.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
-          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
+          {/* <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" /> */}
           <Hero data={data} />
         </div>
         <Mapbase />
@@ -65,7 +65,6 @@ export default function Home({ data }) {
       <main className=" bg-white w-screen justify-center items-center">
         <Timeline />
       </main>
-      <Footer />
     </div>
   );
 }

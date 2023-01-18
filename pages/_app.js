@@ -1,12 +1,17 @@
 import "../styles/globals.css";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
+import AppLayout from "../Layout/AppLayout";
+import { useState } from "react";
 
 import { SidebarContext } from "../context/SidebarContext";
 
 function MyApp({ Component, pageProps }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <SidebarContext>
-      <Component {...pageProps} />
+      <AppLayout isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Component {...pageProps} />
+      </AppLayout>
     </SidebarContext>
   );
 }

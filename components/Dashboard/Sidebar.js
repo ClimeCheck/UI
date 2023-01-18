@@ -5,16 +5,8 @@ import { useRouter } from "next/router";
 import { useState, useMemo } from "react";
 import { Logo } from "../../assets/images";
 
-import {
-  ArticleIcon,
-  CollapsIcon,
-  HomeIcon,
-  LogoIcon,
-  LogoutIcon,
-  UsersIcon,
-  VideosIcon,
-} from "./icons";
-import { Setting2, Wallet, Calculator, LoginCurve } from "iconsax-react";
+import { CollapsIcon } from "./icons";
+import { LoginCurve } from "iconsax-react";
 import {
   MdSensors,
   MdOutlineSettings,
@@ -30,30 +22,35 @@ const menuItems = [
     icon: <MdOutlineDashboard size="32" />,
     link: "/dashboard",
   },
-  { id: 2, label: "My Sensor", icon: <MdSensors size="32" />, link: "/sensor" },
+  {
+    id: 2,
+    label: "My Sensor",
+    icon: <MdSensors size="32" />,
+    link: "/dashboard/sensor",
+  },
   {
     id: 3,
     label: "My Wallet",
     icon: <BiWalletAlt size="32" />,
-    link: "/wallet",
+    link: "/dashboard/wallet",
   },
   {
     id: 4,
     label: "Carbon Calculator",
     icon: <BiCalculator size="32" />,
-    link: "/carbonCalculator",
+    link: "/dashboard/carbon-calculator",
   },
   {
     id: 5,
     label: "Footprint Profile",
     icon: <IoFootstepsOutline size="32" />,
-    link: "/footprint",
+    link: "/dashboard/footprint",
   },
   {
     id: 6,
     label: "Settings",
     icon: <MdOutlineSettings size="32" />,
-    link: "/settings",
+    link: "/dashboard/settings",
   },
 ];
 
@@ -71,13 +68,13 @@ const Sidebar = () => {
   const wrapperClasses = classNames(
     " px-4 pt-8 pb-4 bg-[#F8F8F8] flex justify-between flex-col ",
     {
-      ["w-85"]: !toggleCollapse,
+      ["w-72"]: !toggleCollapse,
       ["w-20"]: toggleCollapse,
     }
   );
 
   const collapseIconClasses = classNames(
-    "p-4 rounded bg-light-lighter absolute right-0",
+    "h-full p-4 rounded bg-[#74BF44] absolute right-0",
     {
       "rotate-180": toggleCollapse,
     }

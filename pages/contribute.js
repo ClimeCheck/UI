@@ -23,9 +23,8 @@ function Contribute() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
-      <div className="px-12">
-        <Navbar textColor="black" />
-
+      <Navbar textColor="black" />
+      <div className="py-32 bg-slate-300">
         <main className="main flex w-screen m-auto justify-center items-center">
           <ContForm />
         </main>

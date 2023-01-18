@@ -7,9 +7,9 @@ import Footer from "../components/Footer";
 import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 
-const Mapbase = dynamic(() => import("../components/Mapbase"));
+const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
-const WhyClime = dynamic(() => import("../components/WhyClime"));
+const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
 export const getServerSideProps = async () => {
   const { co2 = 0 } = await (
     await fetch("https://global-warming.org/api/co2-api/")
@@ -56,7 +56,7 @@ export default function Home({ data }) {
             <source src="/cloud.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
-          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
+          {/* <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" /> */}
           <Hero data={data} />
         </div>
         <Mapbase />
@@ -65,7 +65,6 @@ export default function Home({ data }) {
       <main className=" bg-white w-screen justify-center items-center">
         <Timeline />
       </main>
-      <Footer />
     </div>
   );
 }

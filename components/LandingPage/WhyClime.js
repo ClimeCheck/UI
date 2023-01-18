@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import style from "../styles/WhyClime.module.scss";
+import style from "../../styles/WhyClime.module.scss";
 
 const WhyClime = () => {
   return (

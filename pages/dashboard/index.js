@@ -1,8 +1,8 @@
-import Layout from "../components/Dashboard/Layout";
+import Layout from "../../components/Dashboard/Layout";
 import { MdOutlineNotificationsNone } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
-import Graph from "../components/Dashboard/Graph";
-import Data from "../components/Dashboard/data";
+import Graph from "../../components/Dashboard/Graph";
+import Data from "../../components/Dashboard/data";
 const dashboard = () => {
   return (
     <Layout title="Dashboard" showSearch={true}>

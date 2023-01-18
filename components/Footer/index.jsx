@@ -8,7 +8,9 @@ function Footer() {
   return (
     <div className="grid justify-evenly px-auto  py-16 bg-black text-white  gap-14 sm:flex font-Grotesk overflow-hidden">
       <div>
+        <Link href='/'>
         <Image src={Logo} alt="logo" />
+        </Link>
       </div>
       <div className="grid">
         <p className="font-bold text-base">Explore more</p>

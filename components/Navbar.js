@@ -26,7 +26,7 @@ const Navbar = ({ textColor }) => {
         <nav className={`text-${textColor}`}>
 
           <Link href="/contribute">Contribute</Link>
-          <Link href="/">Explorer</Link>
+          <Link href="/explore">Explorer</Link>
           <Link href="/">FAQs</Link>
         </nav>
         <div className={style.ctawrapper}>

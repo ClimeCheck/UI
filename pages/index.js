@@ -46,6 +46,7 @@ export default function Home({ data }) {
           name="description"
           content="ClimeCheck is a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent  . The Climecheck be all, end all is individual grassroot participation. "
         />
+
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
 
@@ -56,7 +57,7 @@ export default function Home({ data }) {
             <source src="/cloud.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
-          {/* <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" /> */}
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
           <Hero data={data} />
         </div>
         <Mapbase />
@@ -65,6 +66,7 @@ export default function Home({ data }) {
       <main className=" bg-white w-screen justify-center items-center">
         <Timeline />
       </main>
+      <Footer />
     </div>
   );
 }

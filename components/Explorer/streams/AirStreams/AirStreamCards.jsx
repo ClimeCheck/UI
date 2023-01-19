@@ -2,7 +2,7 @@ function AirStreamCards({ continent, AirStreamData }) {
   return (
     <div className="bg-slate-200 rounded-md p-3">
       <p className="text-start font-bold text-sm p-3">{continent}</p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 ">
         {AirStreamData.map(({ name, value }, key) => {
           return (
             <div className={`m-4 ${name == "Temparature" && "border-b-[1px] border-slate-500"} ${name == "CO2" && "border-b-[1px] border-slate-500"}`} key={key}>

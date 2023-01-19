@@ -68,7 +68,7 @@ const Sidebar = () => {
   const wrapperClasses = classNames(
     " px-4 pt-8 pb-4 bg-[#F8F8F8] flex justify-between flex-col  ",
     {
-      ["w-[20%] h-max"]: !toggleCollapse,
+      ["w-[22%] h-max"]: !toggleCollapse,
       ["w-20 "]: toggleCollapse,
     }
   );
@@ -107,7 +107,9 @@ const Sidebar = () => {
       <div className="flex flex-col font-Grotesk h-full">
         <div className="flex items-center justify-between relative">
           <div className="flex items-center pl-1 gap-4 justify-center w-full ">
-            <img src={Logo.src} alt="" className=" object-cover  w-[60%]" />
+            <Link href="/">
+              <img src={Logo.src} alt="" className=" object-cover  w-full" />
+            </Link>
             <span
               className={classNames("mt-2 text-lg font-medium p-auto h-fit", {
                 hidden: toggleCollapse,

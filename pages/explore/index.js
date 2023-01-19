@@ -6,7 +6,7 @@ import WelcomeExplore from "../../components/Explorer/Welcome";
 
 function explorer() {
   return (
-    <div>
+    <div className="h-max relative">
       <Head>
         <title>ClimeCheck | Explorer</title>
         <meta
@@ -15,11 +15,18 @@ function explorer() {
         />
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
-      
-      <video playsInline autoPlay muted loop poster="/Cloud.png" className="absolute -z-10 w-auto h-[200vh] sm:h-[150vh] md:h-[130vh] min-w-full min-h-full max-w-none">
-          <source src="/cloud.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+
+      <video
+        playsInline
+        autoPlay
+        muted
+        loop
+        poster="/Cloud.png"
+        className="absolute h-full -z-10 w-auto min-w-full max-w-none"
+      >
+        <source src="/cloud.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <ExplorerHero />
     </div>
   );

@@ -4,10 +4,10 @@ import Sidebar from "./Sidebar";
 
 const Layout = ({ children, title, showSearch }) => {
   return (
-    <div className=" flex font-Grotesk flex-row justify-start h-full">
+    <div className=" flex font-Grotesk w-full justify-start h-full">
       <Sidebar />
-      <div className="bg-white-400 flex-col flex-1 justify-between py-4 pr-12 pl-6 text-black ">
-        <div className="flex justify-between items-center w-full mb-12 ">
+      <div className="bg-white-400 flex-1 flex-col w-[80%] justify-between py-4 pr-12 pl-6 text-black ">
+        <div className="flex justify-between flex-1 items-center w-full mb-12 ">
           <div className="font-bold">{title}</div>
           <div>
             <input

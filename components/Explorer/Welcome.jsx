@@ -20,7 +20,7 @@ const AirSTreamData = [
 
 function WelcomeExplore() {
   return (
-    <div className="hero min-h-screen font-Grotesk text-white  bg-slate-900 bg-opacity-80">
+    <div className="hero h-full font-Grotesk text-white  bg-slate-900 bg-opacity-80">
       <div className="hero-content my-20 text-center">
         <div className="max-w-4xl justify-center flex flex-col">
           <p className="text-xl my-4">Welcome to</p>
@@ -39,14 +39,21 @@ function WelcomeExplore() {
                 <div>
                   <div>
                     <h1 className="text-3xl sm:text-4xl font-bold text-secondary mt-4">
-                      {welcomeData.totalDevices} <sub className="text-sm font-normal text-green-500">&uarr; +0.1%</sub>
+                      {welcomeData.totalDevices}{" "}
+                      <sub className="text-sm font-normal text-green-500">
+                        &uarr; +0.1%
+                      </sub>
                     </h1>
                     {/**Add Percent Increase and Icon */}
                   </div>
-                  <p className="text-base text-primary py-4">Connected Devices</p>
+                  <p className="text-base text-primary py-4">
+                    Connected Devices
+                  </p>
                 </div>
                 <div className="flex flex-row gap-6 justify-center mt-8">
-                  <div className="self-center">{welcomeData.percentActive} active</div>
+                  <div className="self-center">
+                    {welcomeData.percentActive} active
+                  </div>
                   <div className="font-bold text-xl  text-primary">
                     {welcomeData.amountActive}
                   </div>
@@ -65,12 +72,24 @@ function WelcomeExplore() {
                     return (
                       <div
                         key={key}
-                        className={`m-4 ${name == "Temparature" && "border-b-[1px] border-slate-500"} ${name == "CO2" && "border-b-[1px] border-slate-500"}`}
+                        className={`m-4 ${
+                          name == "Temparature" &&
+                          "border-b-[1px] border-slate-500"
+                        } ${
+                          name == "CO2" && "border-b-[1px] border-slate-500"
+                        }`}
                       >
                         <p className="text-slate-500 py-2">{name}</p>
-                        <h1 className={`text-2xl font-bold ${name == "Temparature" && "text-[#B80D7F]"} ${name == "Pm 2.5" && "text-[#BE690B]"} ${name == "Pm 5" && "text-[#525252]"} ${name == "CO2" && "text-[#192F5D]"}`}>
-                          {value}{name == "Temparature" && <span>&#176;</span>}
-                          </h1>
+                        <h1
+                          className={`text-2xl font-bold ${
+                            name == "Temparature" && "text-[#B80D7F]"
+                          } ${name == "Pm 2.5" && "text-[#BE690B]"} ${
+                            name == "Pm 5" && "text-[#525252]"
+                          } ${name == "CO2" && "text-[#192F5D]"}`}
+                        >
+                          {value}
+                          {name == "Temparature" && <span>&#176;</span>}
+                        </h1>
                       </div>
                     );
                   })}
@@ -94,5 +113,3 @@ function WelcomeExplore() {
 }
 
 export default WelcomeExplore;
-
-

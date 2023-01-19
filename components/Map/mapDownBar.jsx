@@ -2,15 +2,16 @@ import MapContentCard from "./MapContentCard";
 import getDate from "../../utils/getDate";
 import { getTime } from "../../utils/getDate";
 import { mapSideContent } from "./MapData";
+import Link from "next/link";
 
 function MapDownBar({ open, setOpen }) {
   return (
     <div
-      className={`z-20 absolute bg-black max-w-80 min-w-screen ease-in-out transition-all fixed p-2  ${
+      className={` bg-black w-full ease-in-out transition-all  p-2  ${
         open ? "buttom-0" : "hidden"
       }`}
     >
-      <div className="mx-5">
+      <div className="mx-5 ">
         <div className="text-white py-5 mb-8 ">
           <div className="grid grid-cols-4">
             <div className="col-span-3 grid grid-cols-1 gap-2 justify-between py-5">
@@ -27,17 +28,16 @@ function MapDownBar({ open, setOpen }) {
               </p>
             </div>
             <div className="flex col-span-1 justify-end">
-              <button
-                onClick={() => setOpen(!open)}
+              <Link
+                href="/dashboard"
                 className="bg-white text-primary px-4 py-2 rounded-sm self-center"
               >
                 View Statistics
-              </button>
+              </Link>
             </div>
           </div>
-          {/* <button onClick={() => setOpen(!open)}>close</button> */}
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="flex items-stretch justify-center flex-wrap gap-4 mb-4 ">
           {mapSideContent.map(
             (
               {
@@ -52,17 +52,16 @@ function MapDownBar({ open, setOpen }) {
               key
             ) => {
               return (
-                <div key={key} className="col-span-1">
-                  <MapContentCard
-                    value={value}
-                    alert={alert}
-                    changes={changes}
-                    direction={direction}
-                    subscript={subscript}
-                    parameter={parameter}
-                    superscript={superscript}
-                  />
-                </div>
+                <MapContentCard
+                  key={key}
+                  value={value}
+                  alert={alert}
+                  changes={changes}
+                  direction={direction}
+                  subscript={subscript}
+                  parameter={parameter}
+                  superscript={superscript}
+                />
               );
             }
           )}

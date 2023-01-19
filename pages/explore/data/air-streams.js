@@ -3,7 +3,7 @@ import AirStream from "../../../components/Explorer/streams/AirStreams/AirStream
 
 function ExploreAirStreams() {
   return (
-    <div>
+    <div className="h-max relative">
       <Head>
         <title>ClimeCheck | Explorer</title>
         <meta
@@ -12,7 +12,14 @@ function ExploreAirStreams() {
         />
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
-      <video playsInline autoPlay muted loop poster="/Cloud.png" className="absolute -z-10 w-auto h-[450vh] sm:h-[230vh] md:h-[180vh] min-w-full min-h-full max-w-none">
+      <video
+        playsInline
+        autoPlay
+        muted
+        loop
+        poster="/Cloud.png"
+        className="absolute -z-10 w-auto h-full max-w-none"
+      >
         <source src="/cloud.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>

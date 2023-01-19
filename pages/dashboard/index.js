@@ -18,14 +18,14 @@ const dashboard = () => {
       </Head>
       <Layout title="Dashboard" showSearch={true}>
         <div className="flex flex-col items-center justify-between gap-16 text-black ">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex flex-1 justify-between items-center w-full">
             <div className="border p-2 rounded-lg">
               <span>Polution: </span>
               <select name="select" id="">
                 <option value="Co2">Co2</option>
               </select>
             </div>
-            <div className="flex justify-between items-center gap-x-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="border p-2 gap-x-3 justify-between  rounded-lg flex">
                 <span>From: </span>
                 <input

@@ -1,9 +1,14 @@
+
+
 import style from "../styles/Sidebar.module.scss";
 import Link from "next/link";
-import { CloseCircle } from "iconsax-react";
-import { motion } from "framer-motion";
+
 import cx from "classnames";
-const Sidebar = ({ isOpen, setIsOpen }) => {
+import { useSidebarContext } from "../context/SidebarContext";
+
+const Sidebar = () => {
+  const { isOpen, setIsOpen } = useSidebarContext();
+
   return (
     <div className={isOpen ? style.sidebar : style.control}>
       <div
@@ -19,10 +24,10 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           About us
         </Link>
 
-        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/contribute" onClick={() => setIsOpen(!isOpen)}>
           Contribute
         </Link>
-        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/explore" onClick={() => setIsOpen(!isOpen)}>
           Explorer
         </Link>
         <Link href="/" onClick={() => setIsOpen(!isOpen)}>

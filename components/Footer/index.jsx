@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../assets/footerLogo.png";
-import { aboutLinks, companyLinks, exploreLinks } from "./FooterData";
+import { Logo } from "../../assets/images";
+
+import { aboutLinks, exploreLinks } from "./FooterData";
 
 function Footer() {
   return (
-    <div className="grid justify-evenly px-auto mt-32 py-16 bg-black text-white  gap-14 sm:flex font-Grotesk overflow-hidden">
+    <div className="grid justify-evenly px-auto  py-16 bg-black text-white  gap-14 sm:flex font-Grotesk overflow-hidden">
       <div>
+        <Link href='/'>
         <Image src={Logo} alt="logo" />
+        </Link>
       </div>
       <div className="grid">
         <p className="font-bold text-base">Explore more</p>
@@ -29,8 +32,7 @@ function Footer() {
           );
         })}
       </div>
-      <div className="grid">
-        <p className="font-bold text-base">Companies</p>
+      {/* <div className="grid">
         {companyLinks.map((links, key) => {
           return (
             <Link key={key} href={links.link}>
@@ -38,7 +40,7 @@ function Footer() {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

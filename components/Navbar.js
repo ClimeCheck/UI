@@ -1,21 +1,33 @@
 import { Logo } from "../assets/images";
 import Image from "next/image";
 import style from "../styles/Navbar.module.scss";
-
-import Sidebar from "./Sidebar";
-import { useState } from "react";
+import Link from "next/link";
 import cx from "classnames";
-const Navbar = ({ isOpen, setIsOpen }) => {
+
+import { useSidebarContext } from "../context/SidebarContext";
+
+const Navbar = ({ textColor }) => {
+  const { isOpen, setIsOpen } = useSidebarContext();
+
   return (
     <>
       <header className={style.header}>
-        <Image src={Logo} alt="Clime Check Logo" placeholder="blur" priority />
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt="Clime Check Logo"
 
-        <nav>
-          <button>About us</button>
-          <button>Contribute</button>
-          <button>Explorer</button>
-          <button>FAQs</button>
+            height={143}
+            width={143}
+
+            priority
+          />
+        </Link>
+        <nav className={`text-${textColor}`}>
+
+          <Link href="/contribute">Contribute</Link>
+          <Link href="/explore">Explorer</Link>
+          <Link href="/">FAQs</Link>
         </nav>
         <div className={style.ctawrapper}>
           <button>Login</button>
@@ -31,7 +43,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         </div>
       </header>
     </>
-
   );
 };
 

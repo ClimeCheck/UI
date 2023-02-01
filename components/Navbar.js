@@ -30,7 +30,7 @@ const Navbar = ({ textColor }) => {
           <Link href="/">FAQs</Link>
         </nav>
         <div className={style.ctawrapper}>
-          <button>Login</button>
+          <Link href="/auth/login"><button>Login</button></Link>
           <button>Join us for free</button>
         </div>
         <div

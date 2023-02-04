@@ -1,3 +1,5 @@
-export default const SignUp = ()=> {
+ const SignUp = ()=> {
 return <div>Sign Up </div>;
 }
+ 
+ export default SignUp;

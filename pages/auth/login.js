@@ -76,10 +76,10 @@ const Login = () => {
   });
 
   return (
-    <div className="w-full h-[100vh] relative">
+    <div className="w-full h-[100vh] relative font-Grotesk">
       <div className="flex items-center justify-center">
         {/* left panel */}
-        {/* <div className="hidden bg-palegreen text-white font-Raleway w-[50%] h-[100vh] sm:flex justify-between items-center flex-col py-[3rem] text-center">
+        {/* <div className="hidden bg-[#74BF44] text-white font-Raleway w-[50%] h-[100vh] sm:flex justify-between items-center flex-col py-[3rem] text-center">
           <div className="text-[1.2rem] font-[400] px-6">
             Climecheck ecosystem is a real-time big data platform of climate
             monitoring devices around the globe.
@@ -91,7 +91,7 @@ const Login = () => {
           <div>
             <div className="font-[20px] mb-3">Dont have an account?</div>
             <Link href="/auth/signup">
-              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-palegreen uppercase font-semibold tracking-widest">
+              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-[#74BF44] uppercase font-semibold tracking-widest">
                 create account
               </button>
             </Link>
@@ -101,7 +101,7 @@ const Login = () => {
         {/* right panel */}
         <div className="flex items-center justify-center h-screen w-full">
           <div className="bg-white w-full sm:w-[50%] text-black p-8 border border-slate-300 rounded-lg py-[3rem] flex flex-col justify-center">
-            <h1 className="text-[1.4rem] mb-6 font-Raleway text-center font-[600]">
+            <h1 className="text-[1.4rem] mb-6 text-center font-[600]">
               Welcome Back 👋
             </h1>
             <form
@@ -117,7 +117,7 @@ const Login = () => {
               <div className="w-full mb-4 px-4 sm:px-0">
                 <label htmlFor="email">Username</label>
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type="email"
                   id="email"
                   name="email"
@@ -140,7 +140,7 @@ const Login = () => {
               <div className="w-full mb-4 px-4 sm:px-0 relative">
                 <label htmlFor="password">Password</label>
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type={`${showPassword ? "text" : "password"}`}
                   id="password"
                   name="password"
@@ -180,7 +180,7 @@ const Login = () => {
                   </label>
                 </div>
 
-                <p className="text-sm text-palegreen hover:underline-offset-4 cursor-pointer">
+                <p className="text-sm text-[#74BF44] hover:underline-offset-4 cursor-pointer">
                   Forgot password?
                 </p>
               </div>
@@ -190,7 +190,7 @@ const Login = () => {
               <div className="w-full flex justify-center px-4">
                 <button
                   type="submit"
-                  className="flex justify-center items-center w-full py-2 bg-palegreen rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
+                  className="flex justify-center items-center w-full py-2 bg-[#74BF44] rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
                 >
                   {loader ? <Loader /> : "log in"}
                 </button>
@@ -199,7 +199,7 @@ const Login = () => {
 
               <div className="mt-[1.5rem] text-center text-sm mb-[1.5rem] px-6 sm:px-0">
                 Don&apos;t have an account?{" "}
-                <span className="text-palegreen font-[500] px-3">
+                <span className="text-[#74BF44] font-[500] px-3">
                   Create Account
                 </span>
               </div>
@@ -230,7 +230,7 @@ const Login = () => {
               <div className="sm:hidden flex justify-center mt-4 text-sm">
                 Dont have an account?
                 <Link href="/auth/signup" passHref>
-                  <p className="text-palegreen font-[600] ml-2 uppercase">
+                  <p className="text-[#74BF44] font-[600] ml-2 uppercase">
                     create account
                   </p>
                 </Link>

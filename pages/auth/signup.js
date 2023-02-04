@@ -80,7 +80,7 @@ const Signup = () => {
           <div>
             
             <Link href="">
-              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-palegreen uppercase font-semibold tracking-widest">
+              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-[#74BF44] uppercase font-semibold tracking-widest">
                 Connect Wallet
               </button>
             </Link>
@@ -103,7 +103,7 @@ const Signup = () => {
               {/* Full Name starts */}
               <div className="w-full mb-4 px-4 sm:px-0">
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type="text"
                   id="fullName"
                   name="fullName"
@@ -125,7 +125,7 @@ const Signup = () => {
               {/* email adddress start*/}
               <div className="w-full mb-4 px-4 sm:px-0">
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type="email"
                   id="email"
                   name="email"
@@ -146,7 +146,7 @@ const Signup = () => {
               {/* Select Country starts */}
               <div className="w-full mb-4 px-4 sm:px-0">
                 <Select
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type="select"
                   id="country"
                   name="country"
@@ -169,7 +169,7 @@ const Signup = () => {
               {/* password starts*/}
               <div className="w-full mb-4 px-4 sm:px-0 relative">
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type={`${showPassword ? "text" : "password"}`}
                   id="password"
                   name="password"
@@ -197,7 +197,7 @@ const Signup = () => {
               {/* Username starts */}
               <div className="w-full mb-4 px-4 sm:px-0">
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-[#74BF44] focus:outline-none"
                   type="text"
                   id="userName"
                   name="userName"
@@ -218,11 +218,11 @@ const Signup = () => {
               {/* T&C div starts */}
               <div className="mt-[1.5rem] text-sm mb-[1rem] px-6 sm:px-0">
                 By creating an account you agree to our{" "}
-                <span className="text-palegreen font-[500]">
+                <span className="text-[#74BF44] font-[500]">
                   TERMS & CONDITION
                 </span>{" "}
                 and{" "}
-                <span className="text-palegreen font-[500]">PRIVACY POLICY</span>
+                <span className="text-[#74BF44] font-[500]">PRIVACY POLICY</span>
               </div>
               {/* T&C div ends */}
               {/* Create account button starts */}
@@ -230,7 +230,7 @@ const Signup = () => {
                 <button
                   disabled={null}
                   type="submit"
-                  className="flex justify-center items-center w-full py-2 bg-palegreen rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
+                  className="flex justify-center items-center w-full py-2 bg-[#74BF44] rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
                 >
                   {loader ? <Loader /> : "create account"}
                 </button>
@@ -240,7 +240,7 @@ const Signup = () => {
               <div className="text-sm flex justify-center mt-3">
                 Already have an account?
                 <Link href="" passHref>
-                  <p className="text-palegreen font-[600] ml-2 uppercase">
+                  <p className="text-[#74BF44] font-[600] ml-2 uppercase">
                     Sign in
                   </p>
                 </Link>

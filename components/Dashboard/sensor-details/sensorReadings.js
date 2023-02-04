@@ -5,11 +5,11 @@ export default function SensorReading({ sensordata }) {
     <div className="container my-4">
       <div className="flex flex-col border rounded-lg p-3">
         <div className="flex justify-between items-center h-full p-4">
-          <h1 className="my-2 font-bold text-lg">Sensor Readings</h1>
+          <h1 className="font-bold text-lg">Sensor Readings</h1>
           {/**Add chart icon */}
           <FiBarChart2 className="border border-green-300 bg-green-300/25 h-7 w-7 text-green-600" />
         </div>
-        <div className="flex justify-end w-full items-center h-full p-4 my-2">
+        <div className="flex justify-end w-full items-center h-full p-4">
           <FiCalendar className="border border-green-300 bg-green-300/25 h-7 w-7 text-green-600" />
           <div className="border p-2 rounded-lg flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
             <span>Print Readings</span>

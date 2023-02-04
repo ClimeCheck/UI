@@ -1,14 +1,17 @@
 import ReactSpeedometer from "react-d3-speedometer";
+import useWindowSize from "../../../utils/hook/useWindowSize";
 
-export default function Guage({value}) {
+export default function Guage({ value }) {
+  const size = useWindowSize();
+
   const sizes = () => {
     switch (true) {
-      case width < 414:
+      case size.width < 414:
         return { width: 232, height: 120 };
-      case width >= 414 && width < 1800:
+      case size.width >= 414 && size.width < 1800:
         return { width: 300, height: 160 };
       default:
-      case width >= 1800:
+      case size.width >= 1800:
         return { width: 400, height: 220 };
     }
   };
@@ -22,15 +25,11 @@ export default function Guage({value}) {
           needleColor="#6C6B6B"
           needleTransitionDuration={2000}
           needleHeightRatio={0.7}
-          segments={3}
-          segmentColors={[
-            "#0B8910",
-            "#F46B08",
-            "#800000",
-          ]}
+          segments={12}
+          segmentColors={["#0B8910", "#F46B08", "#800000"]}
           ringWidth={70}
-          textColor='black'
-          labelFontSize={textSizes["10"]}
+          textColor="black"
+          labelFontSize={"10px"}
           maxSegmentLabels={11}
           valueFormat={"~s"}
           forceRender={true}

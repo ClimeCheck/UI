@@ -4,13 +4,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import { AuthContext } from "../../context/AuthContext";
+import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
 
 import axios from "axios";
 
 import AlertModal from "../../components/Modals/AlertModal";
 import { useRouter } from "next/router";
 import Loader from "../../components/Modals/Loader";
-import { EyeIcon, EyeSlashIcon, FbIcon } from "../../components/Icons";
+import { EyeIcon, EyeSlashIcon, GoogleIcon } from "../../components/Icons";
 
 const Login = () => {
   const [loader, setLoader] = useState(false);
@@ -78,7 +79,7 @@ const Login = () => {
     <div className="w-full h-[100vh] relative">
       <div className="flex items-center justify-center">
         {/* left panel */}
-        {/* <div className="hidden bg-primary text-white font-Raleway w-[50%] h-[100vh] sm:flex justify-between items-center flex-col py-[3rem] text-center">
+        {/* <div className="hidden bg-palegreen text-white font-Raleway w-[50%] h-[100vh] sm:flex justify-between items-center flex-col py-[3rem] text-center">
           <div className="text-[1.2rem] font-[400] px-6">
             Climecheck ecosystem is a real-time big data platform of climate
             monitoring devices around the globe.
@@ -90,7 +91,7 @@ const Login = () => {
           <div>
             <div className="font-[20px] mb-3">Dont have an account?</div>
             <Link href="/auth/signup">
-              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-primary uppercase font-semibold tracking-widest">
+              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-palegreen uppercase font-semibold tracking-widest">
                 create account
               </button>
             </Link>
@@ -116,7 +117,7 @@ const Login = () => {
               <div className="w-full mb-4 px-4 sm:px-0">
                 <label htmlFor="email">Username</label>
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-primary focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
                   type="email"
                   id="email"
                   name="email"
@@ -139,7 +140,7 @@ const Login = () => {
               <div className="w-full mb-4 px-4 sm:px-0 relative">
                 <label htmlFor="password">Password</label>
                 <input
-                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-primary focus:outline-none"
+                  className="block w-full px-4 py-2 h-[50px] font-normal bg-transparent bg-clip-padding border-[1px] border-gray-200 rounded-md transition-all m-0  focus:bg-transparent focus:border-palegreen focus:outline-none"
                   type={`${showPassword ? "text" : "password"}`}
                   id="password"
                   name="password"
@@ -179,7 +180,7 @@ const Login = () => {
                   </label>
                 </div>
 
-                <p className="text-sm text-primary hover:underline-offset-4 cursor-pointer">
+                <p className="text-sm text-palegreen hover:underline-offset-4 cursor-pointer">
                   Forgot password?
                 </p>
               </div>
@@ -189,7 +190,7 @@ const Login = () => {
               <div className="w-full flex justify-center px-4">
                 <button
                   type="submit"
-                  className="flex justify-center items-center h-12 sm:h-14 px-6 min-w-full sm:min-w-[192px] bg-primary rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
+                  className="flex justify-center items-center w-full py-2 bg-palegreen rounded-md text-white uppercase tracking-widest shadow-[0px_0px_80px_rgba(4,4,88,0.14)]"
                 >
                   {loader ? <Loader /> : "log in"}
                 </button>
@@ -198,30 +199,30 @@ const Login = () => {
 
               <div className="mt-[1.5rem] text-center text-sm mb-[1.5rem] px-6 sm:px-0">
                 Don&apos;t have an account?{" "}
-                <span className="text-primary font-[500] px-3">
+                <span className="text-palegreen font-[500] px-3">
                   Create Account
                 </span>
               </div>
 
-              {/* Auth providers div start */}
-              <div className="w-full flex items-center space-x-2 sm:space-x-3 px-4 sm:px-0">
+             {/* Auth providers div start */}
+             <div className="w-full flex items-center justify-center mt-4 space-x-2 sm:space-x-3 px-4 sm:px-0">
                 <button
                   type="button"
                   className="border py-2 px-2 flex items-center justify-center space-x-2  rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
                 >
-                  <Image
-                    src="/google-icon.svg"
-                    alt="google-icon"
-                    width={25}
-                    height={25}
-                    objectFit="contain"
-                  />
+                  <GoogleIcon />
                 </button>
                 <button
                   type="button"
                   className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
                 >
-                  <FbIcon />
+                  <AiOutlineTwitter className="h-6 w-6 text-blue-400"/>
+                </button>
+                <button
+                 type="button"
+                 className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
+              >
+                    <AiFillLinkedin className="h-6 w-6 text-blue-700" />
                 </button>
               </div>
               {/* Auth providers div ends */}
@@ -229,7 +230,7 @@ const Login = () => {
               <div className="sm:hidden flex justify-center mt-4 text-sm">
                 Dont have an account?
                 <Link href="/auth/signup" passHref>
-                  <p className="text-primary font-[600] ml-2 uppercase">
+                  <p className="text-palegreen font-[600] ml-2 uppercase">
                     create account
                   </p>
                 </Link>

@@ -9,7 +9,7 @@ function AirStream() {
           <p className="text-xl my-4 text-left"> Continent Level Breakdown</p>
           <p className="text-xl my-4">Data streams</p>
 
-          <div className="flex gap-4   text-black justify-center items-center flex-wrap h-full">
+          <div className="flex gap-4 text-black justify-center items-center flex-wrap h-full">
             {AirStreamsByContinent.map(({ name, data }, key) => {
               return (
                 <div key={key}>

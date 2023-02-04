@@ -33,10 +33,10 @@ const Sidebar = () => {
         <Link href="/" onClick={() => setIsOpen(!isOpen)}>
           FAQs
         </Link>
-        <Link href="/" onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/auth/login" onClick={() => setIsOpen(!isOpen)}>
           Login
         </Link>
-        <button href="/" onClick={() => setIsOpen(!isOpen)}>
+        <button href="/auth/sign-up" onClick={() => setIsOpen(!isOpen)}>
           Join us for free
         </button>
       </nav>

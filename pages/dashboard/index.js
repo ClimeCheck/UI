@@ -17,7 +17,7 @@ const dashboard = () => {
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
       <Layout title="Dashboard" showSearch={true}>
-        <div className="flex flex-col items-center justify-between gap-16 text-black ">
+        <div className="flex flex-col flex-[70] items-center justify-between gap-16 text-black ">
           <div className="flex flex-1 justify-between items-center w-full">
             <div className="border p-2 rounded-lg">
               <span>Polution: </span>

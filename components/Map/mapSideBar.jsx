@@ -4,7 +4,7 @@ import { mapSideContent } from "./MapData";
 function MapSideBar({ open, setOpen }) {
   return (
     <div
-      className={`flex flex-col gap-8  p-4 w-80 bg-white  ease-in-out transition-all `}
+      className={`flex flex-col gap-8  p-4 w-80 bg-white  ease-in-out transition-all overflow-y-auto overflow-x-visible h-screen`}
     >
       <div className="text-black ">
         <div>

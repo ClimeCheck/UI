@@ -12,6 +12,9 @@ module.exports = {
         dmsans: ["DM Sans", "sans-serif"],
         sora: ["Sora", "sans-serif"],
       },
+      backgroundImage: (theme) => ({
+        "signup-hero": "url('/assets/images/signupbg.png')",
+      }),
     },
   },
   plugins: [require("daisyui")],
@@ -20,6 +23,7 @@ module.exports = {
       {
         mytheme: {
           primary: "#00963F",
+          palegreen: "#74BF44",
           secondary: "#0069B3",
           "base-100": "#ffffff",
         },

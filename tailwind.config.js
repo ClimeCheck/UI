@@ -12,6 +12,9 @@ module.exports = {
         dmsans: ["DM Sans", "sans-serif"],
         sora: ["Sora", "sans-serif"],
       },
+      backgroundImage: {
+        settings_bg: "url('./public/cloud.png')",
+      },
     },
   },
   plugins: [require("daisyui")],

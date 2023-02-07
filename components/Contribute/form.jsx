@@ -1,5 +1,5 @@
 import { useFormikContext, Formik, Form, useFormik } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
 // import TextFieldWrapper from "./Textfield";
 // import SelectWrapper from "./sellectfield";
 // import { Box, Grid, Container } from "@mui/material";
@@ -37,29 +37,23 @@ function ContributeForm() {
     /^((https?|ftp):\/\/)?(www.)?(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i;
 
   // Yup validation schema... this is for form validation
-  const ContributeSchema = yup.object().shape({
-    name: yup.string().required("This field is required"),
-    email: yup
-      .string()
-      .email("Invalid Email")
+  const validationSchema = Yup.object({
+    name: Yup.string().required("This field is required"),
+    email: Yup.string().email("Invalid Email")
       .required("This field is required"),
-    bio: yup.string().required("This field is required"),
-    AOC: yup.string().required("This field is required"),
-    linkedInUrl: yup
-      .string()
-      .matches(URL, "Enter a valid url")
+    bio: Yup.string().required("This field is required"),
+    AOC: Yup.string().required("This field is required"),
+    linkedInUrl: Yup.string().matches(URL, "Enter a valid url")
       .required("This field is required"),
-    twitterUrl: yup
-      .string()
-      .matches(URL, "Enter a valid url")
+    twitterUrl: Yup.string().matches(URL, "Enter a valid url")
       .required("This field is required"),
-    details: yup.string().required("This field is required"),
+    details: Yup.string().required("This field is required"),
   });
 
   const formik = useFormik({
     initialValues,
     // onSubmit,
-    ContributeSchema,
+    validationSchema,
   });
 
   function handleSubmit(values) {

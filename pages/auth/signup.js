@@ -4,9 +4,9 @@ import React, { useState, useMemo, useContext } from "react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
+import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import Select from "../../components/CustomSelect";
-import countryList from 'react-select-country-list'
+import countryList from "react-select-country-list";
 
 import AlertModal from "../../components/Modals/AlertModal";
 import { useRouter } from "next/router";
@@ -14,9 +14,7 @@ import Loader from "../../components/Modals/Loader";
 import {
   EyeIcon,
   EyeSlashIcon,
-  FbIcon,
   GoogleIcon,
-  MetamaskIcon,
 } from "../../components/Icons";
 
 const Signup = () => {
@@ -61,29 +59,38 @@ const Signup = () => {
   });
 
   //country options
-  const countries = useMemo(() => countryList().getData(), [])
+  const countries = useMemo(() => countryList().getData(), []);
 
   return (
     <div className="w-full relative">
       <div className="flex font-Grotesk overflow-hidden">
         {/* left panel */}
-        <div style={{backgroundImage: `url('/assets/images/signupbg.png')`}} className="hidden bg-signup-hero text-black w-[50%] min-h-[100vh] sm:flex justify-between items-center flex-col py-[3rem] text-center">
+        <div className="hidden sm:flex bg-signup-hero bg-no-repeat bg-center text-black w-[50%] min-h-[100vh] ">
+          <div className="w-full h-full flex flex-col justify-between bg-blue-600/20 backdrop-brightness-75 py-4">
+          <div>
+            <Link href="/">
+              <img
+                src="/ClimeCheck.svg"
+                alt=""
+              />
+            </Link>
+          </div>
           <div className="text-[1.2rem] font-[400] px-6">
             <span className="text-green-600">Climecheck ecosystem</span> is a
             real-time big data platform of climate monitoring devices around the
             globe.
           </div>
-          <div>
-            Did you know? <br />
+          <div className="px-6 ">
+            <span className="font-semibold text-lg">Did you know?</span> <br />
             You can also connect your wallet to your account
           </div>
-          <div>
-            
+          <div className="flex items-center justify-center w-full">
             <Link href="">
               <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-[#74BF44] uppercase font-semibold tracking-widest">
                 Connect Wallet
               </button>
             </Link>
+          </div>
           </div>
         </div>
 
@@ -209,10 +216,11 @@ const Signup = () => {
                     formik.handleBlur(e);
                   }}
                 />
-                {formik.touched.userName && formik.errors.userName &&
+                {formik.touched.userName && formik.errors.userName && (
                   <p className="text-xs text-red-600 text-start mt-[1px]">
                     {formik.errors.userName}
-                  </p>}
+                  </p>
+                )}
               </div>
               {/* Username ends */}
               {/* T&C div starts */}
@@ -222,7 +230,9 @@ const Signup = () => {
                   TERMS & CONDITION
                 </span>{" "}
                 and{" "}
-                <span className="text-[#74BF44] font-[500]">PRIVACY POLICY</span>
+                <span className="text-[#74BF44] font-[500]">
+                  PRIVACY POLICY
+                </span>
               </div>
               {/* T&C div ends */}
               {/* Create account button starts */}
@@ -258,13 +268,13 @@ const Signup = () => {
                   type="button"
                   className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
                 >
-                  <AiOutlineTwitter className="h-6 w-6 text-blue-400"/>
+                  <AiOutlineTwitter className="h-6 w-6 text-blue-400" />
                 </button>
                 <button
-                 type="button"
-                 className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
-              >
-                    <AiFillLinkedin className="h-6 w-6 text-blue-700" />
+                  type="button"
+                  className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
+                >
+                  <AiFillLinkedin className="h-6 w-6 text-blue-700" />
                 </button>
               </div>
               {/* Auth providers div ends */}

@@ -7,9 +7,7 @@ import Link from "next/link";
 function MapDownBar({ open, setOpen }) {
   return (
     <div
-      className={` bg-black w-full ease-in-out transition-all  p-2  ${
-        open ? "buttom-0" : "hidden"
-      }`}
+      className={` bg-black w-full font-Grotesk ease-in-out transition-all p-2`}
     >
       <div className="mx-5 ">
         <div className="text-white py-5 mb-8 ">

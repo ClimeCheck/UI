@@ -13,8 +13,8 @@ module.exports = {
         sora: ["Sora", "sans-serif"],
       },
       backgroundImage: {
-        settings_bg: "url('./public/cloud.png')",
         "signup-hero": "url('/signupbg.png')",
+        settingsbg: "url('/Frame261.png')",
       },
     },
   },

@@ -16,15 +16,12 @@ const Navbar = ({ textColor }) => {
           <Image
             src={Logo}
             alt="Clime Check Logo"
-
             height={143}
             width={143}
-
             priority
           />
         </Link>
         <nav className={`text-${textColor}`}>
-
           <Link href="/contribute">Contribute</Link>
           <Link href="/explore">Explorer</Link>
           <Link href="/">FAQs</Link>

@@ -14,6 +14,7 @@ module.exports = {
       },
       backgroundImage: {
         "signup-hero": "url('/signupbg.png')",
+        settingsbg: "url('/Frame261.png')",
       },
     },
   },

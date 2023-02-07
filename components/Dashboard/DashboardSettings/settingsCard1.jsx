@@ -10,7 +10,7 @@ const SettingsCard1 = () => {
     if (toggleStyle) {
       return;
     } else {
-      setCardDisplay([<SettingsCardDetails />]);
+      setCardDisplay([<SettingsCardDetails key={0} />]);
       setToggleStyle(!toggleStyle);
     }
   };
@@ -19,7 +19,7 @@ const SettingsCard1 = () => {
     if (!toggleStyle) {
       return;
     } else {
-      setCardDisplay([<SettingsCardFormPassword />]);
+      setCardDisplay([<SettingsCardFormPassword key={1} />]);
       setToggleStyle(!toggleStyle);
     }
   };

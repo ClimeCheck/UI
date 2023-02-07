@@ -4,32 +4,47 @@ import SettingsCardFormPassword from "./settingsCardFormPassword";
 
 const SettingsCard1 = () => {
   const [cardDisplay, setCardDisplay] = useState(<SettingsCardDetails />);
+  const [toggleStyle, setToggleStyle] = useState(true);
+
   const settingsCard = () => {
-    setCardDisplay(<SettingsCardDetails />);
+    if (toggleStyle) {
+      return;
+    } else {
+      setCardDisplay([<SettingsCardDetails />]);
+      setToggleStyle(!toggleStyle);
+    }
   };
   const settingcardpassword = () => {
-    setCardDisplay(<SettingsCardFormPassword />);
+    console.log(cardDisplay == <SettingsCardFormPassword />);
+    if (!toggleStyle) {
+      return;
+    } else {
+      setCardDisplay([<SettingsCardFormPassword />]);
+      setToggleStyle(!toggleStyle);
+    }
   };
+
   return (
     <>
       <div>
         <div className="flex flex-row items-start justify-start space-x-8 px-2 my-6">
-          <div className="active:border-b-[2px] active:border-[#74BF44]">
-            <button
-              className="text-[#74BF44] font-[700px] text-[16px]"
-              onClick={settingsCard}
-            >
-              My Details
-            </button>
+          <div
+            className={
+              toggleStyle
+                ? "border-b-[2px] text-[#74BF44] border-[#74BF44] font-[700px] text-[16px]"
+                : " border-none text-[black] font-[700px] text-[16px]"
+            }
+          >
+            <button onClick={settingsCard}>My Details</button>
           </div>
-          <div className="active:border-[#74BF44] focus:border-[#74BF44] focus:border-b-[2px] active:border-b-[2px]">
-            <button
-              className=" font-[700px] text-[16px]"
-              onClick={settingcardpassword}
-            >
-              {" "}
-              Password
-            </button>
+          <div
+            className={
+              !toggleStyle
+                ? "border-b-[2px] text-[#74BF44] border-[#74BF44] font-[700px] text-[16px]"
+                : " border-none text-[black] font-[700px] text-[16px]"
+            }
+          >
+            <button onClick={settingcardpassword}>Password</button>
           </div>
         </div>
         <div>{cardDisplay}</div>

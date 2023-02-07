@@ -14,8 +14,7 @@ export default function Guage({ value }) {
       case size.width >= 1800:
         return { width: 400, height: 220 };
     }
-  };
-
+  };// segmentColors={["#0B8910", "#F46B08", "#800000"]}
   return (
     <div className="container ">
       <div className="flex flex-wrap justify-center items-center">
@@ -26,11 +25,12 @@ export default function Guage({ value }) {
           needleTransitionDuration={2000}
           needleHeightRatio={0.7}
           segments={12}
-          segmentColors={["#0B8910", "#F46B08", "#800000"]}
+          startColor="#0B8910"
+          endColor="#800000"
           ringWidth={70}
           textColor="black"
           labelFontSize={"10px"}
-          maxSegmentLabels={11}
+          maxSegmentLabels={12}
           valueFormat={"~s"}
           forceRender={true}
           width={sizes().width}

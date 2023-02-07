@@ -47,7 +47,7 @@ export default function Home({ data }) {
           content="ClimeCheck is a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent  . The Climecheck be all, end all is individual grassroot participation. "
         />
 
-        <link rel="icon" href="/ClimeCheck.png" />
+        <link rel="icon" href="/ClimeCheck.svg" />
       </Head>
 
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />

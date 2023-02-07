@@ -11,7 +11,7 @@ export default function NotAvailable(){
                 <Image src={NotAvailableImg} alt="" />
                 <h1 className="font-bold text-lg my-4">Page not available !!!</h1>
                 <p>We are currently working on this page, to bring the best experience to you</p>
-                <button className="btn w-sm mt-5">Go to Dashboard</button>
+                <button className="btn-prim w-sm mt-5">Go to Dashboard</button>
             </div>
         </div>
     )

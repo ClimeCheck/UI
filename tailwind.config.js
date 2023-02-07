@@ -12,9 +12,9 @@ module.exports = {
         dmsans: ["DM Sans", "sans-serif"],
         sora: ["Sora", "sans-serif"],
       },
-      backgroundImage: (theme) => ({
-        "signup-hero": "url('/assets/images/signupbg.png')",
-      }),
+      backgroundImage: {
+        "signup-hero": "url('/signupbg.png')",
+      },
     },
   },
   plugins: [require("daisyui")],

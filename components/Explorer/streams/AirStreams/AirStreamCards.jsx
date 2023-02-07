@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link"
+
 function AirStreamCards({ continent, AirStreamData }) {
   return (
+    <Link href="/explore/map">
     <div className="bg-slate-200 group hover:bg-secondary/40 rounded-md p-3">
       <div className="flex w-full justify-between h-full items-center">
         <p className="text-start font-bold group-hover:text-white text-sm p-3">{continent}</p>
@@ -20,6 +23,7 @@ function AirStreamCards({ continent, AirStreamData }) {
         })}
       </div>
     </div>
+    </Link>
   );
 }
 

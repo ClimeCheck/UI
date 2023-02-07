@@ -66,7 +66,7 @@ const Signup = () => {
       <div className="flex font-Grotesk overflow-hidden">
         {/* left panel */}
         <div className="hidden sm:flex bg-signup-hero bg-no-repeat bg-center text-black w-[50%] min-h-[100vh] ">
-          <div className="w-full h-full flex flex-col justify-between bg-blue-600/20 backdrop-brightness-75 py-4">
+          <div className="w-full h-full flex flex-col justify-between bg-slate-300/20 backdrop-brightness-75 py-4">
           <div>
             <Link href="/">
               <img

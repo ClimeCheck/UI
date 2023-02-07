@@ -20,7 +20,7 @@ export default function SensorTopBar({ datastreams, status, earnings }) {
 
           <div className="flex gap-2 items-center">
             <h1 className="font-bold text-lg">{earnings} CLICK</h1>
-            <button className="py-2 px-4 border border-[#74BF44] rounded-lg text-[#74BF44]">
+            <button className="btn-prim">
               Withdraw
             </button>
           </div>

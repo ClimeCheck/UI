@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 function Transactions({ type, txDesc, txDate, txAmount }) {
   return (
     <div className="container m-2">
@@ -21,8 +22,9 @@ function Transactions({ type, txDesc, txDate, txAmount }) {
             <h1 className="text-lg">{txDesc}</h1>
             <p className="text-sm text-[#727272]">{txDate}</p>
           </div>
-          <div className="flex h-full w-full justify-center items-center">
+          <div className="flex h-full w-full justify-center items-center gap-1">
             <h1 className="text-lg">{txAmount}</h1>
+            <img src="/click.svg" className="w-4" alt="" />
           </div>
         </div>
       </div>

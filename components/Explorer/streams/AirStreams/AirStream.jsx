@@ -1,5 +1,7 @@
+import MapButton from "../../MapButton";
 import { AirStreamsByContinent } from "../streamsData";
 import AirStreamCards from "./AirStreamCards";
+
 
 function AirStream() {
   return (
@@ -9,7 +11,7 @@ function AirStream() {
           <p className="text-xl my-4 text-left"> Continent Level Breakdown</p>
           <p className="text-xl my-4">Data streams</p>
 
-          <div className="flex gap-4   text-black justify-center items-center flex-wrap h-full">
+          <div className="flex gap-4 text-black justify-center items-center flex-wrap h-full relative">
             {AirStreamsByContinent.map(({ name, data }, key) => {
               return (
                 <div key={key}>
@@ -17,6 +19,9 @@ function AirStream() {
                 </div>
               );
             })}
+          <div className="flex z-50 sm:bottom-20 sm:right-20 sm:absolute">
+            <MapButton />
+          </div>
           </div>
         </div>
       </div>

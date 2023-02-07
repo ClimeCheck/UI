@@ -14,6 +14,7 @@ module.exports = {
       },
       backgroundImage: {
         settings_bg: "url('./public/cloud.png')",
+        "signup-hero": "url('/signupbg.png')",
       },
     },
   },
@@ -23,6 +24,7 @@ module.exports = {
       {
         mytheme: {
           primary: "#00963F",
+          palegreen: "#74BF44",
           secondary: "#0069B3",
           "base-100": "#ffffff",
         },

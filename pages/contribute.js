@@ -1,4 +1,4 @@
-import ContForm from "../components/Contribute/form";
+import ContributeForm from "../components/Contribute/form";
 import Head from "next/head";
 import { Navbar } from "../components";
 import dynamic from "next/dynamic";
@@ -20,11 +20,9 @@ function Contribute() {
       </Head>
       <Sidebar />
       <Navbar textColor="black" />
-      <div className="py-32 bg-slate-300">
-        <main className="main flex w-screen m-auto justify-center items-center">
-          <ContForm />
-        </main>
-      </div>
+
+      <ContributeForm />
+
       <Footer />
     </div>
   );

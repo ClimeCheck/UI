@@ -4,7 +4,7 @@ import { mapSideContent } from "./MapData";
 function MapSideBar({ open, setOpen }) {
   return (
     <div
-      className={`flex flex-col gap-8  p-4 w-80 bg-white  ease-in-out transition-all `}
+      className={`flex flex-col font-Grotesk gap-8 z-50 p-4 w-80 bg-white ease-in-out transition-all h-full`}
     >
       <div className="text-black ">
         <div>
@@ -15,7 +15,7 @@ function MapSideBar({ open, setOpen }) {
             </div>
             <div className="flex col-span-1 pl-8">
               <button
-                // onClick={() => setOpen(!open)}
+                onClick={() => setOpen(!open)}
                 className="border border-primary text-primary px-1 rounded-sm self-center"
               >
                 &larr;

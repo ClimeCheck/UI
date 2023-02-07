@@ -1,7 +1,11 @@
 import Head from "next/head";
 import WelcomeExplore from "../../components/Explorer/Welcome";
+import Navbar from '../../components/Navbar'
+import Sidebar from '../../components/Sidebar'
+import { useState } from "react";
 
 function explorer() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="h-max relative">
       <Head>
@@ -23,6 +27,8 @@ function explorer() {
         <source src="/cloud.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
       <WelcomeExplore />
     </div>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { BiDevices } from "react-icons/bi";
+import Link from "next/link";
 
 function DataStreamCards({
   icon,
@@ -9,6 +10,7 @@ function DataStreamCards({
   amountActive,
 }) {
   return (
+    <Link href="/explore/map">
     <div className="bg-slate-300 rounded-md p-5 min-w-[250px] group hover:bg-secondary/40">
       <div className="flex justify-between w-full h-full items-center">
         <p className="text-secondary text-sm font-bold p-3 group-hover:text-white">{continent}</p>
@@ -28,6 +30,7 @@ function DataStreamCards({
         <BiDevices size={35} className="text-[#BE690B]" />
       </div>
     </div>
+    </Link>
   );
 }
 

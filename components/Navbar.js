@@ -27,8 +27,12 @@ const Navbar = ({ textColor }) => {
           <Link href="/">FAQs</Link>
         </nav>
         <div className={style.ctawrapper}>
-          <Link href="/auth/login"><button>Login</button></Link>
-          <button>Join us for free</button>
+          <Link href="/auth/login">
+            <button>Login</button>
+          </Link>
+          <Link href="/auth/signup">
+            <button>Sign Up</button>
+          </Link>
         </div>
         <div
           className={!isOpen ? "harmburger" : cx("harmburger", "change")}

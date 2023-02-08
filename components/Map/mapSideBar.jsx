@@ -1,7 +1,7 @@
 import MapContentCard from "./MapContentCard";
 import { mapSideContent } from "./MapData";
 
-function MapSideBar({ open, setOpen }) {
+function MapSideBar({ open, setOpen, continent }) {
   return (
     <div
       className={`flex flex-col font-Grotesk gap-8 z-50 p-4 w-80 bg-white ease-in-out transition-all h-full`}
@@ -11,7 +11,7 @@ function MapSideBar({ open, setOpen }) {
           <div className=" grid grid-cols-4 gap-2 justify-between py-5">
             <div className="col-span-3">
               <p>Welcome to</p>
-              <h1 className="text-3xl ">Asia Continent</h1>
+              <h1 className="text-3xl ">{continent} Continent</h1>
             </div>
             <div className="flex col-span-1 pl-8">
               <button
@@ -24,7 +24,7 @@ function MapSideBar({ open, setOpen }) {
           </div>
 
           <p className="pr-1 text-base">
-            Stay informed about ambient air quality data in Asia. See the
+            Stay informed about ambient air quality data in {continent}. See the
             average statistics for the continent below
           </p>
         </div>

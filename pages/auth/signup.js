@@ -11,11 +11,7 @@ import countryList from "react-select-country-list";
 import AlertModal from "../../components/Modals/AlertModal";
 import { useRouter } from "next/router";
 import Loader from "../../components/Modals/Loader";
-import {
-  EyeIcon,
-  EyeSlashIcon,
-  GoogleIcon,
-} from "../../components/Icons";
+import { EyeIcon, EyeSlashIcon, GoogleIcon } from "../../components/Icons";
 
 const Signup = () => {
   const router = useRouter();
@@ -67,30 +63,28 @@ const Signup = () => {
         {/* left panel */}
         <div className="hidden sm:flex bg-signup-hero bg-no-repeat bg-center text-black w-[50%] min-h-[100vh] ">
           <div className="w-full h-full flex flex-col justify-between bg-slate-300/20 backdrop-brightness-75 py-4">
-          <div>
-            <Link href="/">
-              <img
-                src="/ClimeCheck.svg"
-                alt=""
-              />
-            </Link>
-          </div>
-          <div className="text-[1.2rem] font-[400] px-6">
-            <span className="text-green-600">Climecheck ecosystem</span> is a
-            real-time big data platform of climate monitoring devices around the
-            globe.
-          </div>
-          <div className="px-6 ">
-            <span className="font-semibold text-lg">Did you know?</span> <br />
-            You can also connect your wallet to your account
-          </div>
-          <div className="flex items-center justify-center w-full">
-            <Link href="">
-              <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-[#74BF44] uppercase font-semibold tracking-widest">
-                Connect Wallet
-              </button>
-            </Link>
-          </div>
+            <div>
+              <Link href="/">
+                <img src="/ClimeCheck.svg" alt="" />
+              </Link>
+            </div>
+            <div className="text-[1.2rem] font-[400] px-6">
+              <span className="text-green-600">Climecheck ecosystem</span> is a
+              real-time big data platform of climate monitoring devices around
+              the globe.
+            </div>
+            <div className="px-6 ">
+              <span className="font-semibold text-lg">Did you know?</span>{" "}
+              <br />
+              You can also connect your wallet to your account
+            </div>
+            <div className="flex items-center justify-center w-full">
+              <Link href="">
+                <button className="py-4 px-6 min-w-[192px] bg-white rounded-md text-[#74BF44] uppercase font-semibold tracking-widest">
+                  Connect Wallet
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -249,9 +243,9 @@ const Signup = () => {
               {/* Already have an account div starts */}
               <div className="text-sm flex justify-center mt-3">
                 Already have an account?
-                <Link href="" passHref>
+                <Link href="/auth/login" passHref>
                   <p className="text-[#74BF44] font-[600] ml-2 uppercase">
-                    Sign in
+                    Login
                   </p>
                 </Link>
               </div>

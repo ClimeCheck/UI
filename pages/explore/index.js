@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Navbar } from "../../components";
 import { useState } from "react";
 import ExplorerHero from "../../components/Explorer/Hero";
-import WelcomeExplore from "../../components/Explorer/Welcome";
+import Sidebar from "../../components/Sidebar";
+
 
 function explorer() {
   return (
@@ -16,7 +17,7 @@ function explorer() {
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
 
-      <video
+      {/* <video
         playsInline
         autoPlay
         muted
@@ -26,7 +27,9 @@ function explorer() {
       >
         <source src="/cloud.webm" type="video/webm" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <Sidebar />
+      <Navbar textColor="black" />
       <ExplorerHero />
     </div>
   );

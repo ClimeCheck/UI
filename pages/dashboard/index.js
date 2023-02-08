@@ -14,7 +14,7 @@ const dashboard = () => {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"
         ></meta>
-        <link rel="icon" href="/ClimeCheck.png" />
+        <link rel="icon" href="/ClimeCheck.svg" />
       </Head>
       <Layout title="Dashboard" showSearch={true}>
         <div className="flex flex-col flex-[70] items-center justify-between gap-16 text-black ">

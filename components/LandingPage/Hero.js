@@ -17,7 +17,7 @@ const Hero = (props) => {
       </div>
 
       <div className={style.ctaWrapper}>
-        <Link href="/">View Climate</Link>
+        <Link href="/explore">View Climate</Link>
         <Link href="/contribute">Contribute</Link>
       </div>
       <div className={style.info}>

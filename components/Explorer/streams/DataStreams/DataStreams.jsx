@@ -1,5 +1,8 @@
 import { DataStreamsByContinent } from "../streamsData";
 import DataStreamCards from "./DataStreamCard";
+import {BsMap} from 'react-icons/bs'
+import Link from "next/link";
+import MapButton from "../../MapButton";
 
 function DataStream() {
   return (
@@ -9,7 +12,7 @@ function DataStream() {
           <p className="text-xl my-4">Continent Level Breakdown</p>
           <p className="text-xl my-4">Data streams</p>
 
-          <div className="grid grid-cols-1 text-black sm:grid-cols-2 md:grid-cols-3 gap-4 my-8 self-center max-w-4xl">
+          <div className="flex gap-4 text-black justify-center items-center flex-wrap h-full relative">
             {DataStreamsByContinent.map(
               ({ name, activeDevices, totalDevices, percentActive }, key) => {
                 return (
@@ -24,6 +27,9 @@ function DataStream() {
                 );
               }
             )}
+            <div className="flex z-50 sm:bottom-20 sm:right-20 sm:absolute">
+            <MapButton />
+          </div>
           </div>
         </div>
       </div>

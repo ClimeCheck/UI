@@ -4,11 +4,11 @@ import { MdLocationOn } from "react-icons/md";
 
 function ExplorerHero() {
   return (
-    <div className="hero min-h-screen font-Grotesk text-white  bg-slate-900 bg-opacity-80">
+    <div className="hero min-h-screen font-Grotesk text-black ">
       <div className="hero-content my-20 text-center">
         <div className="max-w-4xl">
           <h1 className="styledHeader">Data and Awareness</h1>
-          <div className="m-4 grid content-center rounded-md bg-black bg-opacity-80 pt-32 text-white">
+          <div className="m-4 grid content-center rounded-md bg-gradient-to-tr from-indigo-800 to-zinc-600 bg-opacity-80 pt-32 text-white">
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center px-4 py-4 ">
               {ClimateData.map(({ name, value, icon }, key) => {
                 return (

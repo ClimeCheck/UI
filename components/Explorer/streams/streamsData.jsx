@@ -23,7 +23,7 @@ export const DataStreamsByContinent = [
     icon: <Africa size={25} />
   },
   {
-    name: "North Amarica",
+    name: "North America",
     activeDevices: "1234",
     totalDevices: "8,000,000",
     percentActive: "80%",
@@ -81,7 +81,7 @@ export const AirStreamsByContinent = [
     icon: <Africa size={25} />
   },
   {
-    name: "North Amarica",
+    name: "North America",
     data: [
       { name: "Temparature", value: "25" },
       { name: "CO2", value: "5.62" },

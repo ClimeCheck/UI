@@ -3,12 +3,12 @@ import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { Devices } from "./MapData";
 import deviceIcon from "./deviceIcon";
-import dynamic from "next/dynamic";
+
 import MapContainer from "./MapContainer";
 import MapDownBar from "./mapDownBar";
 import MapSideBar from "./mapSideBar";
 
-function Map() {
+function Map({ data }) {
   const [open, setOpen] = useState(true);
   const [devices, setDevices] = useState();
 
@@ -19,8 +19,8 @@ function Map() {
 
   return (
     <div className="w-full h-full bg-slate-900 bg-opacity-80  ">
-      <div className="items-stretch  h-full flex justify-start  ">
-        <MapSideBar open={open} setOpen={setOpen} />
+      <div className="items-stretch bg-white h-full flex justify-start  ">
+        <MapSideBar open={open} setOpen={setOpen} continent={data.continent} />
 
         <div className="relative flex flex-col ">
           <div className="flex  justify-center py-2 z-20 mx-auto w-full absolute top-12">
@@ -33,7 +33,8 @@ function Map() {
             <MapContainer
               width="100%"
               height="600"
-              center={[6.44943, 7.49281]}
+              center={[data.latitude, data.longitude]}
+              // center={[location.latitude, location.longitude]}
               zoom={2}
               scrollWheelZoom={true}
             >

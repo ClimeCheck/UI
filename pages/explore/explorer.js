@@ -1,13 +1,13 @@
 import Head from "next/head";
 import WelcomeExplore from "../../components/Explorer/Welcome";
-import Navbar from '../../components/Navbar'
-import Sidebar from '../../components/Sidebar'
+import Navbar from "../../components/Navbar";
+import Sidebar from "../../components/Sidebar";
 import { useState } from "react";
 
 function Explorer() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="h-max relative">
+    <div className="h-max relative  bg-slate-900 bg-opacity-80 ">
       <Head>
         <title>ClimeCheck | Explorer</title>
         <meta

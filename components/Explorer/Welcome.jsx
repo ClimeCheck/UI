@@ -21,7 +21,7 @@ const AirSTreamData = [
 
 function WelcomeExplore() {
   return (
-    <div className="hero h-full font-Grotesk text-white  bg-slate-900 bg-opacity-80">
+    <div className="hero h-full font-Grotesk text-white ">
       <div className="hero-content my-20 text-center">
         <div className="max-w-4xl justify-center flex flex-col">
           <p className="text-2xl my-4">Welcome to</p>
@@ -75,17 +75,21 @@ function WelcomeExplore() {
                         key={key}
                         className={`m-4 ${
                           name == "Temparature" &&
-                          "border-b-[1px] border-slate-500 group-hover:border-slate-100" 
+                          "border-b-[1px] border-slate-500 group-hover:border-slate-100"
                         } ${
-                          name == "CO2" && "border-b-[1px] border-slate-500 group-hover:border-slate-100"
+                          name == "CO2" &&
+                          "border-b-[1px] border-slate-500 group-hover:border-slate-100"
                         }`}
                       >
-                        <p className="text-slate-500 group-hover:text-white py-2">{name}</p>
+                        <p className="text-slate-500 group-hover:text-white py-2">
+                          {name}
+                        </p>
                         <h1
                           className={`text-2xl font-bold ${
                             name == "Temparature" && "text-[#B80D7F]"
                           } ${name == "Pm 2.5" && "text-[#BE690B]"} ${
-                            name == "Pm 5" && "text-[#525252] group-hover:text-[#B80D7F]"
+                            name == "Pm 5" &&
+                            "text-[#525252] group-hover:text-[#B80D7F]"
                           } ${name == "CO2" && "text-[#192F5D]"}`}
                         >
                           {value}
@@ -100,7 +104,7 @@ function WelcomeExplore() {
           </div>
 
           <div className="flex self-center">
-           <MapButton />
+            <MapButton />
           </div>
         </div>
       </div>

@@ -15,7 +15,9 @@ const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
   ssr: false,
 });
 
-function Map() {
+function Map({ data }) {
+  console.log(data);
+
   return (
     <div>
       <Head>
@@ -26,9 +28,30 @@ function Map() {
         />
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
-      <MapComponents />
+      <MapComponents data={data} />
     </div>
   );
 }
+
+export const getServerSideProps = async ({ params }) => {
+  const continent = params.continent;
+  const key = process.env.ACCESS_KEY;
+
+  const result =
+    "http://api.positionstack.com/v1/forward?access_key=" +
+    key +
+    "&query=" +
+    continent;
+  const { data } = await (await fetch(result)).json();
+  const location = data[0];
+  const { latitude, longitude } = location;
+
+
+  return {
+    props: {
+      data: { latitude, longitude, continent },
+    },
+  };
+};
 
 export default Map;

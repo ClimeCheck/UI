@@ -1,9 +1,6 @@
 import { useFormikContext, Formik, Form, useFormik } from "formik";
 import * as Yup from "yup";
-// import TextFieldWrapper from "./Textfield";
-// import SelectWrapper from "./sellectfield";
-// import { Box, Grid, Container } from "@mui/material";
-// import SubmitButton from "./submit";
+
 import axios from "axios";
 import Select from "../CustomSelect";
 import Loader from "../Modals/Loader";
@@ -39,13 +36,16 @@ function ContributeForm() {
   // Yup validation schema... this is for form validation
   const validationSchema = Yup.object({
     name: Yup.string().required("This field is required"),
-    email: Yup.string().email("Invalid Email")
+    email: Yup.string()
+      .email("Invalid Email")
       .required("This field is required"),
     bio: Yup.string().required("This field is required"),
     AOC: Yup.string().required("This field is required"),
-    linkedInUrl: Yup.string().matches(URL, "Enter a valid url")
+    linkedInUrl: Yup.string()
+      .matches(URL, "Enter a valid url")
       .required("This field is required"),
-    twitterUrl: Yup.string().matches(URL, "Enter a valid url")
+    twitterUrl: Yup.string()
+      .matches(URL, "Enter a valid url")
       .required("This field is required"),
     details: Yup.string().required("This field is required"),
   });
@@ -260,57 +260,6 @@ function ContributeForm() {
           </div>
           {/* Submit button ends */}
         </form>
-        {/* <Container maxWidth="md">
-          <Formik
-            initialValues={{
-              ...formData,
-            }}
-            validationSchema={ContributeSchema}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-          >
-            <Form>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <TextFieldWrapper name="name" label="Name" />
-                </Grid>
-
-                <Grid item xs={6}>
-                  <TextFieldWrapper name="email" label="Email" />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <TextFieldWrapper name="bio" label="Your Short Biography" />
-                </Grid>
-                <Grid item xs={12}>
-                  <SelectWrapper
-                    name="AOC"
-                    label="Area Of Contribution"
-                    options={AOC_OPTIONS}
-                  />
-                </Grid>
-
-                <Grid item xs={6}>
-                  <TextFieldWrapper name="linkedInUrl" label="LinkedIn url" />
-                </Grid>
-                <Grid item xs={6}>
-                  <TextFieldWrapper name="twitterUrl" label="Twitter url" />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <TextFieldWrapper
-                    name="details"
-                    label="Additional details that might give more context"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <SubmitButton />
-                </Grid>
-              </Grid>
-            </Form>
-          </Formik>
-        </Container> */}
       </div>
     </div>
   );

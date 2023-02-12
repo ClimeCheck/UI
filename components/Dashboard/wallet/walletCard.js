@@ -23,11 +23,13 @@ function WalletCard({
           className={`text-center font-semibold text-xl flex gap-2 items-center w-full justify-center ${
             walletLimit == null && "mb-[85px]"
           }`}
-        > <img src="/click.svg" className="w-4" alt="" />
-        <div>
-          <p>{tokenAmount}</p>
-          <p>{tokenValue}</p>
-        </div>
+        >
+          {" "}
+          <img src="/click.svg" className="w-4" alt="" />
+          <div>
+            <p>{tokenAmount}</p>
+            <p>{tokenValue}</p>
+          </div>
         </div>
         {withdrawalLimit && walletLimit && (
           <div className="flex w-full justify-between">

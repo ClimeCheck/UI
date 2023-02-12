@@ -14,7 +14,7 @@ export default function Guage({ value }) {
       case size.width >= 1800:
         return { width: 400, height: 220 };
     }
-  };// segmentColors={["#0B8910", "#F46B08", "#800000"]}
+  }; // segmentColors={["#0B8910", "#F46B08", "#800000"]}
   return (
     <div className="container ">
       <div className="flex flex-wrap justify-center items-center">

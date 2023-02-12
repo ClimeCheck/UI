@@ -66,9 +66,9 @@ const Sidebar = () => {
   );
 
   const wrapperClasses = classNames(
-    " h-full px-4 pt-8 pb-4 bg-[#F8F8F8] flex justify-between flex-col  ",
+    "  px-4 pt-8 pb-4 bg-[#F8F8F8] flex justify-between flex-col  ",
     {
-      ["w-[22%] h-max"]: !toggleCollapse,
+      ["w-[22%] "]: !toggleCollapse,
       ["w-20 "]: toggleCollapse,
     }
   );

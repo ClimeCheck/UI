@@ -25,7 +25,7 @@ export default function SensorTopBar({ datastreams, status, earnings }) {
             {/**add refresh */}
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center justify-between">
             <h1 className="font-bold text-lg">{earnings} CLICK</h1>
             <button className="btn-prim">Withdraw</button>
           </div>

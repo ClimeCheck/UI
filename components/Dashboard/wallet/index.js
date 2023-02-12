@@ -62,13 +62,13 @@ function WalletComp() {
         </div>
       )}
       <div className="flex flex-col mt-3">
-        <div className="justify-between flex w-full">
+        <div className="justify-between flex w-full mb-4">
           <p className="font-semibold text-lg">Transaction History</p>
           <button className="border-2 border-primary text-primary py-2 px-4 hover:bg-primary hover:text-white rounded-md">
             view all
           </button>
         </div>
-        <div className="h-[400px] overflow-y-auto overflow-x-auto w-full">
+        <div className="h-[400px] overflow-y-auto overflow-x-hidden w-full">
           {walletData.map(({ type, txDesc, txDate, txAmount }, key) => {
             return (
               <Transactions

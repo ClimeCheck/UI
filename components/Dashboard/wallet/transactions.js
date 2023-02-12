@@ -4,7 +4,7 @@ function Transactions({ type, txDesc, txDate, txAmount }) {
     <div className="container m-2">
       <div className="flex ">
         <div
-          className={`text-xl rounded-full p-3 flex self-center items-center h-10 w-10 ${
+          className={`text-xl rounded-full p-3 flex self-center items-center h-10  ${
             type == "receive"
               ? "text-green-500 bg-green-300/60"
               : "text-red-500 bg-red-300/60"

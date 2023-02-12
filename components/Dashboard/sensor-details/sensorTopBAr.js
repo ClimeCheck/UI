@@ -3,12 +3,12 @@ export default function SensorTopBar({ datastreams, status, earnings }) {
 
   return (
     <div className="container text-black">
-      <div className="flex gap-5 w-full items-stretch flex-wrap justify-between">
-        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg min-w-[220px]">
+      <div className="grid grid-cols-1 min-[850px]:grid-cols-3 gap-4 w-full justify-between">
+        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg ">
           <p className="text-lg">No of Data Stream</p>
           <h1 className="font-bold text-lg">{datastreams}</h1>
         </div>
-        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg min-w-[220px]">
+        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg ">
           <p className="text-lg">Status</p>
           <h1 className="font-bold text-lg flex flex-row items-center">
             <span
@@ -19,7 +19,7 @@ export default function SensorTopBar({ datastreams, status, earnings }) {
             {status}
           </h1>
         </div>
-        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg min-w-[220px]">
+        <div className="grid gap-6 grid-cols-1 p-4 border rounded-lg ">
           <div className="flex w-full justify-between">
             <p className="text-lg">Earnings</p>
             {/**add refresh */}
@@ -27,9 +27,7 @@ export default function SensorTopBar({ datastreams, status, earnings }) {
 
           <div className="flex gap-2 items-center">
             <h1 className="font-bold text-lg">{earnings} CLICK</h1>
-            <button className="btn-prim">
-              Withdraw
-            </button>
+            <button className="btn-prim">Withdraw</button>
           </div>
         </div>
       </div>

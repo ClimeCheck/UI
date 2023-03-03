@@ -10,7 +10,6 @@ const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
 
-
 function Home({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -58,7 +57,6 @@ export const getServerSideProps = async () => {
 
   const { station } = temperatureData?.result?.pop() || { station: 0 };
   const { value } = vitalSignsData || { value: 0 };
-
 
   return {
     props: {

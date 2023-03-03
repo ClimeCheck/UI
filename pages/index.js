@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
@@ -10,16 +10,6 @@ const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
 
-const fetchData = async (url) => {
-  let data;
-  try {
-    const res = await fetch(url);
-    data = await res.json();
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-  }
-  return data;
-};
 
 function Home({ data }) {
   const [isOpen, setIsOpen] = useState(false);

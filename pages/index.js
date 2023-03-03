@@ -48,18 +48,38 @@ function Home({ data }) {
 }
 
 export const getServerSideProps = async () => {
-  const { co2 = 0 } = await (
-    await fetch("https://global-warming.org/api/co2-api/")
-  )?.json();
-  const { result = 0 } = await (
-    await fetch("https://global-warming.org/api/temperature-api")
-  )?.json();
+  let co2Data;
+  let temperatureData;
+  let vitalSignsData;
 
-  const res = await fetch("https://climate.nasa.gov/api/v1/vital_signs/5/");
-  const { value = 0 } = await res.json();
+  try {
+    const co2Res = await fetch("https://global-warming.org/api/co2-api/");
+    co2Data = await co2Res.json();
+  } catch (error) {
+    console.error("Error fetching CO2 data:", error);
+  }
 
-  const { trend } = co2.pop();
-  const { station } = result.pop();
+  try {
+    const temperatureRes = await fetch(
+      "https://global-warming.org/api/temperature-api"
+    );
+    temperatureData = await temperatureRes.json();
+  } catch (error) {
+    console.error("Error fetching temperature data:", error);
+  }
+
+  try {
+    const vitalSignsRes = await fetch(
+      "https://climate.nasa.gov/api/v1/vital_signs/5/"
+    );
+    vitalSignsData = await vitalSignsRes.json();
+  } catch (error) {
+    console.error("Error fetching vital signs data:", error);
+  }
+
+  const trend = co2Data?.co2?.pop()?.trend || 0;
+  const station = temperatureData?.result?.pop()?.station || 0;
+  const value = vitalSignsData?.value || 0;
 
   return {
     props: {

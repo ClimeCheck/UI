@@ -5,7 +5,7 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  webpack5: false,
+
   experimental: { esmExternals: true },
 };
 

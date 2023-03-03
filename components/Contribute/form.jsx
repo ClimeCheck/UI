@@ -71,7 +71,7 @@ function ContributeForm() {
   }
 
   return (
-    <div className="grid font-Grotesk w-screen justify-center">
+    <div className="grid font-Grotesk w-screen justify-center drawer-content">
       <div className="text-2xl sm:text-[46px] text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00963f] via-white to-[#0069B3]">
         CONTRIBUTE TO CLIMECHECK
       </div>

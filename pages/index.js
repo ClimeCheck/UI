@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
@@ -5,7 +6,6 @@ import { Hero, Navbar } from "../components";
 import Footer from "../components/Footer";
 
 import styles from "../styles/Home.module.scss";
-import { useState } from "react";
 
 const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
@@ -58,6 +58,7 @@ export default function Home({ data }) {
             Your browser does not support the video tag.
           </video>
           <Navbar isOpen={isOpen} setIsOpen={setIsOpen} textColor="white" />
+
           <Hero data={data} />
         </div>
         <Mapbase />

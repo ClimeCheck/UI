@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, { useState, useMemo, useContext } from "react";
+import { useState, useMemo, useContext } from "react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";

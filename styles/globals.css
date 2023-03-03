@@ -90,5 +90,18 @@ body {
 }
 
 .btn-prim {
-  @apply py-2 px-4 border border-[#74BF44] rounded-lg text-[#74BF44] hover:text-white hover:bg-[#74BF44]
+  @apply py-2 px-4 border border-[#74BF44] rounded-lg text-[#74BF44] hover:text-white hover:bg-[#74BF44];
+}
+
+/* header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+} */
+nav {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
 }

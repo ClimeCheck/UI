@@ -1,5 +1,3 @@
-
-
 import style from "../styles/Sidebar.module.scss";
 import Link from "next/link";
 

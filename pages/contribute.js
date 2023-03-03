@@ -18,8 +18,9 @@ function Contribute() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Sidebar />
+      {/* <Navbar2 /> */}
       <Navbar textColor="black" />
+      <Sidebar />
 
       <ContributeForm />
 

@@ -1,17 +1,56 @@
-import { TileLayer, Marker, Popup } from "react-leaflet";
+import { TileLayer, Marker, Popup, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Devices } from "./MapData";
 import deviceIcon from "./deviceIcon";
 
 import MapContainer from "./MapContainer";
 import MapDownBar from "./mapDownBar";
 import MapSideBar from "./mapSideBar";
+import RecenterAutomatically from "./RecenterMapAutomatically";
+
+function SetViewOnClick({ animateRef }) {
+  const map = useMapEvent("click", (e) => {
+    map.flyTo(e.latlng, map.getZoom(), {
+      animate: animateRef.current,
+    });
+  });
+
+  return null;
+}
 
 function Map({ data }) {
   const [open, setOpen] = useState(true);
+  const [country, setCountry] = useState("");
+  const [geoDetails, setGeoDetails] = useState([data.latitude, data.longitude]);
   const [devices, setDevices] = useState();
 
+  const animateRef = useRef(true);
+
+  const getCountry = async (e) => {
+    console.log("searching");
+    const key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+    console.log(key);
+    // console.log(process.env.CONTINENT_URL);
+
+    const result =
+      "http://api.positionstack.com/v1/forward?access_key=" +
+      key +
+      "&query=" +
+      e;
+    const { data } = await (await fetch(result)).json();
+    const location = data[0];
+    const { latitude, longitude } = location;
+    console.log([latitude, longitude]);
+
+    setGeoDetails(() => [latitude, longitude]);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      getCountry(country);
+    }
+  };
   useEffect(() => {
     const x = Devices;
     setDevices(x);
@@ -25,24 +64,31 @@ function Map({ data }) {
         <div className="relative flex flex-col ">
           <div className="flex  justify-center py-2 z-20 mx-auto w-full absolute top-12">
             <input
+              type="search"
               className="rounded-full flex  p-2 bg-transparent border-2 border-zinc-600"
               placeholder="search..."
+              value={country}
+              spellCheck="true"
+              autoCorrect="on"
+              onKeyUp={handleKeyPress}
+              // onSearch={() => getCountry(country)}
+              onChange={(e) => setCountry(e.target.value)}
             />
           </div>
           <div className="z-0 relative">
             <MapContainer
               width="100%"
               height="600"
-              center={[data.latitude, data.longitude]}
+              center={geoDetails}
               // center={[location.latitude, location.longitude]}
-              zoom={2}
+              zoom={3}
               scrollWheelZoom={true}
             >
               <TileLayer
                 id="mapbox/streets-v11"
                 accessToken="pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
                 url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
               {devices?.map(({ position }, key) => (
                 <Marker
@@ -54,6 +100,8 @@ function Map({ data }) {
                   <Popup>Device Details</Popup>
                 </Marker>
               ))}
+              <SetViewOnClick animateRef={animateRef} />
+              <RecenterAutomatically lat={geoDetails[0]} lng={geoDetails[1]} />
             </MapContainer>
           </div>
           <div className="mt-auto ">

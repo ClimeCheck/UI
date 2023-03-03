@@ -16,6 +16,9 @@ module.exports = {
         "signup-hero": "url('/signupbg.png')",
         settingsbg: "url('/Frame261.png')",
       },
+      colors: {
+        primary: "#74BF44",
+      },
     },
   },
   plugins: [require("daisyui")],

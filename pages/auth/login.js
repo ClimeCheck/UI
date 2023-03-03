@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import { AuthContext } from "../../context/AuthContext";
-import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
+import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 import axios from "axios";
 
@@ -57,7 +57,7 @@ const Login = () => {
   // Yup validation schema... this is for form validation
   const validationSchema = Yup.object({
     email: Yup.string()
-    //   .email("Invalid Email")
+      //   .email("Invalid Email")
       .required("This field is required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
@@ -204,8 +204,8 @@ const Login = () => {
                 </span>
               </div>
 
-             {/* Auth providers div start */}
-             <div className="w-full flex items-center justify-center mt-4 space-x-2 sm:space-x-3 px-4 sm:px-0">
+              {/* Auth providers div start */}
+              <div className="w-full flex items-center justify-center mt-4 space-x-2 sm:space-x-3 px-4 sm:px-0">
                 <button
                   type="button"
                   className="border py-2 px-2 flex items-center justify-center space-x-2  rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
@@ -216,13 +216,13 @@ const Login = () => {
                   type="button"
                   className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
                 >
-                  <AiOutlineTwitter className="h-6 w-6 text-blue-400"/>
+                  <AiOutlineTwitter className="h-6 w-6 text-blue-400" />
                 </button>
                 <button
-                 type="button"
-                 className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
-              >
-                    <AiFillLinkedin className="h-6 w-6 text-blue-700" />
+                  type="button"
+                  className="border py-2 px-2 flex items-center justify-center space-x-2 rounded-md hover:brightness-95 transition-all bg-[#F4F4FF] h-12 w-20"
+                >
+                  <AiFillLinkedin className="h-6 w-6 text-blue-700" />
                 </button>
               </div>
               {/* Auth providers div ends */}

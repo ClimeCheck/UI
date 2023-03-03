@@ -17,13 +17,56 @@ const Layout = ({ children, title, showSearch }) => {
             />
           </div>
           <div className="flex items-center justify-between gap-x-2 ">
-            <MdOutlineNotificationsNone size="32" />
-            <div className="flex items-center justify-between gap-x-2 border p-2 rounded-lg">
-              <RxAvatar size="32" />
+            {/* <MdOutlineNotificationsNone size="32" /> */}
+
+            <div className="dropdown dropdown-end">
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-circle hover:bg-primary hover:text-white"
+              >
+                <div className="indicator">
+                  <MdOutlineNotificationsNone size="32" />
+                  <span className="badge badge-sm indicator-item bg-primary text-white">
+                    8
+                  </span>
+                </div>
+              </label>
+              <div
+                tabIndex={0}
+                className="mt-4 card card-compact dropdown-content w-52 bg-base-100 shadow"
+              >
+                <div className="card-body">
+                  <span className="font-bold text-lg">No Notification</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-x-2 border p-1 rounded-lg">
               <span>Ayomide</span>
-              <select>
-                <option value="base"></option>
-              </select>
+              <div className="dropdown dropdown-end ">
+                <label
+                  tabIndex={0}
+                  className="btn btn-ghost btn-circle avatar hover:bg-primary hover:text-white"
+                >
+                  <RxAvatar size="32" />
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content mt-4 p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>Settings</a>
+                  </li>
+                  <li>
+                    <a>Logout</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

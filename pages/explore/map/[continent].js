@@ -1,14 +1,5 @@
 import Head from "next/head";
 import "leaflet/dist/leaflet.css";
-// import { useEffect, useState } from "react";
-// import { Devices } from "../../components/Map/MapData";
-// import deviceIcon from "../../components/Map/deviceIcon";
-// import { TileLayer, Marker, Popup } from "react-leaflet";
-// import MapContainer from "../../components/Map/MapContainer";
-// import { mapSideContent } from "../../components/Map/MapData";
-// import MapContentCard from "../../components/Map/MapContentCard";
-// import MapSideBar from "../../components/Map/mapSideBar";
-// import MapDownBar from "../../components/Map/mapDownBar";
 import dynamic from "next/dynamic";
 
 const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
@@ -45,7 +36,6 @@ export const getServerSideProps = async ({ params }) => {
   const { data } = await (await fetch(result)).json();
   const location = data[0];
   const { latitude, longitude } = location;
-
 
   return {
     props: {

@@ -11,27 +11,6 @@ const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
 
-export const getServerSideProps = async () => {
-  const { co2 = 0 } = await (
-    await fetch("https://global-warming.org/api/co2-api/")
-  )?.json();
-  const { result = 0 } = await (
-    await fetch("https://global-warming.org/api/temperature-api")
-  )?.json();
-
-  const res = await fetch("https://climate.nasa.gov/api/v1/vital_signs/5/");
-  const { value = 0 } = await res.json();
-
-  const { trend } = co2.pop();
-  const { station } = result.pop();
-
-  return {
-    props: {
-      data: { station, trend, value },
-    },
-  };
-};
-
 function Home({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -67,4 +46,25 @@ function Home({ data }) {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const { co2 = 0 } = await (
+    await fetch("https://global-warming.org/api/co2-api/")
+  )?.json();
+  const { result = 0 } = await (
+    await fetch("https://global-warming.org/api/temperature-api")
+  )?.json();
+
+  const res = await fetch("https://climate.nasa.gov/api/v1/vital_signs/5/");
+  const { value = 0 } = await res.json();
+
+  const { trend } = co2.pop();
+  const { station } = result.pop();
+
+  return {
+    props: {
+      data: { station, trend, value },
+    },
+  };
+};
 export default Home;

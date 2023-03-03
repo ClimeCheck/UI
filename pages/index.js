@@ -9,6 +9,7 @@ import styles from "../styles/Home.module.scss";
 const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
+
 function Home({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   return (

@@ -10,7 +10,7 @@ import styles from "../styles/Home.module.scss";
 const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const { co2 = 0 } = await (
     await fetch("https://global-warming.org/api/co2-api/")
   )?.json();
@@ -33,6 +33,7 @@ export const getServerSideProps = async () => {
     props: {
       data: { station, trend, value },
     },
+    revalidate: 86400,
   };
 };
 

@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
+
 import SettingsCardDetails from "./settingsCardMyDetails";
 import SettingsCardFormPassword from "./settingsCardFormPassword";
 

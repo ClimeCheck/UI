@@ -2,12 +2,11 @@
 import style from "../../styles/Mapbase.module.scss";
 import Map from "./Map";
 
+import { useRef } from "react";
 import { InfoCircle } from "iconsax-react";
 
 import cx from "classnames";
 import Link from "next/link";
-import { Continent } from "../../assets/images";
-import { useRef } from "react";
 
 const FakeMap = ({
   func: {

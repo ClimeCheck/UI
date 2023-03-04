@@ -10,33 +10,19 @@ import styles from "../styles/Home.module.scss";
 const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
-export const getServerSideProps = async () => {
-  const { co2 = 0 } = await (
-    await fetch("https://global-warming.org/api/co2-api/")
-  )?.json();
-  const { result = 0 } = await (
-    await fetch("https://global-warming.org/api/temperature-api")
-  )?.json();
 
-  const res = await fetch("https://climate.nasa.gov/api/v1/vital_signs/5/");
-  const { value = 0 } = await res.json();
-
-  const { trend } = co2.pop();
-  const { station } = result.pop();
-
-  if (!result || !trend || !station) {
-    return {
-      notFound: true,
-    };
+const fetchData = async (url) => {
+  let data;
+  try {
+    const res = await fetch(url);
+    data = await res.json();
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
   }
-  return {
-    props: {
-      data: { station, trend, value },
-    },
-  };
+  return data;
 };
 
-export default function Home({ data }) {
+function Home({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -71,3 +57,22 @@ export default function Home({ data }) {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const [co2Data, temperatureData, vitalSignsData] = await Promise.all([
+    fetchData("https://global-warming.org/api/co2-api/"),
+    fetchData("https://global-warming.org/api/temperature-api"),
+    fetchData("https://climate.nasa.gov/api/v1/vital_signs/5/"),
+  ]);
+
+  const { trend = 0 } = co2Data?.co2?.shift() || {};
+  const { station = 0 } = temperatureData?.result?.pop() || {};
+  const { value = 0 } = vitalSignsData || {};
+
+  return {
+    props: {
+      data: { station, trend, value },
+    },
+  };
+};
+export default Home;

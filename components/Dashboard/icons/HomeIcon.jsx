@@ -1,5 +1,3 @@
-import * as React from "react";
-
 function HomeIcon({ fill = "#6C7281", ...rest }) {
   return (
     <svg

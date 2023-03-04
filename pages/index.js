@@ -65,7 +65,7 @@ export const getServerSideProps = async () => {
     fetchData("https://climate.nasa.gov/api/v1/vital_signs/5/"),
   ]);
 
-  const { trend = 0 } = co2Data?.co2?.shift() || {};
+  const { trend = 0 } = co2Data?.co2?.pop() || {};
   const { station = 0 } = temperatureData?.result?.pop() || {};
   const { value = 0 } = vitalSignsData || {};
 

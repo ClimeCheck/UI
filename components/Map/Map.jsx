@@ -48,11 +48,6 @@ function Map({ continent, data }) {
     setGeoDetails(() => [latitude, longitude]);
   };
 
-
-
-  ;
-
- 
   useEffect(() => {
     const loadMarkers = async () => {
       const markers = [];
@@ -111,10 +106,8 @@ function Map({ continent, data }) {
   };
 
   return (
-
     <div className="w-full h-full  bg-white bg-opacity-80  ">
       <div className=" h-full flex justify-start relative ">
-
         <MapSideBar open={open} setOpen={setOpen} continent={continent[2]} />
 
         <div className="relative flex flex-col ">
@@ -127,7 +120,6 @@ function Map({ continent, data }) {
               spellCheck="true"
               autoCorrect="on"
               onKeyUp={handleKeyPress}
-              // onSearch={() => getCountry(country)}
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>

@@ -1,21 +1,13 @@
 import Head from "next/head";
 import "leaflet/dist/leaflet.css";
-// import { useEffect, useState } from "react";
-// import { Devices } from "../../components/Map/MapData";
-// import deviceIcon from "../../components/Map/deviceIcon";
-// import { TileLayer, Marker, Popup } from "react-leaflet";
-// import MapContainer from "../../components/Map/MapContainer";
-// import { mapSideContent } from "../../components/Map/MapData";
-// import MapContentCard from "../../components/Map/MapContentCard";
-// import MapSideBar from "../../components/Map/mapSideBar";
-// import MapDownBar from "../../components/Map/mapDownBar";
+
 import dynamic from "next/dynamic";
 
 const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
   ssr: false,
 });
 
-function Map() {
+function Map({ data, continent }) {
   return (
     <div>
       <Head>
@@ -26,9 +18,44 @@ function Map() {
         />
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
-      <MapComponents />
+      <MapComponents data={data} continent={continent} />
     </div>
   );
 }
 
+export const getServerSideProps = async () => {
+  const key = process.env.XAPI_KEY;
+  const device = process.env.DEVICE_URL;
+
+  try {
+    const res = await fetch(device, {
+      headers: {
+        "X-API-Key": key,
+      },
+    });
+    const { data } = await res.json();
+
+    const result = data.slice(0, 500).map((item) => ({
+      latitude: item[2],
+      longitude: item[3],
+    }));
+
+    return {
+      props: {
+        data: result,
+        continent: [0, 0, "World"],
+      },
+    };
+  } catch (error) {
+    // Handle the error here
+    console.error(error);
+
+    return {
+      props: {
+        data: {},
+        continent: [0, 0, "World"],
+      },
+    };
+  }
+};
 export default Map;

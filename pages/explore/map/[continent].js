@@ -6,9 +6,7 @@ const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
   ssr: false,
 });
 
-function Map({ data }) {
-  console.log(data);
-
+function Map({ continent, data }) {
   return (
     <div>
       <Head>
@@ -19,29 +17,62 @@ function Map({ data }) {
         />
         <link rel="icon" href="/ClimeCheck.png" />
       </Head>
-      <MapComponents data={data} />
+      <MapComponents continent={continent} data={data} />
     </div>
   );
 }
 
 export const getServerSideProps = async ({ params }) => {
   const continent = params.continent;
-  const key = process.env.ACCESS_KEY;
+  const mapKey = process.env.ACCESS_KEY;
+  const mapUrl = process.env.CONTINENT_URL;
+  const xApiKey = process.env.XAPI_KEY;
+  const device = process.env.DEVICE_URL;
 
-  const result =
-    "http://api.positionstack.com/v1/forward?access_key=" +
-    key +
-    "&query=" +
-    continent;
-  const { data } = await (await fetch(result)).json();
-  const location = data[0];
-  const { latitude, longitude } = location;
+  // First API call
+  const mapResult = mapUrl + mapKey + "&query=" + continent;
 
-  return {
-    props: {
-      data: { latitude, longitude, continent },
-    },
-  };
+  // Second API call
+  let result2;
+
+  try {
+    // Make both API calls in parallel using Promise.all
+    const [mapRes, purpleAirRes] = await Promise.all([
+      fetch(mapResult),
+      fetch(device, {
+        headers: {
+          "X-API-Key": xApiKey,
+        },
+      }),
+    ]);
+    const { data } = await mapRes.json();
+    const location = data[0];
+
+    const { latitude, longitude } = location;
+
+    const response = await purpleAirRes.json();
+
+    result2 = response?.data.slice(0, 500).map((item) => ({
+      latitude: item[2],
+      longitude: item[3],
+    }));
+
+    return {
+      props: {
+        continent: [latitude, longitude, continent],
+        data: result2,
+      },
+    };
+  } catch (error) {
+    // Handle the error here
+    console.error(error);
+    return {
+      props: {
+        continent: {},
+        data: {},
+      },
+    };
+  }
 };
 
 export default Map;

@@ -20,7 +20,6 @@ function SetViewOnClick({ animateRef }) {
 }
 
 function Map({ continent, data }) {
-  console.log(continent);
   const [open, setOpen] = useState(true);
   const [country, setCountry] = useState("");
   const [geoDetails, setGeoDetails] = useState([continent[0], continent[1]]);
@@ -29,14 +28,7 @@ function Map({ continent, data }) {
 
   const getCountry = async (e) => {
     console.log("searching");
-    const key = process.env.NEXT_PUBLIC_ACCESS_KEY;
-    console.log(key);
-
-    const result =
-      "http://api.positionstack.com/v1/forward?access_key=" +
-      key +
-      "&query=" +
-      e;
+    const result = `/api/getCountry?e=${e}`;
     const { data } = await (await fetch(result)).json();
     const location = data[0];
     const { latitude, longitude } = location;
@@ -74,7 +66,7 @@ function Map({ continent, data }) {
               width="100%"
               height="600"
               center={geoDetails}
-              zoom={2}
+              zoom={1}
               scrollWheelZoom={true}
             >
               <TileLayer

@@ -35,7 +35,7 @@ export const getServerSideProps = async () => {
     });
     const { data } = await res.json();
 
-    const result = data.slice(0, 500).map((item) => ({
+    const result = data.slice(0, 2000).map((item) => ({
       latitude: item[2],
       longitude: item[3],
     }));
@@ -43,7 +43,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         data: result,
-        continent: [0, 0, "World"],
+        continent: [0, 0, "Globe"],
       },
     };
   } catch (error) {

@@ -10,7 +10,7 @@ function Map({ continent, data }) {
   return (
     <div>
       <Head>
-        <title>ClimeCheck | Map</title>
+        <title>ClimeCheck | Map Overview</title>
         <meta
           name="description"
           content="ClimeCheck is a global climate commons built through the aggregation of individuals and data from the Local  City  State  Country  Continent  . The Climecheck be all, end all is individual grassroot participation. "
@@ -52,7 +52,7 @@ export const getServerSideProps = async ({ params }) => {
 
     const response = await purpleAirRes.json();
 
-    result2 = response?.data.slice(0, 500).map((item) => ({
+    result2 = response?.data.slice(0, 2000).map((item) => ({
       latitude: item[2],
       longitude: item[3],
     }));

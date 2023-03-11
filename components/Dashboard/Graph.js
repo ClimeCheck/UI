@@ -55,7 +55,7 @@ const Graph = ({ data }) => {
       }}
     >
       <div className="flex text-black z-10 justify-between items-center absolute top-4  font-semi-bold w-full px-24">
-        <div className=" flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className=" flex flex-row justify-between items-center flex-wrap gap-4">
           <div
             className={`border rounded-md  p-1 cursor-pointer ${
               show && "border-[#74BF44] text-[#74BF44]"
@@ -77,7 +77,7 @@ const Graph = ({ data }) => {
             Line Graph
           </div>
         </div>
-        <div className=" flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className=" flex flex-wrap flex-row justify-end items-center gap-4">
           <div className="flex justify-between items-center">
             <Indicator colour="#179502" />
             <span>Low</span>

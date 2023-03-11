@@ -66,9 +66,9 @@ const Sidebar = () => {
   );
 
   const wrapperClasses = classNames(
-    "  px-4 pt-8 pb-4 bg-[#F8F8F8] sm:flex justify-between flex-col max-[800px]:w-20 hidden ",
+    "  pt-8 pb-4 bg-[#F8F8F8] sm:flex justify-between flex-col max-[800px]:w-20 hidden ",
     {
-      ["w-max "]: !toggleCollapse,
+      ["w-[250px] "]: !toggleCollapse,
       ["w-20 "]: toggleCollapse,
     }
   );
@@ -82,7 +82,7 @@ const Sidebar = () => {
 
   const getNavItemClasses = (menu) => {
     return classNames(
-      "flex items-center justify-center cursor-pointer mb-2 hover:bg-white rounded w-full text-black overflow-hidden whitespace-nowrap",
+      "flex items-center justify-center cursor-pointer mb-2 hover:bg-white rounded w-full text-black overflow-hidden whitespace-nowrap px-4",
       {
         ["bg-white text-primary "]: activeMenu.id === menu.id,
       }

@@ -1,4 +1,10 @@
-import { TileLayer, Marker, Popup, useMapEvent } from "react-leaflet";
+import {
+  TileLayer,
+  Marker,
+  Popup,
+  useMapEvent,
+  ZoomControl,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState, useRef } from "react";
 
@@ -101,7 +107,7 @@ function Map({ continent, data }) {
 
   return (
     <div className="w-full h-full bg-slate-900 bg-opacity-80  ">
-      <div className="items-stretch bg-white h-full flex justify-start  ">
+      <div className=" h-full flex justify-start relative  ">
         <MapSideBar open={open} setOpen={setOpen} continent={continent[2]} />
 
         <div className="relative flex flex-col ">
@@ -126,13 +132,16 @@ function Map({ continent, data }) {
               scrollWheelZoom={true}
               ref={mapRef}
               onMoveend={handleMoveEnd}
+              zoomControl={false}
             >
+              <ZoomControl position="topright" />
               <TileLayer
                 id="mapbox/streets-v11"
                 accessToken="pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
                 url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
+
               {loadedMarkers}
 
               <SetViewOnClick animateRef={animateRef} />

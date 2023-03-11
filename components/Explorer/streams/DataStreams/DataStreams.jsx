@@ -3,8 +3,12 @@ import DataStreamCards from "./DataStreamCard";
 import { AiOutlineRollback } from "react-icons/ai";
 import { useRouter } from "next/router";
 import MapButton from "../../MapButton";
+import { useContext } from "react";
+
+import PositionContext from "../../../../context/PositionContext";
 
 function DataStream() {
+  const { positions } = useContext(PositionContext);
   const router = useRouter();
   return (
     <div className="hero h-full font-Grotesk text-white bg-slate-900 bg-opacity-80 ">
@@ -20,23 +24,22 @@ function DataStream() {
           </div>
 
           <p className="text-xl my-4">Data streams</p>
-
-          <div className="flex gap-4 text-black justify-center items-center flex-wrap h-full relative">
-            {DataStreamsByContinent.map(
-              ({ name, activeDevices, totalDevices, percentActive }, key) => {
+          <div className="flex flex-col gap-4 justify-center items-center">
+            <div className="flex l gap-4 text-black justify-center items-center flex-wrap h-full relative">
+              {positions.map(({ continentName, positionLength }, key) => {
                 return (
                   <div key={key} className="p-2">
                     <DataStreamCards
-                      continent={name}
-                      amountActive={activeDevices}
-                      totalDevices={totalDevices}
-                      percentActive={percentActive}
+                      continent={continentName}
+                      amountActive={positionLength}
+                      totalDevices={positionLength}
+                      percentActive={"100%"}
                     />
                   </div>
                 );
-              }
-            )}
-            <div className="flex z-50 sm:bottom-20 sm:right-20 sm:absolute">
+              })}
+            </div>
+            <div className="flex z-50">
               <MapButton />
             </div>
           </div>

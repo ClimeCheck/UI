@@ -1,11 +1,13 @@
 import Head from "next/head";
 import { Navbar } from "../../components";
-import { useState } from "react";
+import { useContext } from "react";
 import ExplorerHero from "../../components/Explorer/Hero";
 import Sidebar from "../../components/Sidebar";
+import PositionContext from "../../context/PositionContext";
 
-
-function explorer() {
+function Explorer() {
+  const { positions } = useContext(PositionContext);
+  console.log("explorer", positions);
   return (
     <div className="h-max relative">
       <Head>
@@ -35,4 +37,4 @@ function explorer() {
   );
 }
 
-export default explorer;
+export default Explorer;

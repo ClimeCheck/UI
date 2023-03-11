@@ -52,7 +52,7 @@ export const getServerSideProps = async ({ params }) => {
 
     const response = await purpleAirRes.json();
 
-    result2 = response?.data.slice(0, 2000).map((item) => ({
+    result2 = response?.data.slice(0, 8000).map((item) => ({
       latitude: item[2],
       longitude: item[3],
     }));

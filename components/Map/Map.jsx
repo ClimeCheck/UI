@@ -1,7 +1,7 @@
 import { TileLayer, Marker, Popup, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState, useRef } from "react";
-import { Devices } from "./MapData";
+
 import deviceIcon from "./deviceIcon";
 
 import MapContainer from "./MapContainer";
@@ -20,11 +20,16 @@ function SetViewOnClick({ animateRef }) {
 }
 
 function Map({ continent, data }) {
+  const [loadedMarkers, setLoadedMarkers] = useState([]);
+  const [remainingPositions, setRemainingPositions] = useState(
+    data.slice(7000)
+  );
   const [open, setOpen] = useState(true);
   const [country, setCountry] = useState("");
   const [geoDetails, setGeoDetails] = useState([continent[0], continent[1]]);
 
   const animateRef = useRef(true);
+  const mapRef = useRef();
 
   const getCountry = async (e) => {
     console.log("searching");
@@ -37,6 +42,57 @@ function Map({ continent, data }) {
     setGeoDetails(() => [latitude, longitude]);
   };
 
+  useEffect(() => {
+    const loadMarkers = async () => {
+      const markers = [];
+      for (let i = 0; i < 1000; i++) {
+        const position = data[i];
+        const marker = (
+          <Marker
+            key={i}
+            icon={deviceIcon}
+            onClick={() => setOpen(!open)}
+            position={[position.latitude, position.longitude]}
+          >
+            <Popup>Device Details</Popup>
+          </Marker>
+        );
+        markers.push(marker);
+      }
+      setLoadedMarkers(markers);
+    };
+    loadMarkers();
+  }, [data]);
+
+  const handleMoveEnd = async () => {
+    const map = mapRef.current;
+    const bounds = map.getBounds();
+
+    // Check if any remaining positions are visible on the map
+    const visiblePositions = remainingPositions.filter((position) =>
+      bounds.contains([position.lat, position.lng])
+    );
+
+    if (visiblePositions.length > 0) {
+      // Load next chunk of positions
+      const nextChunk = remainingPositions.slice(0, 1000);
+      const nextMarkers = [];
+      for (let i = 0; i < nextChunk.length; i++) {
+        const position = nextChunk[i];
+        const marker = (
+          <Marker
+            key={i + loadedMarkers.length}
+            position={[position.lat, position.lng]}
+          >
+            <Popup>{position.name}</Popup>
+          </Marker>
+        );
+        nextMarkers.push(marker);
+      }
+      setLoadedMarkers((prevMarkers) => [...prevMarkers, ...nextMarkers]);
+      setRemainingPositions((prevPositions) => prevPositions.slice(1500));
+    }
+  };
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       getCountry(country);
@@ -66,8 +122,10 @@ function Map({ continent, data }) {
               width="100%"
               height="600"
               center={geoDetails}
-              zoom={1}
+              zoom={13}
               scrollWheelZoom={true}
+              ref={mapRef}
+              onMoveend={handleMoveEnd}
             >
               <TileLayer
                 id="mapbox/streets-v11"
@@ -75,16 +133,8 @@ function Map({ continent, data }) {
                 url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
-              {data?.map((e, key) => (
-                <Marker
-                  key={key}
-                  position={[e.latitude, e.longitude]}
-                  icon={deviceIcon}
-                  onClick={() => setOpen(!open)}
-                >
-                  <Popup>Device Details</Popup>
-                </Marker>
-              ))}
+              {loadedMarkers}
+
               <SetViewOnClick animateRef={animateRef} />
               <RecenterAutomatically lat={geoDetails[0]} lng={geoDetails[1]} />
             </MapContainer>

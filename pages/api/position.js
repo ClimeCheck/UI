@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
     const { data } = await response.json();
 
-    const result = data.map((item) => ({
+    const result = data.slice(0, 8000).map((item) => ({
       latitude: item[2],
       longitude: item[3],
     }));

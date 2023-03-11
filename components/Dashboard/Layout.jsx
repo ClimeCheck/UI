@@ -1,18 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import { MdOutlineNotificationsNone } from "react-icons/md";
-import { RxAvatar } from "react-icons/rx";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
 import { Logo } from "../../assets/images";
 
-import Navbar from "./Navbar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import classNames from "classnames";
 
 import { useRef, useMemo } from "react";
 import { useRouter } from "next/router";
 
-import { LoginCurve } from "iconsax-react";
 import {
   MdSensors,
   MdOutlineSettings,
@@ -85,7 +82,7 @@ const Layout = ({ children, title, showSearch }) => {
   return (
     <div className=" flex flex-row font-Grotesk w-full justify-start h-min">
       <Sidebar />
-      <div className="bg-white-400 flex-1 flex-col w-[80%] justify-between py-4 pr-12 pl-6 text-black ">
+      <div className="bg-white-400 flex-1 flex-col w-[80%] justify-between py-4 pr-6 sm:pr-12 pl-6 text-black ">
         <div className="flex justify-between flex-1 items-center w-full mb-12 ">
           <div className="h-[3rem] block w-[5rem] sm:hidden">
             <Link href="/" className="h-full block">
@@ -104,9 +101,9 @@ const Layout = ({ children, title, showSearch }) => {
           />
           <div
             ref={navRef}
-            className="nav-links z-[20] duration-500 md:relative absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex sm:hidden items-center px-5"
+            className="nav-links z-[20] shadow-md duration-500 md:relative absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex sm:hidden items-center px-5"
           >
-            <ul className="self-start flex md:flex-row flex-col md:items-center md:gap-[4vw]  gap-8">
+            <ul className="self-start flex md:flex-row flex-col md:items-center ]">
               {menuItems.map(({ icon: Icon, ...menu }, index) => {
                 const classes = getNavItemClasses(menu);
                 return (
@@ -114,11 +111,9 @@ const Layout = ({ children, title, showSearch }) => {
                     <Link
                       href={menu.link}
                       className={classNames(
-                        "flex py-4 px-4 gap-x-2  items-center  w-full h-full justify-center"
+                        "flex py-4 px-4 gap-x-2  items-center  w-full h-full "
                       )}
                     >
-                     
-
                       <span className={classNames("text-md font-medium  ")}>
                         {menu.label}
                       </span>
@@ -166,7 +161,7 @@ const Layout = ({ children, title, showSearch }) => {
                   tabIndex={0}
                   className="btn btn-ghost btn-circle avatar hover:bg-primary hover:text-white"
                 >
-                  <RxAvatar size="32" />
+                  <img src="/Frame262.png" alt="user Image" />
                 </label>
                 <ul
                   tabIndex={0}

@@ -8,15 +8,12 @@ export const PositionProvider = ({ children }) => {
 
   useEffect(() => {
     async function fetchData() {
-      console.log("starting");
-
       const response = await fetch("/api/position");
 
       const data = await response.json();
 
       const grouped = groupByContinent(data);
       setPositions(grouped);
-      
     }
 
     fetchData();

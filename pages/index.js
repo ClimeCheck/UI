@@ -69,6 +69,7 @@ export const getServerSideProps = async () => {
   const { station } = temperatureData?.result?.pop() || { station: 0 };
   const { value } = vitalSignsData || { value: 0 };
 
+
   return {
     props: {
       data: { station, trend, value },

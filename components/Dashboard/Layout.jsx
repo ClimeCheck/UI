@@ -135,8 +135,6 @@ const Layout = ({ children, title, showSearch }) => {
             />
           </div>
           <div className=" items-center justify-between gap-x-4 hidden sm:flex ">
-            {/* <MdOutlineNotificationsNone size="32" /> */}
-
             <div className="dropdown dropdown-end md:block hidden">
               <label
                 tabIndex={0}

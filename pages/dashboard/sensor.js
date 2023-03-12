@@ -6,7 +6,7 @@ const Sensor = () => {
   const [connectedDevice, setConnectDevices] = useState(true);
 
   return (
-    <Layout title="My sensor" showSearch={false}>
+    <Layout title="My Sensor" showSearch={false}>
       {!connectedDevice ? <NoConnectedDevice /> : <SensorComponent />}
     </Layout>
   );

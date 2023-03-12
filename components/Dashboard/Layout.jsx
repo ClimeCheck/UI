@@ -77,13 +77,13 @@ const Layout = ({ children, title, showSearch }) => {
   const onToggleMenu = (e) => {
     e["name"] = e.name === "menu" ? "close" : "menu";
 
-    navRef.current.classList.toggle("top-[10%]");
+    navRef.current.classList.toggle("translate-y-[-150%]");
   };
   return (
     <div className=" flex  font-Grotesk w-full justify-start h-min">
       <Sidebar />
-      <div className=" flex-1 w-[80%] bg-white flex flex-col justify-start pb-4 pr-6 sm:pr-12 pl-6 text-black ">
-        <div className="flex justify-between items-center py-4 w-full mb-8 ">
+      <div className="  flex-1 w-[80%] bg-white flex flex-col justify-start pb-4 pr-6 sm:pr-12 pl-6 text-black ">
+        <div className="relative flex justify-between items-center  py-4 w-full mb-8 ">
           <div className="h-[3rem] block w-[5rem] sm:hidden">
             <Link href="/" className="h-full block">
               <img
@@ -95,7 +95,7 @@ const Layout = ({ children, title, showSearch }) => {
           </div>
           <div className=" font-black ">{title}</div>
 
-          <div className="block cursor-pointer rounded sm:hidden bg-[#F7FDF3] p-2">
+          <div className="block  cursor-pointer rounded sm:hidden bg-[#F7FDF3] p-2">
             <GiHamburgerMenu
               onClick={(e) => onToggleMenu(e)}
               name="menu"
@@ -105,26 +105,28 @@ const Layout = ({ children, title, showSearch }) => {
 
           <div
             ref={navRef}
-            className="nav-links z-[20] shadow-md duration-500 md:relative absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex sm:hidden items-center px-5"
+            className="nav-links z-[20] shadow-md duration-500 absolute bg-white md:min-h-fit min-h-[60vh] translate-y-[-150%] -left-[24px] top-20   w-screen flex sm:hidden items-center px-5"
           >
             <ul className="self-start flex md:flex-row flex-col md:items-center ]">
-              {menuItems.map(({ icon: Icon, ...menu }, index) => {
-                const classes = getNavItemClasses(menu);
-                return (
-                  <div key={index} className={classes}>
-                    <Link
-                      href={menu.link}
-                      className={classNames(
-                        "flex py-4 px-4 gap-x-2  items-center  w-full h-full "
-                      )}
-                    >
-                      <span className={classNames("text-md font-medium  ")}>
-                        {menu.label}
-                      </span>
-                    </Link>
-                  </div>
-                );
-              })}
+              {menuItems
+                .filter((item) => item.id != 7)
+                .map(({ icon: Icon, ...menu }, index) => {
+                  const classes = getNavItemClasses(menu);
+                  return (
+                    <div key={index} className={classes}>
+                      <Link
+                        href={menu.link}
+                        className={classNames(
+                          "flex py-4 px-4 gap-x-2  items-center  w-full h-full "
+                        )}
+                      >
+                        <span className={classNames("text-md font-medium  ")}>
+                          {menu.label}
+                        </span>
+                      </Link>
+                    </div>
+                  );
+                })}
             </ul>
           </div>
           <div className="hidden sm:block mx-auto">

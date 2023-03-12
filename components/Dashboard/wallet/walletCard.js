@@ -10,7 +10,7 @@ function WalletCard({
 }) {
   return (
     <div
-      className={`container w-[400px] rounded-lg p-4 font-Grotesk text-white ${
+      className={`container w-full min-w-[250px] max-w-[400px] rounded-lg p-4 font-Grotesk text-white ${
         walletLimit == null ? "bg-[#589530]" : "bg-[#0069B3]"
       }`}
     >

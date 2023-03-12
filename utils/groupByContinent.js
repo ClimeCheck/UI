@@ -1,7 +1,9 @@
 import getContinentFromLatLng from "./getContinentFromLatLng";
 export default function groupByContinent(positions) {
   const grouped = {};
+
   let totalPositions = 0;
+
   positions.forEach((position) => {
     const continent = getContinentFromLatLng(
       position.latitude,
@@ -12,6 +14,7 @@ export default function groupByContinent(positions) {
         grouped[continent] = [];
       }
       grouped[continent].push(position);
+
       totalPositions++;
     }
   });
@@ -25,4 +28,5 @@ export default function groupByContinent(positions) {
   );
 
   return { groupedByContinent, totalPositions };
+
 }

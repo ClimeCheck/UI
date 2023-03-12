@@ -37,19 +37,7 @@ const dashboard = () => {
                   max={new Date().toISOString().split("T")[0]}
                 />
               </div>
-              <div className="flex-1 border p-2 gap-x-3 flex justify-between rounded-lg ">
-                <span>To: </span>
-                <div className="hidden sm:flex gap-4 justify-between items-center">
-                  <div className="flex-1 border p-2 gap-x-3 justify-between  rounded-lg flex">
-                    <span>From: </span>
-                    <input
-                      type="date"
-                      name="date"
-                      id="from"
-                      value={new Date().toISOString().split("T")[0]}
-                      max={new Date().toISOString().split("T")[0]}
-                    />
-                  </div>
+             
                   <div className="flex-1 border p-2 gap-x-3 flex justify-between rounded-lg ">
                     <span>To: </span>
 
@@ -84,6 +72,7 @@ const dashboard = () => {
               <div className=" p-4 flex border  rounded-lg justify-between items-center">
                 <FiDownload />
               </div>
+
             </div>
 
             <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
@@ -106,6 +95,7 @@ const dashboard = () => {
             >
               <Graph data={Data} />
             </div>
+          </div>
           </div>
         </div>
       </Layout>

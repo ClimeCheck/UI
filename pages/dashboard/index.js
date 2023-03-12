@@ -106,6 +106,7 @@ const dashboard = () => {
           >
             <Graph data={Data} />
           </div>
+          </div>
         </div>
       </Layout>
     </>

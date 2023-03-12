@@ -1,6 +1,4 @@
-
-
-function CollapsIcon({ fill = "#6C7281", ...rest }) {
+function CollapsIcon({ fill = "white", ...rest }) {
   return (
     <svg
       width={16}

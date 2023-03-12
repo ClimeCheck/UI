@@ -80,10 +80,10 @@ const Layout = ({ children, title, showSearch }) => {
     navRef.current.classList.toggle("top-[10%]");
   };
   return (
-    <div className=" flex flex-row font-Grotesk w-full justify-start h-min">
+    <div className=" flex  font-Grotesk w-full justify-start h-min">
       <Sidebar />
-      <div className=" flex-1 bg-white-400 flex-col justify-between py-4 pr-6 sm:pr-12 pl-6 text-black ">
-        <div className="flex justify-between flex-1 items-center w-full mb-12 ">
+      <div className=" flex-1 w-[80%] bg-white flex flex-col justify-start pb-4 pr-6 sm:pr-12 pl-6 text-black ">
+        <div className="flex justify-between items-center py-4 w-full mb-8 ">
           <div className="h-[3rem] block w-[5rem] sm:hidden">
             <Link href="/" className="h-full block">
               <img
@@ -127,7 +127,7 @@ const Layout = ({ children, title, showSearch }) => {
               })}
             </ul>
           </div>
-          <div className="hidden sm:block ">
+          <div className="hidden sm:block mx-auto">
             <input
               type="text"
               className={` rounded-md border p-2 ${!showSearch && "hidden"}`}
@@ -156,14 +156,22 @@ const Layout = ({ children, title, showSearch }) => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-between gap-x-2 border p-1 rounded-lg">
+            <div
+              className="flex items-center justify-between gap-x-2 border py-1 px-2 rounded-lg"
+              style={{ height: "2.7rem" }}
+            >
               <span>Ayomide</span>
               <div className="dropdown dropdown-end ">
                 <label
                   tabIndex={0}
                   className="btn btn-ghost btn-circle avatar hover:bg-primary hover:text-white"
                 >
-                  <img src="/Frame262.png" alt="user Image" />
+                  <img
+                    src="/Frame262.png"
+                    className=""
+                    alt="user Image"
+                    style={{ height: "1.5rem", width: "1.5rem" }}
+                  />
                 </label>
                 <ul
                   tabIndex={0}

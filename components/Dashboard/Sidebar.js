@@ -52,6 +52,12 @@ const menuItems = [
     icon: <MdOutlineSettings size="32" />,
     link: "/dashboard/settings",
   },
+  {
+    id: 7,
+    label: "Logout",
+    icon: <LoginCurve size="32" color="#000000" />,
+    link: "/auth/login",
+  },
 ];
 
 const Sidebar = () => {
@@ -66,7 +72,7 @@ const Sidebar = () => {
   );
 
   const wrapperClasses = classNames(
-    "  pt-8 pb-4 bg-[#F8F8F8] sm:flex justify-between flex-col max-[800px]:w-20 hidden ",
+    "  py-8 bg-[#F8F8F8] sm:flex justify-between flex-col max-[800px]:w-20 hidden ",
     {
       ["w-[250px] "]: !toggleCollapse,
       ["w-20 "]: toggleCollapse,
@@ -74,7 +80,7 @@ const Sidebar = () => {
   );
 
   const collapseIconClasses = classNames(
-    "h-fit p-4 rounded bg-[#74BF44] absolute right-0",
+    "h-fit p-2 rounded-full bg-[#74BF44] text-white absolute -right-4 max-[800px]:hidden",
     {
       "rotate-180": toggleCollapse,
     }
@@ -103,7 +109,7 @@ const Sidebar = () => {
       className={wrapperClasses}
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseOver}
-      style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
+      style={{ transition: "all 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
     >
       <div className="flex flex-col font-Grotesk h-full">
         <div className="flex items-center justify-between relative">
@@ -117,25 +123,50 @@ const Sidebar = () => {
               })}
             ></span>
           </div>
-          {isCollapsible && (
-            <button
-              className={collapseIconClasses}
-              onClick={handleSidebarToggle}
-            >
-              <CollapsIcon />
-            </button>
-          )}
+
+          <button className={collapseIconClasses} onClick={handleSidebarToggle}>
+            <CollapsIcon />
+          </button>
         </div>
 
         <div className="flex flex-col items-center mt-8">
-          {menuItems.map(({ icon: Icon, ...menu }, index) => {
+          {menuItems
+            .filter((item) => item.id != 7)
+            .map(({ icon: Icon, ...menu }, index) => {
+              const classes = getNavItemClasses(menu);
+              return (
+                <div key={index} className={classes}>
+                  <Link
+                    href={menu.link}
+                    className={classNames(
+                      "flex py-4 px-4 gap-x-2  items-center  w-full h-full ",
+                      toggleCollapse && "justify-center"
+                    )}
+                  >
+                    <div>{Icon}</div>
+                    {!toggleCollapse && (
+                      <span className={classNames("text-md font-medium  ")}>
+                        {menu.label}
+                      </span>
+                    )}
+                  </Link>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+
+      <div className="flex items-center mt-auto py-4 px-4 justify-center bg-[#FEE4E4] cursor-pointer  rounded w-full text-[#7E0F0F]  whitespace-nowrap">
+        {menuItems
+          .filter((item) => item.id == 7)
+          .map(({ icon: Icon, ...menu }, index) => {
             const classes = getNavItemClasses(menu);
             return (
               <div key={index} className={classes}>
                 <Link
                   href={menu.link}
                   className={classNames(
-                    "flex py-4 px-4 gap-x-2  items-center  w-full h-full ",
+                    "flex  px-z gap-x-2  items-center  w-full h-full ",
                     toggleCollapse && "justify-center"
                   )}
                 >
@@ -149,16 +180,7 @@ const Sidebar = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      <div className="flex items-center mt-auto py-4 px-4 justify-center bg-[#FEE4E4] cursor-pointer  rounded w-full text-[#7E0F0F]  whitespace-nowrap">
-        <div
-          className={classNames(
-            "flex  gap-x-2  items-center  w-full ",
-            toggleCollapse && "justify-center"
-          )}
-        >
+        {/* <div key={index} className={getNavItemClasses()}>
           <div>
             <LoginCurve size="32" color="#000000" />
           </div>
@@ -166,7 +188,7 @@ const Sidebar = () => {
           {!toggleCollapse && (
             <span className={classNames("text-md font-medium ")}>Logout</span>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

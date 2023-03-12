@@ -18,8 +18,8 @@ const dashboard = () => {
         <link rel="icon" href="/ClimeCheck.svg" />
       </Head>
       <Layout title="Dashboard" showSearch={true}>
-        <div className="flex flex-col flex-[70] items-center justify-between gap-16 text-black ">
-          <div className="md:flex-row flex gap-4 flex-1 text-center justify-between flex-wrap items-stretch sm:items-center w-full">
+        <div className="flex flex-col  items-center justify-between gap-4 text-black ">
+          <div className=" flex gap-2 flex-1 text-center justify-between flex-wrap items-center w-full">
             <div className=" border p-2 rounded-lg">
               <span>Polution: </span>
               <select name="select" id="">
@@ -58,18 +58,19 @@ const dashboard = () => {
               </div>
             </div>
 
-            <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
+            <div className=" hidden border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
               <span>Download Now</span>
               <FiDownload />
             </div>
             <div
               style={{
                 color: "#fff",
-
+                marginTop: "3rem",
                 transition: "0.3s ease-in-out",
                 width: "100%",
                 height: "400px",
                 display: "flex",
+                paddingInline: "0",
                 flexDirection: "column",
                 position: "relative",
               }}

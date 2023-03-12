@@ -14,7 +14,6 @@ export default function groupByContinent(positions) {
         grouped[continent] = [];
       }
       grouped[continent].push(position);
-
       totalPositions++;
     }
   });
@@ -28,5 +27,4 @@ export default function groupByContinent(positions) {
   );
 
   return { groupedByContinent, totalPositions };
-
 }

@@ -57,40 +57,25 @@ const dashboard = () => {
                 <FiDownload />
               </div>
             </div>
-            <input
-              type="date"
-              name="date"
-              id="to"
-              max={new Date().toISOString().split("T")[0]}
-            />
-          </div>
 
-          <div className="flex sm:hidden gap-4 justify-between items-center text-primary">
-            <div className=" p-4 flex border rounded-lg justify-between items-center">
-              <AiOutlineCalendar />
-            </div>
-            <div className=" p-4 flex border  rounded-lg justify-between items-center">
+            <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
+              <span>Download Now</span>
               <FiDownload />
             </div>
-          </div>
+            <div
+              style={{
+                color: "#fff",
 
-          <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
-            <span>Download Now</span>
-            <FiDownload />
-          </div>
-          <div
-            style={{
-              color: "#fff",
-
-              transition: "0.3s ease-in-out",
-              width: "100%",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              position: "relative",
-            }}
-          >
-            <Graph data={Data} />
+                transition: "0.3s ease-in-out",
+                width: "100%",
+                height: "400px",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+              }}
+            >
+              <Graph data={Data} />
+            </div>
           </div>
         </div>
       </Layout>

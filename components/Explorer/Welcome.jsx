@@ -4,13 +4,8 @@ import { BiDevices } from "react-icons/bi";
 import Link from "next/link";
 import getDate from "../../utils/getDate";
 import MapButton from "./MapButton";
-
-const welcomeData = {
-  totalDevices: "8,000,000",
-  percentActive: "80%",
-  amountActive: "1234",
-  percentIncrease: "1%",
-};
+import { useContext } from "react";
+import PositionContext from "../../context/PositionContext";
 
 const AirSTreamData = [
   { name: "Temparature", value: `25` },
@@ -20,6 +15,7 @@ const AirSTreamData = [
 ];
 
 function WelcomeExplore() {
+  const { totalDevices } = useContext(PositionContext);
   return (
     <div className="hero h-full font-Grotesk text-white ">
       <div className="hero-content my-20 text-center">
@@ -40,7 +36,7 @@ function WelcomeExplore() {
                 <div>
                   <div>
                     <h1 className="text-3xl sm:text-4xl group-hover:text-primary font-bold text-secondary mt-4">
-                      {welcomeData.totalDevices}{" "}
+                      {totalDevices}{" "}
                       <sub className="text-sm font-normal text-green-500 group-hover:text-white">
                         &uarr; +0.1%
                       </sub>
@@ -51,12 +47,12 @@ function WelcomeExplore() {
                     Connected Devices
                   </p>
                 </div>
-                <div className="flex flex-row gap-6 justify-center mt-8">
+                <div className="flex flex-row gap-6 items-center justify-center mt-8">
                   <div className="self-center group-hover:text-white">
-                    {welcomeData.percentActive} active
+                    100% active
                   </div>
                   <div className="font-bold text-xl  text-primary">
-                    {welcomeData.amountActive}
+                    {totalDevices}
                   </div>
                   <BiDevices size={40} className="text-[#BE690B]" />
                 </div>

@@ -7,7 +7,6 @@ import PositionContext from "../../context/PositionContext";
 
 function Explorer() {
   const { positions } = useContext(PositionContext);
-  console.log("explorer", positions);
   return (
     <div className="h-max relative">
       <Head>

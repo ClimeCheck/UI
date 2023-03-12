@@ -5,6 +5,7 @@ const PositionContext = createContext(null);
 
 export const PositionProvider = ({ children }) => {
   const [positions, setPositions] = useState([]);
+  const [totalDevices, setTotalDevices] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -12,15 +13,17 @@ export const PositionProvider = ({ children }) => {
 
       const data = await response.json();
 
-      const grouped = groupByContinent(data);
-      setPositions(grouped);
+      const { groupedByContinent, totalPositions } = groupByContinent(data);
+
+      setPositions(groupedByContinent);
+      setTotalDevices(totalPositions);
     }
 
     fetchData();
   }, []);
 
   return (
-    <PositionContext.Provider value={{ positions }}>
+    <PositionContext.Provider value={{ positions, totalDevices }}>
       {children}
     </PositionContext.Provider>
   );

@@ -64,27 +64,3 @@ export default function getContinentFromLatLng(lat, lng) {
 
   return null;
 }
-
-// const test = ()=>{
-//   ge
-// }
-// export default function getContinentFromLatLng(lat, lng) {
-//   const continentLookup = {
-//     "North America": { lat: [56.98, 7.1], lng: [-168.37, -47.39] },
-//     "South America": { lat: [-56.29, 12.47], lng: [-87.19, -34.77] },
-//     Africa: { lat: [-35.86, 37.54], lng: [-26.08, 57.62] },
-//     Europe: { lat: [71.38, 34.03], lng: [-27.64, 61.57] },
-//     Asia: { lat: [77.38, -10.12], lng: [23.68, 179.86] },
-//     Oceania: { lat: [-46.7, -9.92], lng: [112.5, -172.56] },
-//   };
-
-//   for (const [continent, bounds] of Object.entries(continentLookup)) {
-//     const latInRange = lat >= bounds.lat[0] && lat <= bounds.lat[1];
-//     const lngInRange = lng >= bounds.lng[0] && lng <= bounds.lng[1];
-//     if (latInRange && lngInRange) {
-//       return continent;
-//     }
-//   }
-
-//   return null;
-// }

@@ -106,8 +106,8 @@ function Map({ continent, data }) {
   };
 
   return (
-    <div className="w-full h-full bg-slate-900 bg-opacity-80  ">
-      <div className=" h-full flex justify-start relative  ">
+    <div className="w-full h-full  bg-white bg-opacity-80  ">
+      <div className=" h-full flex justify-start relative ">
         <MapSideBar open={open} setOpen={setOpen} continent={continent[2]} />
 
         <div className="relative flex flex-col ">
@@ -126,7 +126,8 @@ function Map({ continent, data }) {
           <div className="z-0 relative">
             <MapContainer
               width="100%"
-              height="600"
+              // height="600"
+              // className=" h-[80vh] md:h-[600px]"
               center={geoDetails}
               zoom={13}
               scrollWheelZoom={true}

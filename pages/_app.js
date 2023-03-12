@@ -1,15 +1,15 @@
 import "../styles/globals.css";
-// import Footer from "../components/Footer";
-import AppLayout from "../Layout/AppLayout";
-import { useState } from "react";
-
+import { PositionProvider } from "../context/PositionContext";
+// import usePositions from "../utils/hook/usePositions";
 import { SidebarContext } from "../context/SidebarContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <SidebarContext>
-      <Component {...pageProps} />
-    </SidebarContext>
+    <PositionProvider>
+      <SidebarContext>
+        <Component {...pageProps} />
+      </SidebarContext>
+    </PositionProvider>
   );
 }
 

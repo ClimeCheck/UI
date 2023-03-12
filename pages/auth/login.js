@@ -23,25 +23,6 @@ const Login = () => {
 
   //   Initialize the next router hook
   const router = useRouter();
-
-  // Auth context
-  //   const { authSuccess, signIn, error, signInWithGoogle } =
-  //     useContext(AuthContext);
-
-  // Listen for error
-  //   useEffect(() => {
-  //     if (error.isError) {
-  //       setDisplayAlert(true);
-  //       setAlertHeading("Error");
-  //       setAlertMessage(error.errorMsg);
-  //       setAlertStatus("error");
-  //     }
-  //   }, [error.isError]);
-
-  // Console log context
-  //   console.log(error);
-  //   console.log(authSuccess);
-
   // handle Sign up
   const handleSignIn = (email, password) => {
     // signIn(email, password);
@@ -200,7 +181,7 @@ const Login = () => {
               <div className="mt-[1.5rem] text-center text-sm mb-[1.5rem] px-6 sm:px-0">
                 Don&apos;t have an account?{" "}
                 <span className="text-[#74BF44] font-[500] px-3">
-                  Create Account
+                  <Link href="/auth/signup">Create Account</Link>
                 </span>
               </div>
 

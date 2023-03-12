@@ -2,7 +2,7 @@
 const SettingsHeader = () => {
   return (
     <>
-      <div className="relative bg-settingsbg w-[1007px] h-[253px] bg-cover rounded-[4px] items-center justify-start">
+      <div className="relative bg-settingsbg w-full pr-12 h-[253px] bg-cover rounded-[4px] items-center justify-start">
         <div className=" flex flex-row ">
           <img
             src="/Frame262.png"

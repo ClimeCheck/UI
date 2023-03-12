@@ -1,5 +1,7 @@
 import Head from "next/head";
+import { useContext } from "react";
 import DataStream from "../../../components/Explorer/streams/DataStreams/DataStreams";
+
 
 function ExploreAirStreams() {
   return (

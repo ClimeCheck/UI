@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Timeline from "../components/Timeline";
@@ -6,7 +6,6 @@ import { Hero, Navbar } from "../components";
 import Footer from "../components/Footer";
 
 import styles from "../styles/Home.module.scss";
-
 const Mapbase = dynamic(() => import("../components/LandingPage/Mapbase"));
 const Sidebar = dynamic(() => import("../components/Sidebar"));
 const WhyClime = dynamic(() => import("../components/LandingPage/WhyClime"));
@@ -65,9 +64,11 @@ export const getServerSideProps = async () => {
     fetchData("https://climate.nasa.gov/api/v1/vital_signs/5/"),
   ]);
 
-  const { trend = 0 } = co2Data?.co2?.pop() || {};
-  const { station = 0 } = temperatureData?.result?.pop() || {};
-  const { value = 0 } = vitalSignsData || {};
+  const { trend } = co2Data?.co2.shift() || { trend: 395 };
+
+  const { station } = temperatureData?.result?.pop() || { station: 0 };
+  const { value } = vitalSignsData || { value: 0 };
+
 
   return {
     props: {

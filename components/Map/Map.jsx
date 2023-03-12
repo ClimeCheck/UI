@@ -48,6 +48,11 @@ function Map({ continent, data }) {
     setGeoDetails(() => [latitude, longitude]);
   };
 
+
+
+  ;
+
+ 
   useEffect(() => {
     const loadMarkers = async () => {
       const markers = [];
@@ -122,6 +127,7 @@ function Map({ continent, data }) {
               spellCheck="true"
               autoCorrect="on"
               onKeyUp={handleKeyPress}
+              // onSearch={() => getCountry(country)}
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>

@@ -84,7 +84,7 @@ const Sidebar = () => {
     return classNames(
       "flex items-center justify-center cursor-pointer mb-2 hover:bg-white rounded w-full text-black overflow-hidden whitespace-nowrap px-4",
       {
-        ["bg-white text-primary border border-r-primary "]:
+        ["bg-white text-primary border-r-2 border-r-primary "]:
           activeMenu.id === menu.id,
       }
     );
@@ -168,17 +168,7 @@ const Sidebar = () => {
           )}
         </div>
       </div>
-      {/* <div
-        className={`${getNavItemClasses(
-
-        )} px-3 py-4 bg-[#FEE4E4] rounded-lg flex items-center justify-center text-[#7E0F0F]`}
-      >
-        <LoginCurve size="32" color="#000000" />
-
-        {!toggleCollapse && (
-          <span className={classNames("text-md font-medium ")}>Logout</span>
-        )}
-      </div> */}
+      
     </div>
   );
 };

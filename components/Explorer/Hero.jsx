@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ClimateData } from "./HeroData";
 import { MdLocationOn } from "react-icons/md";
-
+import { useContext } from "react";
+import PositionContext from "../../context/PositionContext";
 function ExplorerHero() {
+  const { totalDevices } = useContext(PositionContext);
+
   return (
     <div className="hero min-h-screen font-Grotesk text-black ">
       <div className="hero-content my-20 text-center">
@@ -10,7 +13,7 @@ function ExplorerHero() {
           <h1 className="styledHeader">Data and Awareness</h1>
           <div className="m-4 grid content-center rounded-md bg-gradient-to-tr from-indigo-800 to-zinc-600 bg-opacity-80 pt-32 text-white">
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center px-4 py-4 ">
-              {ClimateData.map(({ name, value, icon }, key) => {
+              {ClimateData.map(({ name, icon }, key) => {
                 return (
                   <div
                     key={key}
@@ -25,7 +28,11 @@ function ExplorerHero() {
                       <h2 className="">{name}</h2>
                     </div>
                     <div className="py-10 text-3xl sm:text-4xl font-bold">
-                      <span>{value}</span>
+                      {name === "Countries" ? (
+                        <span>100</span>
+                      ) : (
+                        <span>{totalDevices}</span>
+                      )}
                     </div>
                   </div>
                 );
@@ -42,7 +49,7 @@ function ExplorerHero() {
 
           <Link
             href="/explore/explorer"
-            className="btn rounded-sm btn-primary px-12"
+            className="btn text-white rounded-lg bg-primary px-12"
           >
             {" "}
             <MdLocationOn size={25} className="mx-2" /> Get Started

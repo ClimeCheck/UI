@@ -11,7 +11,7 @@ function MapDownBar({ open, setOpen }) {
     >
       <div className="mx-5 ">
         <div className="text-white py-5 mb-8 ">
-          <div className="grid grid-cols-4">
+          <div className="flex justify-center sm:justify-between items-center flex-wrap">
             <div className="col-span-3 grid grid-cols-1 gap-2 justify-between py-5">
               <div className="flex gap-4">
                 <p className="font-bold text-xl">Kano , Nigeria</p>
@@ -25,7 +25,7 @@ function MapDownBar({ open, setOpen }) {
                 sensitive group may experience more serious health effects.
               </p>
             </div>
-            <div className="flex col-span-1 justify-end">
+            <div className="">
               <Link
                 href="/dashboard"
                 className="bg-white text-primary px-4 py-2 rounded-sm self-center"

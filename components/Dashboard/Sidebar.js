@@ -84,7 +84,8 @@ const Sidebar = () => {
     return classNames(
       "flex items-center justify-center cursor-pointer mb-2 hover:bg-white rounded w-full text-black overflow-hidden whitespace-nowrap px-4",
       {
-        ["bg-white text-primary "]: activeMenu.id === menu.id,
+        ["bg-white text-primary border border-r-primary "]:
+          activeMenu.id === menu.id,
       }
     );
   };

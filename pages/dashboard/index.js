@@ -37,38 +37,26 @@ const dashboard = () => {
                   max={new Date().toISOString().split("T")[0]}
                 />
               </div>
-              <div className="flex-1 border p-2 gap-x-3 flex justify-between rounded-lg ">
-                <span>To: </span>
-            <div className="hidden sm:flex gap-4 justify-between items-center">
-              <div className="flex-1 border p-2 gap-x-3 justify-between  rounded-lg flex">
-                <span>From: </span>
-                <input
-                  type="date"
-                  name="date"
-                  id="from"
-                  value={new Date().toISOString().split("T")[0]}
-                  max={new Date().toISOString().split("T")[0]}
-                />
-              </div>
-              <div className="flex-1 border p-2 gap-x-3 flex justify-between rounded-lg ">
-                <span>To: </span>
+             
+                  <div className="flex-1 border p-2 gap-x-3 flex justify-between rounded-lg ">
+                    <span>To: </span>
 
-                <input
-                  type="date"
-                  name="date"
-                  id="to"
-                  max={new Date().toISOString().split("T")[0]}
-                />
-              </div>
-            </div>
-            <div className="flex sm:hidden gap-4 justify-between items-center text-primary">
-              <div className=" p-4 flex border rounded-lg justify-between items-center">
-                <AiOutlineCalendar />
-              </div>
-              <div className=" p-4 flex border  rounded-lg justify-between items-center">
-                <FiDownload />
-              </div>
-            </div>
+                    <input
+                      type="date"
+                      name="date"
+                      id="to"
+                      max={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
+                </div>
+                <div className="flex sm:hidden gap-4 justify-between items-center text-primary">
+                  <div className=" p-4 flex border rounded-lg justify-between items-center">
+                    <AiOutlineCalendar />
+                  </div>
+                  <div className=" p-4 flex border  rounded-lg justify-between items-center">
+                    <FiDownload />
+                  </div>
+                </div>
                 <input
                   type="date"
                   name="date"
@@ -84,27 +72,29 @@ const dashboard = () => {
               <div className=" p-4 flex border  rounded-lg justify-between items-center">
                 <FiDownload />
               </div>
+
             </div>
 
             <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
-            <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
-              <span>Download Now</span>
-              <FiDownload />
+              <div className=" hidden flex-1 border p-2 rounded-lg w-max sm:flex items-center justify-between gap-x-1 px-4 bg-[#74BF44] text-white">
+                <span>Download Now</span>
+                <FiDownload />
+              </div>
             </div>
-          </div>
-          <div
-            style={{
-              color: "#fff",
+            <div
+              style={{
+                color: "#fff",
 
-              transition: "0.3s ease-in-out",
-              width: "100%",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              position: "relative",
-            }}
-          >
-            <Graph data={Data} />
+                transition: "0.3s ease-in-out",
+                width: "100%",
+                height: "400px",
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+              }}
+            >
+              <Graph data={Data} />
+            </div>
           </div>
           </div>
         </div>

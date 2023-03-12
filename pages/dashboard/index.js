@@ -2,7 +2,6 @@ import Layout from "../../components/Dashboard/Layout";
 import { MdOutlineNotificationsNone } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 import { AiOutlineCalendar } from "react-icons/ai";
-import { AiOutlineCalendar } from "react-icons/ai";
 import Graph from "../../components/Dashboard/Graph";
 import Data from "../../components/Dashboard/data";
 import Head from "next/head";

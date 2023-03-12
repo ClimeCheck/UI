@@ -9,8 +9,8 @@ import { GrAdd } from "react-icons/gr";
 function WalletComp() {
   const [walletDisplay, setWalletDisplay] = useState(walletTypeData[0]);
   return (
-    <div className="container flex flex-col gap-4">
-      <div>
+    <div className="container  flex flex-col gap-4">
+      <div className="mx-auto sm:mx-0">
         <WalletCard
           walletName={walletDisplay.walletName}
           tokenAmount={walletDisplay.tokenAmount}
@@ -19,7 +19,7 @@ function WalletComp() {
           walletLimit={walletDisplay.walletLimit}
           bgcolor={walletDisplay.bgcolor}
         />
-        <p className="flex gap-1 mt-2 justify-center text-center w-[400px]">
+        <p className="flex gap-1 mt-2 justify-center text-center w-full max-w-[400px]">
           <span
             onClick={() => setWalletDisplay(walletTypeData[0])}
             className={`rounded-full p-1 border border-primary ${
@@ -52,7 +52,7 @@ function WalletComp() {
           </div>
         </div>
       ) : (
-        <div className="flex gap-4 w-[400px] justify-center">
+        <div className="flex gap-4 w-full max-w-[400px] mx-auto sm:mx-0 justify-center">
           <div className="bg-gradient-to-b from-slate-50 to-slate-300 p-4 rounded-full text-primary">
             <GrAdd className="h-8 w-8" />
           </div>

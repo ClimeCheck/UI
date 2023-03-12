@@ -64,4 +64,3 @@ export default function getContinentFromLatLng(lat, lng) {
 
   return null;
 }
-

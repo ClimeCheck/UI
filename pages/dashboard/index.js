@@ -98,6 +98,7 @@ const dashboard = () => {
           </div>
           </div>
         </div>
+        </div>
       </Layout>
     </>
   );

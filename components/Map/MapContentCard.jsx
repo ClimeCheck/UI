@@ -15,22 +15,22 @@ function MapContentCard({
     <div
       className={`flex w-[280px] items-stretch justify-between  bg-slate-300 text-black rounded-md p-4 h-full ${
         parameter == "Temparature" && "bg-[#EDE0E8]"
-      } ${parameter == "PM 2.5" && "bg-[#F2ECE6]"} ${
-        parameter == "PM 5" && "text-[#525252]"
-      } ${parameter == "CarbonDioxide" && "bg-[#DCE0EB]"}`}
+      } ${parameter == "PM 1.0" && "bg-[#F2ECE6]"} ${
+        parameter == "PM 10.0" && "text-[#525252]"
+      } ${parameter == "Humidity" && "bg-[#DCE0EB]"}`}
     >
       <div className="flex flex-col justify-between gap-4  items-start">
         <span className="text-[#192F5D] text-xl font-bold">{parameter}</span>
         <h1
           className={`text-3xl  ${
             parameter == "Temparature" && "text-[#B80D7F]"
-          } ${parameter == "PM 2.5" && "text-[#BE690B]"} ${
-            parameter == "PM 5" && "text-[#525252]"
-          } ${parameter == "CarbonDioxide" && "text-[#192F5D]"}`}
+          } ${parameter == "PM 1.0" && "text-[#BE690B]"} ${
+            parameter == "PM 10.0" && "text-[#525252]"
+          } ${parameter == "Humidity" && "text-[#192F5D]"}`}
         >
           {value}
-          {subscript && <sub className="text-base">{subscript}</sub>}
-          {superscript && <sup className="text-base ml-1">{superscript}</sup>}
+          {/* {subscript && <sub className="text-base">{subscript}</sub>}
+          {superscript && <sup className="text-base ml-1">{superscript}</sup>} */}
         </h1>
         <span
           className={`text-sm ${direction == "up" && "text-green-600"} ${

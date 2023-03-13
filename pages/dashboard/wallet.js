@@ -3,7 +3,7 @@ import WalletComp from "../../components/Dashboard/wallet";
 
 const wallet = () => {
   return (
-    <Layout title="My sensor" showSearch={false}>
+    <Layout title="My Wallet" showSearch={false}>
       <WalletComp />
     </Layout>
   );

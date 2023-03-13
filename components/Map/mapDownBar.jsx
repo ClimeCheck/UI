@@ -1,10 +1,16 @@
 import MapContentCard from "./MapContentCard";
+
 import getDate from "../../utils/getDate";
 import { getTime } from "../../utils/getDate";
-import { mapSideContent } from "./MapData";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+function MapDownBar({ data, info: { city, country, date, time } }) {
+  const [mapContentCards, setMapContentCards] = useState([]);
 
-function MapDownBar({ open, setOpen }) {
+  useEffect(() => {
+    setMapContentCards(data.parameters);
+  }, [data]);
+
   return (
     <div
       className={` bg-black w-full font-Grotesk ease-in-out transition-all p-2`}
@@ -14,9 +20,11 @@ function MapDownBar({ open, setOpen }) {
           <div className="flex justify-center sm:justify-between items-center flex-wrap">
             <div className="col-span-3 grid grid-cols-1 gap-2 justify-between py-5">
               <div className="flex gap-4">
-                <p className="font-bold text-xl">Kano , Nigeria</p>
-                <p className="text-sm self-center">
-                  ({getTime(Date.now())}, today {getDate(Date.now())})
+                <p className="font-bold text-xl">
+                  {city} , {country}
+                </p>
+                <p className="text-md self-center">
+                  Local: {time}: {date}
                 </p>
               </div>
               <p className="pr-1 text-base">
@@ -36,33 +44,18 @@ function MapDownBar({ open, setOpen }) {
           </div>
         </div>
         <div className="flex items-stretch justify-center flex-wrap gap-4 mb-4 ">
-          {mapSideContent.map(
-            (
-              {
-                parameter,
-                value,
-                direction,
-                alert,
-                subscript,
-                superscript,
-                changes,
-              },
-              key
-            ) => {
-              return (
-                <MapContentCard
-                  key={key}
-                  value={value}
-                  alert={alert}
-                  changes={changes}
-                  direction={direction}
-                  subscript={subscript}
-                  parameter={parameter}
-                  superscript={superscript}
-                />
-              );
-            }
-          )}
+          {mapContentCards.map((item, index) => {
+            return (
+              <MapContentCard
+                key={index}
+                value={item.value}
+                alert={"Normal"}
+                changes={"0.025"}
+                direction={"down"}
+                parameter={item.name}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

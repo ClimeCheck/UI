@@ -80,7 +80,7 @@ const Sidebar = () => {
   );
 
   const collapseIconClasses = classNames(
-    "h-fit p-2 rounded-full bg-[#74BF44] text-white absolute -right-4 max-[800px]:hidden",
+    "h-fit p-2 z-30 rounded-full bg-[#74BF44] text-white absolute -right-4 max-[800px]:hidden",
     {
       "rotate-180": toggleCollapse,
     }
@@ -145,7 +145,11 @@ const Sidebar = () => {
                   >
                     <div>{Icon}</div>
                     {!toggleCollapse && (
-                      <span className={classNames("text-md font-medium  ")}>
+                      <span
+                        className={classNames(
+                          "text-md font-medium max-[800px]:hidden "
+                        )}
+                      >
                         {menu.label}
                       </span>
                     )}
@@ -172,7 +176,11 @@ const Sidebar = () => {
                 >
                   <div>{Icon}</div>
                   {!toggleCollapse && (
-                    <span className={classNames("text-md font-medium  ")}>
+                    <span
+                      className={classNames(
+                        "text-md max-[800px]:hidden font-medium "
+                      )}
+                    >
                       {menu.label}
                     </span>
                   )}

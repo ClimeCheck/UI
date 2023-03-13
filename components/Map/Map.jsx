@@ -7,7 +7,8 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState, useRef } from "react";
-
+import getDate from "../../utils/getDate";
+import { getTime } from "../../utils/getDate";
 import deviceIcon from "./deviceIcon";
 
 import MapContainer from "./MapContainer";
@@ -27,10 +28,17 @@ function SetViewOnClick({ animateRef }) {
 
 function Map({ continent, data }) {
   const [loadedMarkers, setLoadedMarkers] = useState([]);
+  const [id, setId] = useState(3);
   const [remainingPositions, setRemainingPositions] = useState(
     data.slice(7000)
   );
-  const [open, setOpen] = useState(true);
+  const [info, setInfo] = useState({
+    country: "Nigeria",
+    city: "Lagos",
+    continent: "Africa",
+    date: getDate(Date.now()),
+    time: getTime(Date.now()),
+  });
   const [country, setCountry] = useState("");
   const [geoDetails, setGeoDetails] = useState([continent[0], continent[1]]);
 
@@ -48,6 +56,12 @@ function Map({ continent, data }) {
     setGeoDetails(() => [latitude, longitude]);
   };
 
+  const fetchLocation = async (lat, lng) => {
+    const res = await fetch(`/api/location?location=${lat},${lng}`);
+
+    const result = await res.json();
+    setInfo({ ...result });
+  };
   useEffect(() => {
     const loadMarkers = async () => {
       const markers = [];
@@ -57,10 +71,15 @@ function Map({ continent, data }) {
           <Marker
             key={i}
             icon={deviceIcon}
-            onClick={() => setOpen(!open)}
+            eventHandlers={{
+              click: () => {
+                fetchLocation(position.latitude, position.longitude);
+                setId(position.id);
+              },
+            }}
             position={[position.latitude, position.longitude]}
           >
-            <Popup>Device Details</Popup>
+            <Popup>Device</Popup>
           </Marker>
         );
         markers.push(marker);
@@ -88,7 +107,13 @@ function Map({ continent, data }) {
         const marker = (
           <Marker
             key={i + loadedMarkers.length}
-            position={[position.lat, position.lng]}
+            position={[position.latitude, position.latitude]}
+            eventHandlers={{
+              click: () => {
+                fetchLocation(position.latitude, position.longitude);
+                setId(position.id);
+              },
+            }}
           >
             <Popup>{position.name}</Popup>
           </Marker>
@@ -108,9 +133,9 @@ function Map({ continent, data }) {
   return (
     <div className="w-full h-full  bg-white bg-opacity-80  ">
       <div className=" h-full flex justify-start relative ">
-        <MapSideBar open={open} setOpen={setOpen} continent={continent[2]} />
+        <MapSideBar continent={continent[2]} />
 
-        <div className="relative flex flex-col ">
+        <div className="w-full relative flex flex-col ">
           <div className="flex  justify-center py-2 z-20 left-1/2 transform -translate-x-1/2 absolute top-12">
             <input
               type="search"
@@ -150,7 +175,7 @@ function Map({ continent, data }) {
             </MapContainer>
           </div>
           <div className="mt-auto ">
-            <MapDownBar open={open} setOpen={setOpen} />
+            <MapDownBar data={data[id]} info={info} />
           </div>
         </div>
       </div>

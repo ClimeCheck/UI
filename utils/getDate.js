@@ -13,6 +13,5 @@ export function getTime(unixTimestamp) {
   let hours = date.getHours();
   let minutes = "0" + date.getMinutes();
 
- return hours + ":" + minutes.substr(-2);
-
+  return hours + ":" + minutes.substr(-2);
 }

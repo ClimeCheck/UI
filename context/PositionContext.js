@@ -5,6 +5,7 @@ const PositionContext = createContext(null);
 
 export const PositionProvider = ({ children }) => {
   const [positions, setPositions] = useState([]);
+  const [result, setResult] = useState();
   const [totalDevices, setTotalDevices] = useState();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ export const PositionProvider = ({ children }) => {
 
       setPositions(groupedByContinent);
       setTotalDevices(totalPositions);
+     
     }
 
     fetchData();
@@ -24,6 +26,7 @@ export const PositionProvider = ({ children }) => {
 
   return (
     <PositionContext.Provider value={{ positions, totalDevices }}>
+    
       {children}
     </PositionContext.Provider>
   );

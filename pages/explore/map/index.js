@@ -34,10 +34,17 @@ export const getServerSideProps = async () => {
       },
     });
     const { data } = await res.json();
-
-    const result = data.slice(0, 8000).map((item) => ({
-      latitude: item[2],
-      longitude: item[3],
+    
+    const result = data.slice(0, 8000).map((item, index) => ({
+      id: index,
+      latitude: item[1],
+      longitude: item[2],
+      parameters: [
+        { name: "Temperature", value: item[3] },
+        { name: "Humidity", value: item[4] },
+        { name: "PM 1.0", value: item[5] },
+        { name: "PM 10.0", value: item[6] },
+      ],
     }));
 
     return {

@@ -1,7 +1,7 @@
 import MapContentCard from "./MapContentCard";
 import { mapSideContent } from "./MapData";
 
-function MapSideBar({ open, setOpen, continent }) {
+function MapSideBar({ continent }) {
   return (
     <div
       className={` hidden md:flex flex-col font-Grotesk gap-8 z-50 p-4 w-80 bg-white ease-in-out transition-all h-full`}
@@ -14,10 +14,7 @@ function MapSideBar({ open, setOpen, continent }) {
               <h1 className="text-3xl ">{continent}</h1>
             </div>
             <div className="flex col-span-1 pl-8">
-              <button
-                onClick={() => setOpen(!open)}
-                className="border border-primary text-primary px-1 rounded-sm self-center"
-              >
+              <button className="border border-primary text-primary px-1 rounded-sm self-center">
                 &larr;
               </button>
             </div>

@@ -7,6 +7,8 @@ const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
 });
 
 function Map({ continent, data }) {
+  console.log(data);
+
   return (
     <div>
       <Head>
@@ -52,7 +54,7 @@ export const getServerSideProps = async ({ params }) => {
 
     const response = await purpleAirRes.json();
 
-    const result2 = data.slice(0, 8000).map((item, index) => ({
+    result2 = response?.data.slice(0, 8000).map((item, index) => ({
       id: index,
       latitude: item[1],
       longitude: item[2],

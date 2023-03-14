@@ -9,7 +9,7 @@ const Hero = (props) => {
     <div className={style.container}>
       <div className={style.text}>
         <h1>Community sourced hyperlocalized stream of climate data.</h1>
-        <h4>
+        <h4 className="pt-8">
           Climecheck is a Decentralized Science (DeSci) ecosystem with a
           real-time big data Platform of climate monitoring devices around the
           world.
@@ -28,7 +28,6 @@ const Hero = (props) => {
             <span>
               {trend}
               <span className={style.supsub}>
-
                 <sup>ppm</sup>
               </span>
             </span>
@@ -46,7 +45,6 @@ const Hero = (props) => {
               </span>
             </span>
           </div>
-
         </div>
 
         <div>
@@ -56,12 +54,10 @@ const Hero = (props) => {
             <span>
               {Number(value).toFixed(2)}
               <span className={style.supsub}>
-
                 <sup>inches</sup>
               </span>
             </span>
           </div>
-
         </div>
       </div>
     </div>

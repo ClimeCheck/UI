@@ -21,7 +21,7 @@ function MapDownBar({ data, info: { city, country, date, time } }) {
             <div className="col-span-3 grid grid-cols-1 gap-2 justify-between py-5">
               <div className="flex gap-4">
                 <p className="font-bold text-xl">
-                  {city} , {country}
+                  {city}, {country}
                 </p>
                 <p className="text-md self-center">
                   Local: {time}: {date}

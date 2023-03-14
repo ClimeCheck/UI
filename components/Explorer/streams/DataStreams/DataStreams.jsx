@@ -1,4 +1,4 @@
-import { DataStreamsByContinent } from "../streamsData";
+
 import DataStreamCards from "./DataStreamCard";
 import { AiOutlineRollback } from "react-icons/ai";
 import { useRouter } from "next/router";

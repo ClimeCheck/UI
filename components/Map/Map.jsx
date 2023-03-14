@@ -40,20 +40,23 @@ function Map({ continent, data }) {
     time: getTime(Date.now()),
   });
   const [country, setCountry] = useState("");
-  const [geoDetails, setGeoDetails] = useState([continent[0], continent[1]]);
+  const [geoDetails, setGeoDetails] = useState([
+    continent[0],
+    continent[1],
+    13,
+  ]);
 
   const animateRef = useRef(true);
   const mapRef = useRef();
 
-  const getCountry = async (e) => {
+  const Get_Country = async (e) => {
     console.log("searching");
     const result = `/api/getCountry?e=${e}`;
     const { data } = await (await fetch(result)).json();
     const location = data[0];
     const { latitude, longitude } = location;
-    console.log([latitude, longitude]);
 
-    setGeoDetails(() => [latitude, longitude]);
+    setGeoDetails(() => [latitude, longitude, 25]);
   };
 
   const fetchLocation = async (lat, lng) => {
@@ -126,7 +129,7 @@ function Map({ continent, data }) {
   };
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      getCountry(country);
+      Get_Country(country);
     }
   };
 
@@ -153,12 +156,12 @@ function Map({ continent, data }) {
               width="100%"
               // height="600"
               // className=" h-[80vh] md:h-[600px]"
-              center={geoDetails}
-              zoom={13}
+              center={[geoDetails[0], geoDetails[1]]}
+              zoom={geoDetails[2]}
               scrollWheelZoom={true}
-              ref={mapRef}
               onMoveend={handleMoveEnd}
               zoomControl={false}
+              ref={mapRef}
             >
               <ZoomControl position="topright" />
               <TileLayer

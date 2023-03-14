@@ -1,6 +1,5 @@
 import { AiOutlineRollback } from "react-icons/ai";
 import MapButton from "../../MapButton";
-import { AirStreamsByContinent } from "../streamsData";
 import AirStreamCards from "./AirStreamCards";
 import { useRouter } from "next/router";
 import { useContext } from "react";

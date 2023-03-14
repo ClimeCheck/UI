@@ -181,7 +181,7 @@ const Layout = ({ children, title, showSearch }) => {
 
         <div
           ref={navRef}
-          className="nav-links z-[20] pl-[3rem] shadow-md duration-500 absolute bg-white md:min-h-fit min-h-[60vh] translate-y-[-150%] -left-[24px] top-20   w-[110vw] flex sm:hidden items-center"
+          className="nav-links z-[20] pl-[3rem] shadow-md duration-500 absolute bg-white md:min-h-fit h-max translate-y-[-150%] -left-[24px] top-20   w-[110vw] flex sm:hidden items-center"
         >
           <ul className="self-start flex md:flex-row flex-col md:items-center ">
             {menuItems

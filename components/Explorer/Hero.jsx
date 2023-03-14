@@ -11,13 +11,13 @@ function ExplorerHero() {
       <div className="hero-content my-20 text-center">
         <div className="max-w-4xl">
           <h1 className="styledHeader">Data and Awareness</h1>
-          <div className="m-4 grid content-center rounded-md bg-gradient-to-tr from-indigo-800 to-zinc-600 bg-opacity-80 pt-32 text-white">
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center px-4 py-4 ">
+          <div className="m-4  h-full rounded-md bg-gradient-to-tr from-indigo-800 to-zinc-600 bg-opacity-80 py-16 text-white">
+            <div className=" m-auto w-full h-full flex justify-center flex-wrap items-center  ">
               {ClimateData.map(({ name, icon }, key) => {
                 return (
                   <div
                     key={key}
-                    className={`m-2 rounded-md p-2 bg-slate-300 ${
+                    className={`m-2 w-[210px] h-[160px] rounded-md p-2 bg-slate-300 ${
                       name == "Data streams" && "text-[#192F5D]"
                     } ${name == "Countries" && "text-[#008000]"} ${
                       name == "Total Connected Device" && "text-[#F07D00]"

@@ -98,7 +98,7 @@ function Map({ continent, data }) {
 
     // Check if any remaining positions are visible on the map
     const visiblePositions = remainingPositions.filter((position) =>
-      bounds.contains([position.lat, position.lng])
+      bounds.contains([position.latitude, position.longitude])
     );
 
     if (visiblePositions.length > 0) {
@@ -110,7 +110,7 @@ function Map({ continent, data }) {
         const marker = (
           <Marker
             key={i + loadedMarkers.length}
-            position={[position.latitude, position.latitude]}
+            position={[position.latitude, position.longitude]}
             eventHandlers={{
               click: () => {
                 fetchLocation(position.latitude, position.longitude);

@@ -8,7 +8,7 @@ const MapComponents = dynamic(() => import("../../../components/Map/Map"), {
 });
 
 function Map({ data, continent }) {
-  console.log(data);
+  
   return (
     <div>
       <Head>
@@ -36,7 +36,7 @@ export const getServerSideProps = async () => {
     });
     const { data } = await res.json();
 
-    const result = data.slice(0, 8000).map((item, index) => ({
+    const result = data.slice(0, 7000).map((item, index) => ({
       id: index,
       latitude: item[1],
       longitude: item[2],
@@ -51,7 +51,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         data: result,
-        continent: [0, 0, "Globe"],
+        continent: [40.8, 20.9, "Globe"],
       },
     };
   } catch (error) {

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import React from "react";
 
 const DynamicMap = dynamic(() => import("./dynamicMap"), {
   ssr: false,
@@ -9,14 +10,16 @@ const DynamicMap = dynamic(() => import("./dynamicMap"), {
 
 const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 600;
+// eslint-disable-next-line react/display-name
 
-const MapContainer = (props) => {
+// eslint-disable-next-line react/display-name
+const MapContainer = React.forwardRef((props, ref) => {
   const { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT } = props;
   return (
     <div style={{ aspectRatio: 16 / 9 }}>
-      <DynamicMap {...props} />
+      <DynamicMap {...props} ref={ref} />
     </div>
   );
-};
+});
 
 export default MapContainer;

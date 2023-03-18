@@ -22,7 +22,6 @@ function SetViewOnClick({ animateRef }) {
       animate: animateRef.current,
     });
   });
-
   return null;
 }
 
@@ -30,7 +29,7 @@ function Map({ continent, data }) {
   const [loadedMarkers, setLoadedMarkers] = useState([]);
   const [id, setId] = useState(3);
   const [remainingPositions, setRemainingPositions] = useState(
-    data.slice(7000)
+    data.slice(1000)
   );
   const [info, setInfo] = useState({
     country: "Nigeria",
@@ -41,17 +40,19 @@ function Map({ continent, data }) {
   });
   const [country, setCountry] = useState("");
   const [geoDetails, setGeoDetails] = useState([
-    continent[0],
-    continent[1],
+    data[id].latitude,
+    data[id].longitude,
     13,
   ]);
 
   const animateRef = useRef(true);
   const mapRef = useRef();
 
-  const Get_Country = async (e) => {
+  const Get_Country = async (country) => {
     console.log("searching");
-    const result = `/api/getCountry?e=${e}`;
+    const result = `/api/getCountry?e=${country}`;
+
+    console.log(result);
     const { data } = await (await fetch(result)).json();
     const location = data[0];
     const { latitude, longitude } = location;
@@ -68,44 +69,47 @@ function Map({ continent, data }) {
   useEffect(() => {
     const loadMarkers = async () => {
       const markers = [];
+
       for (let i = 0; i < 1000; i++) {
         const position = data[i];
-        const marker = (
-          <Marker
-            key={i}
-            icon={deviceIcon}
-            eventHandlers={{
-              click: () => {
-                fetchLocation(position.latitude, position.longitude);
-                setId(position.id);
-              },
-            }}
-            position={[position.latitude, position.longitude]}
-          >
-            <Popup>Device</Popup>
-          </Marker>
-        );
-        markers.push(marker);
+        if (position) {
+          const marker = (
+            <Marker
+              key={i}
+              icon={deviceIcon}
+              position={[position.latitude + 0, position.longitude]}
+              eventHandlers={{
+                click: (e) => {
+                  fetchLocation(position.latitude, position.longitude);
+                  setId(position.id);
+                },
+              }}
+            >
+              <Popup>Device {position.id}</Popup>
+            </Marker>
+          );
+          markers.push(marker);
+        }
       }
       setLoadedMarkers(markers);
     };
     loadMarkers();
+    fetchLocation(data[3].latitude, data[3].longitude);
   }, [data]);
 
   const handleMoveEnd = async () => {
     const map = mapRef.current;
     const bounds = map.getBounds();
-
+    console.log(bounds);
     // Check if any remaining positions are visible on the map
     const visiblePositions = remainingPositions.filter((position) =>
       bounds.contains([position.latitude, position.longitude])
     );
-
     if (visiblePositions.length > 0) {
       // Load next chunk of positions
       const nextChunk = remainingPositions.slice(0, 1000);
       const nextMarkers = [];
-      for (let i = 0; i < nextChunk.length; i++) {
+      for (let i = 0; i < 1000; i++) {
         const position = nextChunk[i];
         const marker = (
           <Marker
@@ -118,13 +122,13 @@ function Map({ continent, data }) {
               },
             }}
           >
-            <Popup>{position.name}</Popup>
+            <Popup>Device {position.id}</Popup>
           </Marker>
         );
         nextMarkers.push(marker);
       }
       setLoadedMarkers((prevMarkers) => [...prevMarkers, ...nextMarkers]);
-      setRemainingPositions((prevPositions) => prevPositions.slice(1500));
+      setRemainingPositions((prevPositions) => prevPositions.slice(1000));
     }
   };
   const handleKeyPress = (e) => {
@@ -152,30 +156,36 @@ function Map({ continent, data }) {
             />
           </div>
           <div className="z-0 relative">
-            <MapContainer
-              width="100%"
-              // height="600"
-              // className=" h-[80vh] md:h-[600px]"
-              center={[geoDetails[0], geoDetails[1]]}
-              zoom={geoDetails[2]}
-              scrollWheelZoom={true}
-              onMoveend={handleMoveEnd}
-              zoomControl={false}
-              ref={mapRef}
-            >
-              <ZoomControl position="topright" />
-              <TileLayer
-                id="mapbox/streets-v11"
-                accessToken="pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
-                url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
+            {geoDetails[0] != "" && geoDetails[0] != "" && (
+              <>
+                <MapContainer
+                  width="100%"
+                  center={[geoDetails[0], geoDetails[1]]}
+                  zoom={geoDetails[2]}
+                  scrollWheelZoom={true}
+                  onMoveend={handleMoveEnd}
+                  zoomControl={false}
+                  ref={mapRef}
+                >
+                  <ZoomControl position="topright" />
+                  <TileLayer
+                    id="mapbox/streets-v11"
+                    accessToken="pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
+                    url="https://api.mapbox.com/styles/v1/callynnamani/cks6qgrvv9uah17o5njktvof4/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaWtlbWhvb2QiLCJhIjoiY2xjaW90Z2phMGNtMzNxcDZzeXhlazg5cSJ9.lDfPg9kf5ngiRxjIk6pLdA"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  {loadedMarkers != null && loadedMarkers.length > 0
+                    ? loadedMarkers
+                    : "Loading..."}
 
-              {loadedMarkers}
-
-              <SetViewOnClick animateRef={animateRef} />
-              <RecenterAutomatically lat={geoDetails[0]} lng={geoDetails[1]} />
-            </MapContainer>
+                  <SetViewOnClick animateRef={animateRef} />
+                  <RecenterAutomatically
+                    lat={geoDetails[0]}
+                    lng={geoDetails[1]}
+                  />
+                </MapContainer>
+              </>
+            )}
           </div>
           <div className="mt-auto ">
             <MapDownBar data={data[id]} info={info} />

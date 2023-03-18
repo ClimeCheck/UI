@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import groupByContinent from "../utils/groupByContinent";
 
-const PositionContext = createContext(null);
+const PositionContext = createContext();
 
 export const PositionProvider = ({ children }) => {
   const [positions, setPositions] = useState([]);
@@ -18,7 +18,6 @@ export const PositionProvider = ({ children }) => {
 
       setPositions(groupedByContinent);
       setTotalDevices(totalPositions);
-     
     }
 
     fetchData();
@@ -26,7 +25,6 @@ export const PositionProvider = ({ children }) => {
 
   return (
     <PositionContext.Provider value={{ positions, totalDevices }}>
-    
       {children}
     </PositionContext.Provider>
   );

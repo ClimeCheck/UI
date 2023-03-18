@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(url + location + "&aqi=no");
-    let continent;
+
     const {
       location: { country, tz_id, localtime },
     } = await response.json();
